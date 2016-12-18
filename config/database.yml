@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: speakerline_development
+
+test:
+  <<: *default
+  database: speakerline_test
+
+production:
+  <<: *default
+  database: speakerline_production
