@@ -7,10 +7,13 @@ development:
   <<: *default
   database: speakerline_development
 
-test:
+test: &test
   <<: *default
   database: speakerline_test
 
 production:
   <<: *default
   database: speakerline_production
+
+cucumber:
+  <<: *test
