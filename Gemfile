@@ -10,7 +10,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails'
 end
 
 group :development do
