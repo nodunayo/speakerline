@@ -1,5 +1,5 @@
 <h1>Speaker Directory</h1>
 
 <% @speakers.each do |speaker| %>
-  <p><%= speaker.name %></p>
+  <p><%= link_to speaker.name, speaker_path(speaker.id) %></p>
 <% end %>

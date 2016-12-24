@@ -1,0 +1,6 @@
+<h1><%= @speaker.name %></h1>
+
+<h3>Proposals</h3>
+<% @speaker.proposals.each do |proposal| %>
+  <p><%= proposal.title %></p>
+<% end %>
