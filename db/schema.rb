@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161224120500) do
+ActiveRecord::Schema.define(version: 20161228162718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "year",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "proposals", force: :cascade do |t|
     t.string   "title"
@@ -30,5 +37,17 @@ ActiveRecord::Schema.define(version: 20161224120500) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "submissions", force: :cascade do |t|
+    t.integer  "result"
+    t.integer  "proposal_id"
+    t.integer  "event_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["event_id"], name: "index_submissions_on_event_id", using: :btree
+    t.index ["proposal_id"], name: "index_submissions_on_proposal_id", using: :btree
+  end
+
   add_foreign_key "proposals", "speakers"
+  add_foreign_key "submissions", "events"
+  add_foreign_key "submissions", "proposals"
 end

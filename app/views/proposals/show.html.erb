@@ -1,3 +1,8 @@
 <h1><%= @proposal.title %></h1>
 
 <p><%= @proposal.body %></p>
+
+<h2>Submissions </h2>
+<% @proposal.submissions.each do |submission| %>
+  <p><%= "#{submission.event.name} #{submission.event.year} — #{submission.result.capitalize}" %></p>
+<% end %>
