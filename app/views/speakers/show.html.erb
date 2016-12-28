@@ -2,5 +2,5 @@
 
 <h3>Proposals</h3>
 <% @speaker.proposals.each do |proposal| %>
-  <p><%= proposal.title %></p>
+  <p><%= link_to proposal.title, proposal_path(proposal.id) %></p>
 <% end %>
