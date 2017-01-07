@@ -10,3 +10,10 @@ Feature: Speaker Directory
     When I go to the speaker directory page
     And I click on 'Sandi Metz'
     Then I should see 'All The Little Things'
+
+  Scenario: Add a speaker to the directory
+    Given the speaker 'Katrina Owen' is not in the directory
+    When I add 'Katrina Owen' to the directory
+    And I go to the speaker directory page
+    Then I should see 'Katrina Owen'
+

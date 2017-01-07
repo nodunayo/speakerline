@@ -1,0 +1,7 @@
+<h3>Add a speaker</h3>
+<%= form_for @speaker, url: {action: 'create'} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Add" %>
+<% end %>
+
+<p><%= link_to 'Back to Speaker Directory', speakers_path %></p>

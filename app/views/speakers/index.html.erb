@@ -3,3 +3,5 @@
 <% @speakers.each do |speaker| %>
   <p><%= link_to speaker.name, speaker_path(speaker.id) %></p>
 <% end %>
+
+<p><%= link_to 'Add a speaker', new_speaker_path %></p>

@@ -23,3 +23,18 @@ end
 Then(/^I should see 'All The Little Things'$/) do
   expect(page).to have_content('All The Little Things')
 end
+
+Given(/^the speaker 'Katrina Owen' is not in the directory$/) do
+  visit speakers_path
+  expect(page).not_to have_content('Katrina Owen')
+end
+
+When(/^I add 'Katrina Owen' to the directory$/) do
+  visit new_speaker_path
+  page.fill_in 'speaker_name', with: 'Katrina Owen'
+  page.click_on 'Add'
+end
+
+Then(/^I should see 'Katrina Owen'$/) do
+  expect(page).to have_content('Katrina Owen')
+end
