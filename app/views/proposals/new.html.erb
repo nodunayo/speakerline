@@ -1,4 +1,5 @@
 <h3>Add a proposal</h3>
+
 <%= form_for @proposal, url: {action: 'create'} do |f| %>
   <%= f.collection_select(:speaker_id, Speaker.all, :id, :name) %>
   <%= f.label(:title) %>
@@ -8,3 +9,4 @@
   <%= f.submit "Add proposal" %>
 <% end %>
 
+<p><%= link_to 'Back to Speaker Directory', speakers_path %></p>
