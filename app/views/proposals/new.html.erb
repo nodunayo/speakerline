@@ -1,0 +1,10 @@
+<h3>Add a proposal</h3>
+<%= form_for @proposal, url: {action: 'create'} do |f| %>
+  <%= f.collection_select(:speaker_id, Speaker.all, :id, :name) %>
+  <%= f.label(:title) %>
+  <%= f.text_field(:title) %>
+  <%= f.label(:body) %>
+  <%= f.text_area(:body) %>
+  <%= f.submit "Add proposal" %>
+<% end %>
+

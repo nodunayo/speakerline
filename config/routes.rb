@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   root 'speakers#index'
 
   resources :speakers
-  resources :proposals, only: :show
+  resources :proposals, only: [:new, :create, :show]
 end

@@ -2,6 +2,10 @@ Given(/^the speaker 'Sandi Metz' is in the directory$/) do
   create(:speaker, name: 'Sandi Metz')
 end
 
+Given(/^the speaker 'Saron Yitbarek' is in the directory$/) do
+  create(:speaker, name: 'Saron Yitbarek')
+end
+
 When(/^I go to the speaker directory page$/) do
   visit speakers_path
 end
