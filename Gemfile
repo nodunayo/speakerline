@@ -8,11 +8,13 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
