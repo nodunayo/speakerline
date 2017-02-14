@@ -12,6 +12,9 @@
     <% flash.each do |key, value| %>
        <%= content_tag :div, value, class: "flash #{key}" %>
     <% end %>
+    <p><%= link_to 'Home', speakers_path %></p>
+    <p><%= link_to 'Add a speaker', new_speaker_path %></p>
+    <p><%= link_to 'Add a proposal', new_proposal_path %></p>
 
     <%= yield %>
   </body>

@@ -1,8 +1,6 @@
-<h1>Speaker Directory</h1>
+<h1>Speakerline</h1>
 
 <% @speakers.each do |speaker| %>
   <p><%= link_to speaker.name, speaker_path(speaker.id) %></p>
 <% end %>
 
-<p><%= link_to 'Add a speaker', new_speaker_path %></p>
-<p><%= link_to 'Add a proposal', new_proposal_path %></p>
