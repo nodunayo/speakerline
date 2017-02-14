@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  include ApplicationHelper
+
   def show
     @proposal = Proposal.find(params[:id])
   end

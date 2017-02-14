@@ -9,6 +9,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'rails_admin'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'rspec-rails'
