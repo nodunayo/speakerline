@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.navigation {
+  margin-top: 5%
+}
+
+.medium-height {
+  height: 15em
+}
+
+.inline {
+  display: inline
+}

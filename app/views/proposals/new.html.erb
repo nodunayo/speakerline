@@ -5,7 +5,7 @@
   <%= f.label(:title) %>
   <%= f.text_field(:title) %>
   <%= f.label(:body) %>
-  <%= f.text_area(:body) %>
+  <%= f.text_area(:body, class: 'u-full-width medium-height', placeholder: "For formatting, you can use Markdown! :-)") %>
   <%= f.submit "Add proposal" %>
 <% end %>
 

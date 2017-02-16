@@ -1,10 +1,17 @@
-<h1><%= @proposal.title %></h1>
-<h3><%= link_to @proposal.speaker.name, speaker_path(@proposal.speaker) %></h3>
+<div class='row'>
+  <div class="one-half column">
+    <h3><%= @proposal.title %></h3>
+    <h5><%= link_to @proposal.speaker.name, speaker_path(@proposal.speaker) %></h5>
 
-<p><%= markdown(@proposal.body) %></p>
+    <p><%= markdown(@proposal.body) %></p>
+  </div>
 
-<h2>Submissions </h2>
-<% @proposal.submissions.each do |submission| %>
-  <p><%= "#{submission.event.name} #{submission.event.year} — #{submission.result.capitalize}" %></p>
-<% end %>
-<%= link_to 'Add submission', new_submission_path(proposal: @proposal.id) %>
+  <div class="one-half column">
+    <h4>Submissions </h4>
+    <% @proposal.submissions.each do |submission| %>
+      <p><%= "#{submission.event.name} #{submission.event.year} — #{submission.result.capitalize}" %></p>
+  <% end %>
+    <%= link_to 'Add submission', new_submission_path(proposal: @proposal.id) %>
+  </div>
+</div>
+

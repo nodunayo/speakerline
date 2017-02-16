@@ -9,13 +9,18 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-       <%= content_tag :div, value, class: "flash #{key}" %>
-    <% end %>
-    <p><%= link_to 'Home', speakers_path %></p>
-    <p><%= link_to 'Add a speaker', new_speaker_path %></p>
-    <p><%= link_to 'Add a proposal', new_proposal_path %></p>
+    <div class="container">
 
-    <%= yield %>
+      <% flash.each do |key, value| %>
+        <%= content_tag :div, value, class: "flash #{key}" %>
+      <% end %>
+
+      <div class="navigation">
+        <p><%= link_to 'Home', speakers_path %> <%= link_to 'Add a speaker', new_speaker_path %> <%= link_to 'Add a proposal', new_proposal_path %></p>
+      </div>
+
+      <%= yield %>
+
+    </div>
   </body>
 </html>
