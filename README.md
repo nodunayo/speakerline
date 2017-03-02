@@ -43,15 +43,14 @@ As Speakerline develops, hopefully it will:
 
 ### Getting started with Ruby and Postgres
 
-First, you'll need to install Ruby 2.3.3. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install)
-to manage my ruby versions.
+First, you'll need to install Ruby 2.3.3. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install) to manage my Ruby versions.
 
-Another popular alternative is using [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build):
+Another popular alternative is using [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build).
 
 Next, you'll need to have PostgreSQL installed. This can be done on OSX using [Homebrew](http://mxcl.github.io/homebrew/)
 or by using [http://postgresapp.com](http://postgresapp.com). 
 
-Have a look at these [further instructions for installing Postgres via Homebrew](http://www.mikeball.us/blog/setting-up-postgres-with-homebrew/).
+Have a look at these [further instructions for installing Postgres via Homebrew](http://www.mikeball.us/blog/setting-up-postgres-with-homebrew/):
 
 ```bash
 brew install postgres phantomjs
@@ -84,7 +83,6 @@ Once all the gems are installed, we'll need to create the databases and tables u
 bundle exec rake db:create:all
 bundle exec rake db:migrate
 ```
-
 
 Finally, we have to do is start up the Rails server and point our browser to <http://localhost:3000>
 
@@ -133,4 +131,4 @@ I'd love any help with this project. Here are some basic steps for submitting pu
 ## Credits
 
 * Thank you to [Andrew Nesbitt](https://twitter.com/teabass) for being patient and answering all of my Open Source questions.
-* Thank you to the [24 Pull Requests](https://github.com/24pullrequests/24pullrequests). This README was heavily inspired by theirs!
+* Thank you to [24 Pull Requests](https://github.com/24pullrequests/24pullrequests). This README was heavily inspired by theirs!
