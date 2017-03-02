@@ -135,4 +135,4 @@ I'd love any help with this project. Here are some basic steps for submitting pu
 
 ## Copyright
 
-Copyright (c) 2017 Nadia Odunayo. See [LICENSE]() for details.
+Copyright (c) 2017 Nadia Odunayo. See [LICENSE](https://github.com/nodunayo/speakerline/blob/master/LICENSE) for details.
