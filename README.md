@@ -132,3 +132,7 @@ I'd love any help with this project. Here are some basic steps for submitting pu
 
 * Thank you to [Andrew Nesbitt](https://twitter.com/teabass) for being patient and answering all of my Open Source questions.
 * Thank you to [24 Pull Requests](https://github.com/24pullrequests/24pullrequests). This README was heavily inspired by theirs!
+
+## Copyright
+
+Copyright (c) 2017 Nadia Odunayo. See [LICENSE]() for details.
