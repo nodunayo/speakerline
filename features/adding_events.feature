@@ -1,6 +1,5 @@
 Feature: Adding an Event
 
-  @wip
   Scenario: Adding an event to a proposal
     Given there is a proposal called 'Reading Code Good'
     And I am on the 'Add an Event' page
