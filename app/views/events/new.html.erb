@@ -1,0 +1,19 @@
+<h3>Add an event</h3>
+
+<%= form_for @event do |f| %>
+  <div class="row">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="row">
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+  </div>
+
+  <div class="row">
+    <%= f.submit 'Add event' %>
+  </div>
+<% end %>
+
+<p><%= link_to 'Back to Speaker Directory', speakers_path %></p>
