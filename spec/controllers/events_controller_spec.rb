@@ -20,5 +20,15 @@ RSpec.describe EventsController do
 
       it { should redirect_to(speakers_path) }
     end
+
+    context 'with invalid attributes' do
+      before do
+        allow(Event).to receive(:create!) { fail ActiveRecord::ActiveRecordError }
+        post :create, params: { event: { name: '', year: '' } }
+      end
+
+      it { is_expected.to set_flash[:alert].to('Failed to save event') }
+      it { should redirect_to(new_event_path) }
+    end
   end
 end
