@@ -1,5 +1,7 @@
 # Speakerline
 
+[![Build Status](https://travis-ci.org/nodunayo/speakerline.svg?branch=master)](https://travis-ci.org/nodunayo/speakerline)
+
 > Showcasing speakers' proposals and timelines in a effort to demystify the CFP process and help new speakers get started
 
 ## Where did the idea come from?
@@ -53,7 +55,7 @@ or by using [http://postgresapp.com](http://postgresapp.com).
 Have a look at these [further instructions for installing Postgres via Homebrew](http://www.mikeball.us/blog/setting-up-postgres-with-homebrew/):
 
 ```bash
-brew install postgres phantomjs
+brew install postgres
 ```
 
 On Debian-based Linux distributions you can use apt-get to install Postgres:
