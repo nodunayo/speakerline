@@ -53,7 +53,7 @@ or by using [http://postgresapp.com](http://postgresapp.com).
 Have a look at these [further instructions for installing Postgres via Homebrew](http://www.mikeball.us/blog/setting-up-postgres-with-homebrew/):
 
 ```bash
-brew install postgres phantomjs
+brew install postgres
 ```
 
 On Debian-based Linux distributions you can use apt-get to install Postgres:
