@@ -256,6 +256,7 @@ DEPENDENCIES
   rails (>= 5.0.0.1)
   rails-controller-testing
   rails_admin
+  rake
   redcarpet
   rspec-rails
   sass-rails
