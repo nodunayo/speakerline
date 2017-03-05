@@ -1,6 +1,7 @@
 <h3>Speakerline</h3>
 
+<p>Showcasing speakers' proposals and timelines in an effort to demystify the CFP process and help new speakers get started.</p>
+
 <% @speakers.each do |speaker| %>
   <p><%= link_to speaker.name, speaker_path(speaker.id) %></p>
 <% end %>
-
