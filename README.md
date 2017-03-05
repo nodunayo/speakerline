@@ -45,7 +45,7 @@ As Speakerline develops, hopefully it will:
 
 ### Getting started with Ruby and Postgres
 
-First, you'll need to install Ruby 2.3.3. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install) to manage my Ruby versions.
+First, you'll need to install Ruby 2.4.0. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install) to manage my Ruby versions.
 
 Another popular alternative is using [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build).
 
