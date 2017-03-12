@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170319134913) do
     t.integer  "year",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "year",       null: false
   end
 
   create_table "proposals", force: :cascade do |t|
