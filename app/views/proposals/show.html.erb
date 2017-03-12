@@ -11,6 +11,7 @@
     <% @proposal.submissions.each do |submission| %>
       <p><%= "#{submission.event.name} #{submission.event.year} — #{submission.result.capitalize}" %></p>
   <% end %>
+    <%= link_to 'Edit proposal', edit_proposal_path(@proposal) %>
     <%= link_to 'Add submission', new_submission_path(proposal: @proposal.id) %>
   </div>
 </div>
