@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'speakers#index'
 
   resources :speakers
-  resources :proposals, only: [:new, :create, :show]
+  resources :proposals, only: [:new, :create, :show, :edit, :update]
   resources :submissions, only: [:new, :create]
   resources :events, only: [:new, :create]
 end
