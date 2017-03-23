@@ -1,7 +1,8 @@
 class SubmissionsController < ApplicationController
   def new
-    @proposal = Proposal.find(params[:proposal]) 
+    @proposal = Proposal.find(params[:proposal])
     @submission = Submission.new(proposal_id: @proposal.id)
+    @events = Event.all.order('name ASC, year ASC')
   end
 
   def create
