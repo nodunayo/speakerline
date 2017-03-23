@@ -7,6 +7,7 @@ class ProposalsController < ApplicationController
 
   def new
     @proposal = Proposal.new
+    @speakers = Speaker.all.order('name ASC')
   end
 
   def create
