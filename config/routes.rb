@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :speakers
   resources :proposals, only: [:new, :create, :show]
   resources :submissions, only: [:new, :create]
-  resources :events, only: [:new, :create]
+  resources :events
 end

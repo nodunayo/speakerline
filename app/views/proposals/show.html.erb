@@ -9,9 +9,11 @@
   <div class="one-half column">
     <h4>Submissions </h4>
     <% @proposal.submissions.each do |submission| %>
-      <p><%= "#{submission.event.name} #{submission.event.year} — #{submission.result.capitalize}" %></p>
+      <p>
+        <%= link_to submission.event.name_and_year, submission.event %> -
+        <%= submission.result.capitalize %>
+      </p>
   <% end %>
     <%= link_to 'Add submission', new_submission_path(proposal: @proposal.id) %>
   </div>
 </div>
-
