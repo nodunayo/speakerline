@@ -2,11 +2,10 @@
 
 <%= form_for @submission, url: {action: 'create'} do |f| %>
   <%= f.hidden_field(:proposal_id, value: @proposal.id) %>
-  <%= f.collection_select(:event_id, Event.all, :id, :name_and_year) %>
+  <%= f.collection_select(:event_id, @events, :id, :name_and_year) %>
   <%= f.radio_button(:result, :accepted) %>
   <%= f.label(:result_accepted, "Accepted", class: 'inline') %>
   <%= f.radio_button(:result, :rejected) %>
   <%= f.label(:result_rejected, "Rejected", class: 'inline') %>
   <%= f.submit "Add submission" %>
 <% end %>
-
