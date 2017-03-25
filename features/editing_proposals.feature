@@ -8,3 +8,4 @@ Scenario: Editing an Existing proposal
   And I click 'Update Proposal'
   Then I should see 'Reading Code Well'
   And I should not see 'Reading Code Good'
+
