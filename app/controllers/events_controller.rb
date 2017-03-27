@@ -11,6 +11,14 @@ class EventsController < ApplicationController
     redirect_to new_event_path
   end
 
+  def index
+    @events = Event.all.order('name ASC, year ASC')
+  end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
   private
 
   def event_params
