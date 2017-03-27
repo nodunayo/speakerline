@@ -35,7 +35,7 @@ Given(/^Saron Yitbarek's 'Reading Code Good' was accepted at RailsConf 2014$/) d
 end
 
 Then(/^I should see a record of the RailsConf 2014 acceptance$/) do
-  expect(page).to have_content('RailsConf 2014 — Accepted')
+  expect(page).to have_content('RailsConf 2014 - Accepted')
 end
 
 When(/^I add that the proposal was rejected from Boo Ruby in 2017$/) do
@@ -50,5 +50,5 @@ Given(/^there is an (\d+) event called "([^"]*)" in the system$/) do |year, even
 end
 
 Then(/^I should see a record of the Boo Ruby 2017 rejection$/) do
-  expect(page).to have_content('Boo Ruby 2017 — Rejected')
+  expect(page).to have_content('Boo Ruby 2017 - Rejected')
 end
