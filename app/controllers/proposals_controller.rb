@@ -7,7 +7,7 @@ class ProposalsController < ApplicationController
 
   def new
     @proposal = Proposal.new
-    @speakers = Speaker.all.order('name ASC')
+    @speakers = speakers
   end
 
   def create
@@ -20,6 +20,7 @@ class ProposalsController < ApplicationController
 
   def edit
     @proposal = Proposal.find(params[:id])
+    @speakers = speakers
   end
 
   def update
@@ -35,5 +36,9 @@ class ProposalsController < ApplicationController
 
   def proposal_params
     params.require(:proposal).permit(:title, :body, :speaker_id).to_h
+  end
+
+  def speakers
+    Speaker.all.order('name ASC')
   end
 end
