@@ -45,12 +45,12 @@ As Speakerline develops, hopefully it will:
 
 ### Getting started with Ruby and Postgres
 
-First, you'll need to install Ruby 2.4.0. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install) to manage my Ruby versions.
+First, you'll need to install Ruby 2.4.1. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install) to manage my Ruby versions.
 
 Another popular alternative is using [rbenv](https://github.com/rbenv/rbenv) and [ruby-build](https://github.com/rbenv/ruby-build).
 
 Next, you'll need to have PostgreSQL installed. This can be done on OSX using [Homebrew](http://mxcl.github.io/homebrew/)
-or by using [http://postgresapp.com](http://postgresapp.com). 
+or by using [http://postgresapp.com](http://postgresapp.com).
 
 Have a look at these [further instructions for installing Postgres via Homebrew](http://www.mikeball.us/blog/setting-up-postgres-with-homebrew/):
 
@@ -94,7 +94,7 @@ bundle exec rails s
 
 ### Running the tests
 
-RSpec and Cucumber are used for [test-driven](https://en.wikipedia.org/wiki/Test-driven_development) and 
+RSpec and Cucumber are used for [test-driven](https://en.wikipedia.org/wiki/Test-driven_development) and
 [behaviour-driven](https://en.wikipedia.org/wiki/Behavior-driven_development) development.
 
 All of the tests can be run with:
