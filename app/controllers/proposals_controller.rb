@@ -11,11 +11,13 @@ class ProposalsController < ApplicationController
   end
 
   def create
-    @proposal = Proposal.create!(proposal_params)
-    redirect_to proposal_path(@proposal)
-  rescue ActiveRecord::ActiveRecordError
-    flash[:alert] = 'Failed to save proposal'
-    redirect_to new_proposal_path
+    @proposal = Proposal.new(proposal_params)
+    if verify_recaptcha(model: @proposal) && @proposal.save
+      redirect_to proposal_path(@proposal)
+    else
+      flash[:alert] = 'Failed to save proposal'
+      redirect_to new_proposal_path
+    end
   end
 
   def edit
@@ -31,7 +33,7 @@ class ProposalsController < ApplicationController
     flash[:alert] = 'Failed to update proposal'
     render 'edit'
   end
-  
+
   private
 
   def proposal_params
