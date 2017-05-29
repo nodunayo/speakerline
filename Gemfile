@@ -1,7 +1,7 @@
 ruby '2.4.0'
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.2'
+gem 'rails', '5.1.1'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'rails_admin'
 gem 'redcarpet'
+gem 'erubis'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -20,7 +21,7 @@ end
 
 group :development do
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
