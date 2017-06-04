@@ -6,6 +6,7 @@
   <%= f.text_field(:title) %>
   <%= f.label(:body) %>
   <%= f.text_area(:body, class: 'u-full-width medium-height', placeholder: "For formatting, you can use Markdown! :-)") %>
+  <%= recaptcha_tags %><br>
   <%= f.submit "Add proposal" %>
 <% end %>
 

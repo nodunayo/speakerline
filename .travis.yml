@@ -4,3 +4,6 @@ cache: bundler
 
 before_script:
   - psql -c 'create database speakerline_test;' -U postgres
+ 
+env:
+  - RECAPTCHA_SITE_KEY=aaaaa
