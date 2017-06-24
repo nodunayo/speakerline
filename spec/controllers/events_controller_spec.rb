@@ -10,20 +10,25 @@ RSpec.describe EventsController do
       let(:expected_event) { double }
 
       before do
-        allow(Event).to receive(:create!).and_return(expected_event)
+        allow(Event).to receive(:new).and_return(expected_event)
+        allow(expected_event).to receive(:save).and_return(true)
         post :create, params: { event: { name: 'RubyConf', year: '2017' } }
       end
 
       it 'creates a new event' do
-        expect(Event).to have_received(:create!).with(hash_including(name: 'RubyConf', year: '2017'))
+        expect(Event).to have_received(:new).with(hash_including(name: 'RubyConf', year: '2017'))
       end
 
       it { should redirect_to(speakers_path) }
     end
 
     context 'with invalid attributes' do
+      let(:invalid_event) { double }
+
       before do
-        allow(Event).to receive(:create!) { fail ActiveRecord::ActiveRecordError }
+        allow(Event).to receive(:new).and_return(invalid_event)
+        allow(invalid_event).to receive(:save).and_return(false)
+
         post :create, params: { event: { name: '', year: '' } }
       end
 

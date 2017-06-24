@@ -4,11 +4,13 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.create!(event_params)
-    redirect_to speakers_path
-  rescue ActiveRecord::ActiveRecordError
-    flash[:alert] = 'Failed to save event'
-    redirect_to new_event_path
+    event = Event.new(event_params)
+    if verify_recaptcha(model: event) && event.save
+      redirect_to speakers_path
+    else
+      flash[:alert] = 'Failed to save event'
+      redirect_to new_event_path
+    end
   end
 
   def index
