@@ -5,4 +5,8 @@ class Rack::Attack
   blocklist('block 5.188.211.*') do |req|
    RANGE.include?(IPAddr.new(req.ip).to_i)
   end
+
+  throttle('proposals', limit: 1, period: 1.second) do |req|
+    req.ip if req.path == '/proposals' && req.post?
+  end
 end
