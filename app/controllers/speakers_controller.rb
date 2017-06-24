@@ -12,13 +12,14 @@ class SpeakersController < ApplicationController
   end
 
   def create
-    speaker = Speaker.create!(speaker_params)
-    redirect_to speakers_path
-  rescue ActiveRecord::ActiveRecordError
-    flash[:alert] = 'Failed to save speaker'
-    redirect_to new_speaker_path
+    speaker = Speaker.new(speaker_params)
+    if verify_recaptcha(model: speaker) && speaker.save
+      redirect_to speakers_path
+    else
+      flash[:alert] = 'Failed to save speaker'
+      redirect_to new_speaker_path
+    end
   end
-
 
   private
 
