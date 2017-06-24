@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
+gem 'rack-attack'
 
 group :development, :test do
   gem 'rspec-rails'

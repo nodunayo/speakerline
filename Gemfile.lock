@@ -133,6 +133,8 @@ GEM
     public_suffix (2.0.5)
     puma (3.8.2)
     rack (2.0.3)
+    rack-attack (5.0.1)
+      rack
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
@@ -260,6 +262,7 @@ DEPENDENCIES
   listen
   pg
   puma
+  rack-attack
   rails (= 5.1.1)
   rails-controller-testing
   rails_admin
@@ -280,4 +283,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
