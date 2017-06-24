@@ -1,7 +1,7 @@
 <h3>Add a speaker</h3>
 <%= form_for @speaker, url: {action: 'create'} do |f| %>
   <%= f.text_field :name %>
-  <%= recaptcha_tags %>
+  <%= recaptcha_tags %><br>
   <%= f.submit "Add" %>
 <% end %>
 
