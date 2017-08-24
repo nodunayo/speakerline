@@ -12,8 +12,8 @@ class SpeakersController < ApplicationController
   end
 
   def create
-    speaker = Speaker.new(speaker_params)
-    if verify_recaptcha(model: speaker) && speaker.save
+    @speaker = Speaker.new(speaker_params)
+    if verify_recaptcha(model: @speaker) && @speaker.save
       redirect_to speakers_path
     else
       flash[:alert] = 'Failed to save speaker'
