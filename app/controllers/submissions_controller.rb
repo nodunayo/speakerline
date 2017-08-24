@@ -6,11 +6,13 @@ class SubmissionsController < ApplicationController
   end
 
   def create
-    @submission = Submission.create!(submission_params)
-    redirect_to proposal_path(@submission.proposal)
-  rescue ActiveRecord::ActiveRecordError
-    flash[:alert] = 'Failed to save submission'
-    redirect_to new_submission_path
+    @submission = Submission.new(submission_params)
+    if verify_recaptcha(model: @submission) && @submission.save
+      redirect_to proposal_path(@submission.proposal)
+    else
+      flash[:alert] = 'Failed to save submission'
+      redirect_to speakers_path
+    end
   end
 
   private

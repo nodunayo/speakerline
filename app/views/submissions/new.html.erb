@@ -7,5 +7,6 @@
   <%= f.label(:result_accepted, "Accepted", class: 'inline') %>
   <%= f.radio_button(:result, :rejected) %>
   <%= f.label(:result_rejected, "Rejected", class: 'inline') %>
+  <%= recaptcha_tags %>
   <%= f.submit "Add submission" %>
 <% end %>
