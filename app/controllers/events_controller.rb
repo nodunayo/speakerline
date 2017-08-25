@@ -4,8 +4,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(event_params)
-    if verify_recaptcha(model: event) && event.save
+    @event = Event.new(event_params)
+    if verify_recaptcha(model: @event) && @event.save
       redirect_to speakers_path
     else
       flash[:alert] = 'Failed to save event'
