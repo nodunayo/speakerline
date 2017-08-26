@@ -27,11 +27,13 @@ class ProposalsController < ApplicationController
 
   def update
     @proposal = Proposal.find(params[:id])
-    @proposal.update_attributes(proposal_params)
-    redirect_to @proposal
-  rescue ActiveRecord::ActiveRecordError
-    flash[:alert] = 'Failed to update proposal'
-    render 'edit'
+    @speakers = speakers
+    if verify_recaptcha(model: @proposal) && @proposal.update_attributes(proposal_params)
+      redirect_to proposal_path(@proposal)
+    else
+      flash[:alert] = 'Failed to update proposal'
+      render 'edit'
+    end
   end
 
   private

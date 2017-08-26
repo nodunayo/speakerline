@@ -32,4 +32,40 @@ RSpec.describe ProposalsController do
       it { should redirect_to(new_proposal_path) }
     end
   end
+
+  describe 'PUT #update' do
+    context 'with valid attributes' do
+
+      let(:existing_proposal) { create(:proposal, title: "I am an old proposal") }
+
+      before do
+        put :update, params: { id: existing_proposal.id, proposal: { title: "I am a new proposal" } }
+        existing_proposal.reload
+      end
+
+
+      it 'updates the proposal details' do
+        expect(existing_proposal.title).to eq("I am a new proposal")
+      end
+
+      it { should redirect_to(proposal_path(existing_proposal)) }
+    end
+
+    context 'with invalid attributes' do
+      let(:existing_proposal) { create(:proposal, title: "I am an old proposal") }
+
+      before do
+        put :update, params: { id: existing_proposal.id, proposal: { title: "" } }
+        existing_proposal.reload
+      end
+
+      it 'fails to update the proposal details' do
+        expect(existing_proposal.title).to eq("I am an old proposal")
+      end
+
+      it { is_expected.to set_flash[:alert].to('Failed to update proposal') }
+      it { should render_template(:edit) }
+
+    end
+  end
 end
