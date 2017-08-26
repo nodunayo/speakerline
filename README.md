@@ -86,7 +86,7 @@ bundle exec rake db:create:all
 bundle exec rake db:migrate
 ```
 
-##### Environment variables
+#### Environment variables
 
 Now we need to set up some environment variables.
 
