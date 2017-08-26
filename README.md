@@ -86,6 +86,8 @@ bundle exec rake db:create:all
 bundle exec rake db:migrate
 ```
 
+##### Environment variables
+
 Now we need to set up some environment variables.
 
 I like to use [dotenv](https://github.com/bkeepers/dotenv) to manage them.
