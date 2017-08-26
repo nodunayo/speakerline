@@ -86,6 +86,20 @@ bundle exec rake db:create:all
 bundle exec rake db:migrate
 ```
 
+Now we need to set up some environment variables.
+
+I like to use [dotenv](https://github.com/bkeepers/dotenv) to manage them.
+
+Currently, the admin endpoint is authenticated using basic access authentication.
+
+Set `RAILS_ADMIN_USERNAME` and `RAILS_ADMIN_PASSWORD` in a file named `.env`.
+
+You'll also need to set `RECAPTCHA_SITE_KEY` and `RECAPTCHA_SECRET_KEY`. To get values for these, visit
+[https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) and choose the
+'Register a new site' option.
+
+Select 'reCAPTCHA V2' and add 'localhost' to the list of domains.
+
 Finally, we have to do is start up the Rails server and point our browser to <http://localhost:3000>
 
 ```bash
@@ -111,13 +125,6 @@ bundle exec rake db:test:prepare
 
 This will create the test database and populate its schema.
 
-### Environment variables
-
-I like to use [dotenv](https://github.com/bkeepers/dotenv) to manage environment variables.
-
-Currently, the admin endpoint is authenticated using basic access authentication.
-
-Set `RAILS_ADMIN_USERNAME` and `RAILS_ADMIN_PASSWORD` in a file named `.env`.
 
 
 ### Submit Pull Requests!
