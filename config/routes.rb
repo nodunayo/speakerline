@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root 'speakers#index'
+  root 'pages#homepage'
 
   resources :speakers
   resources :proposals, only: [:new, :create, :show, :edit, :update]

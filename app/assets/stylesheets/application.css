@@ -14,14 +14,70 @@
  *= require_self
  */
 
+body {
+  font-family: avenir next;
+}
+
 .navigation {
-  margin-top: 5%
+  margin-top: 5%;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #9B9B9B;
+  margin-left: 20px
+}
+
+.navigation ul {
+  list-style-type: none;
+}
+
+.navigation ul li {
+  display: inline;
+  font-size: 18px;
+  vertical-align: bottom;
+}
+
+li .heading {
+  font-size: 48px;
+  color: #333333;
+  font-weight: 500;
+  margin-left: 0px
 }
 
 .medium-height {
   height: 15em
 }
 
-.inline {
+ul .inline {
   display: inline
+}
+
+.tagline {
+  font-size: 22px;
+  width: 550px;
+  margin-top: 40px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .align-right {
+    position: absolute;
+    right: 0px;
+    top: 25px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .navigation ul li {
+    display: block;
+    margin-right: 0;
+  }
+
+  .navigation a {
+    margin-left: 0px;
+  }
+
+  .tagline {
+    width: 100%
+  }
 }
