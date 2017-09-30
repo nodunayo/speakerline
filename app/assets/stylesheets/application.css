@@ -59,6 +59,10 @@ ul .inline {
   margin-top: 40px;
 }
 
+select#submission_event_id {
+  display: block;
+}
+
 @media only screen and (min-width: 1000px) {
   .align-right {
     position: absolute;
