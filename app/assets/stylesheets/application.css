@@ -30,12 +30,18 @@ body {
 
 .navigation ul {
   list-style-type: none;
+  margin-bottom: 0;
 }
 
 .navigation ul li {
   display: inline;
   font-size: 18px;
   vertical-align: bottom;
+}
+
+hr {
+  width: 100%;
+  margin: 5px;
 }
 
 li .heading {
