@@ -1,6 +1,6 @@
 class SpeakersController < ApplicationController
   def index
-    @speakers = Speaker.all
+    @speakers = Speaker.all.order('name ASC')
   end
 
   def show

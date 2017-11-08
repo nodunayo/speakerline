@@ -1,6 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe SpeakersController do
+  describe 'GET #index' do
+      context 'when viewing the Speakers#index page' do
+        before do
+          create(:speaker, name: "Zebra")
+          create(:speaker, name: "Angel")
+          get :index
+        end
+
+        it 'lists the speakers in alphabetical order' do
+          expect(assigns(:speakers).first.name).to eq("Angel")
+        end
+      end
+  end
+
   describe 'POST #create' do
     context 'with valid attributes' do
       let(:expected_speaker) { Speaker.new(name: 'Obama') }
@@ -10,7 +24,7 @@ RSpec.describe SpeakersController do
         allow(expected_speaker).to receive(:save).and_return(true)
         post :create, params: { speaker: { name: 'Obama' } }
       end
- 
+
       it 'creates a new speaker' do
         expect(Speaker).to have_received(:new).with(name: 'Obama')
       end
@@ -32,5 +46,3 @@ RSpec.describe SpeakersController do
     end
   end
 end
-
-
