@@ -102,7 +102,7 @@ You'll also need to set `RECAPTCHA_SITE_KEY` and `RECAPTCHA_SECRET_KEY`. To get 
 
 Select 'reCAPTCHA V2' and add 'localhost' to the list of domains.
 
-Finally, we have to do is start up the Rails server and point our browser to <http://localhost:3000>
+All we have to do now is start up the Rails server and point our browser to <http://localhost:3000>
 
 ```bash
 bundle exec rails s
