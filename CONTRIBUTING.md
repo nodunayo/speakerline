@@ -4,14 +4,14 @@ Want to contribute to Speakerline? That's great! Here are a few guidelines that 
 
 Before we get started: Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md) to ensure that it is a welcoming place for **everyone** to contribute to. By participating in this project you agree to abide by its terms.
 
-#### Overview
+#### Contents
 
-* [Contribution workflow](#contribution-workflow)
+* [Contributing workflow](#contributing-workflow)
 * [Setup instructions](#setup-instructions)
 * [Reporting a bug](#reporting-a-bug)
 * [Contributing to an existing issue](#contributing-to-an-existing-issue)
 * [Our labels](#our-labels)
-* [Additional info](#additional-info)
+* [Credits](#credits)
 
 ## Contributing workflow
 
@@ -102,5 +102,5 @@ through your first pull request. Find out more [about pull requests](https://hel
 If you have any suggestions for adding, removing, renaming a label, or rewording a label's
 description then please let me know!
 
-## Credit
+## Credits
 * Thank you to [24 Pull Requests](https://github.com/24pullrequests/24pullrequests). This [CONTRIBUTING.md](CONTRIBUTING.md) was heavily inspired by theirs!
