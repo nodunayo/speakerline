@@ -75,6 +75,8 @@ through your first pull request. Find out more [about pull requests](https://hel
 
 - **bug**: An issue gets marked as a bug if (surprise!) the issue is linked to a bug in our code or something broken in our infrastructure. Bugs are usually the highest priority kind of issue as they will affect our users.
 
+- **design**: This relates to visual elements of the site that could be improved or are broken. These may be as simple as a change to a CSS colour or font size, but can stretch all the way to things that do not render as expected on mobile devices. These are usually good issues for people with front-end development experience to tackle.
+
 - **documentation**: If an issue requires changes or clarification to our documentation (README, CONTRIBUTING, wiki, code comments, etc.) then it will be marked with this label. These issues normally do not pertain to code changes so may be suitable for first-timers or those new to the project.
 
 - **duplicate**: If an issue has been reported before, it will be marked with this label. This flags that a previous issue may not have been fixed as expected, or in the case of things we don't intend to fix or issues currently in discussion in another open issue, it means that we are likely to close the issue.
@@ -85,17 +87,15 @@ through your first pull request. Find out more [about pull requests](https://hel
 
 - **help**: Issues will be marked with this label by the maintainers if we'd like outside contributors to pitch in with code or opinions before we close them. These do not assume any skill level and are great opportunities for all members of our community to steer the direction of the project.
 
-- **rebase**: You will find this label normally attached to pull requests, and means that the maintainers would like to you squash commits or rebase existing commits from master into your branch before we can merge your pull request. A maintainer will clarify this in the comment thread.
-
 - **question**: Issues can be marked with this label by anybody who would like other contributors or maintainers to answer a specific question before an issue can be closed. These normally do not assume any skill level (although may sometimes require maintainers to have the final say on them) and are great opportunities for all members of our community to steer the direction of the project.
+
+- **rebase**: You will find this label normally attached to pull requests, and means that the maintainers would like to you squash commits or rebase existing commits from master into your branch before we can merge your pull request. A maintainer will clarify this in the comment thread.
 
 - **refactoring**: If an issue requires code to be refactored before a particular change can be made, or if you spot inelegant patterns or implementations in code that you feel could be better, then feel free to add this label to an issue. If the issue is the latter type, please be careful about the language you use in these threads. For example, things like "this code sucks!" or "you must be an idiot!" are unacceptable!. Programmers have feelings too and there are ways to suggest code changes without insulting people.
 
 - **security**: If you spot an issue related to security issues (e.g. invalid SSL certs, potential CSRF issues), mark it with this label. Don't forget to be a good OSS citizen and always report zero-day issues through [a private channel](mailto:nodunayo@gmail.com) to minimise impact to your fellow users!
 
 - **ux**: These issues relate to how the site works or, more holistically, how the site _feels_ to the end user, and will normally be related to the front-end of the website. These issues might relate to confusion stemming from navigation, form elements, input validation, or breaks in user flows.
-
-- **design**: This relates to visual elements of the site that could be improved or are broken. These may be as simple as a change to a CSS colour or font size, but can stretch all the way to things that do not render as expected on mobile devices. These are usually good issues for people with front-end development experience to tackle.
 
 - **wontfix**: This means that, after considering your issue in full, your issue is outside of the intended scope of the project and is not something we'd like to add to the codebase right now or in the future. This label is used sparingly, is intended to be rare, and is never used without reasoned justification.
 
