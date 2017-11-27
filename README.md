@@ -134,6 +134,9 @@ This will create the test database and populate its schema.
 I'd love any help with this project. Have a look at our [Contributing Guide](CONTRIBUTING.md)
 for more information on how you can get involved.
 
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating
+in this project you agree to abide by its terms.
+
 ## Credits
 
 * Thank you to [Andrew Nesbitt](https://twitter.com/teabass) for being patient and answering all of my Open Source questions.
