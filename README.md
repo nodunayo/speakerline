@@ -129,15 +129,10 @@ This will create the test database and populate its schema.
 
 
 
-### Submit Pull Requests!
+### Contributing to Speakerline
 
-I'd love any help with this project. Here are some basic steps for submitting pull requests:
-
-* Fork the project
-* Clone a version to your local machine
-* Test-drive your feature addition or bug fix
-* Push your code to your forked repo
-* Submit your pull request!
+I'd love any help with this project. Have a look at our [Contributing Guide](CONTRIBUTING.md)
+for more information on how you can get involved.
 
 ## Credits
 
