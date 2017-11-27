@@ -95,6 +95,8 @@ through your first pull request. Find out more [about pull requests](https://hel
 
 - **security**: If you spot an issue related to security issues (e.g. invalid SSL certs, potential CSRF issues), mark it with this label. Don't forget to be a good OSS citizen and always report zero-day issues through [a private channel](mailto:nodunayo@gmail.com) to minimise impact to your fellow users!
 
+- **testing**: If you're into all things testing, then this is the label for you. These issues are likely to be ones where refactoring of current tests are needed, tests are missing from something already delivered (hopefully not!), or you've spotted another test case to add. Currently the project uses Cucumber, Capybara, and RSpec.
+
 - **ux**: These issues relate to how the site works or, more holistically, how the site _feels_ to the end user, and will normally be related to the front-end of the website. These issues might relate to confusion stemming from navigation, form elements, input validation, or breaks in user flows.
 
 - **wontfix**: This means that, after considering your issue in full, your issue is outside of the intended scope of the project and is not something we'd like to add to the codebase right now or in the future. This label is used sparingly, is intended to be rare, and is never used without reasoned justification.
