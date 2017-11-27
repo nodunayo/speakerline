@@ -69,7 +69,7 @@ through your first pull request. Find out more [about pull requests](https://hel
 
 ## Our labels
 
-- **beginner**: One of our most important kinds of issues! These issues have been marked by the maintainers as small, low-impact changes and fixes, ideal for those dipping their toes into the world of contributing to Open Source software for the first time. These are by no means any less important than any other issues! We'd appreciate if our more experienced contributors would leave these issues to our newer teammates!
+- **good first issue**: One of our most important kinds of issues! These issues have been marked by the maintainers as small, low-impact changes and fixes, ideal for those dipping their toes into the world of contributing to Open Source software for the first time. These are by no means any less important than any other issues! We'd appreciate if our more experienced contributors would leave these issues to our newer teammates!
 
 - **blocked**: We will mark an issue as blocked if it requires more context for us to fix, is waiting on an updated version of a library that the issue depends on, or is waiting on a maintainer to do something before it can be answered. There may be other conditions in which we'll mark an issue as blocked and we'll make this clear in the issue comments.
 
@@ -85,7 +85,7 @@ through your first pull request. Find out more [about pull requests](https://hel
 
 - **feature**: An issue will be marked with this label if it adds a new, discrete functional element to the codebase. They will generally require large amounts or effort to implement, require changes to both front-end view templates and back-end code, and assume prior knowledge of the codebase. This makes these the most tricky kinds of issues to close. However, they can be the most rewarding to tackle for the intrepid or for those looking to challenge themselves!
 
-- **help**: Issues will be marked with this label by the maintainers if we'd like outside contributors to pitch in with code or opinions before we close them. These do not assume any skill level and are great opportunities for all members of our community to steer the direction of the project.
+- **help wanted**: Issues will be marked with this label by the maintainers if we'd like outside contributors to pitch in with code or opinions before we close them. These do not assume any skill level and are great opportunities for all members of our community to steer the direction of the project.
 
 - **question**: Issues can be marked with this label by anybody who would like other contributors or maintainers to answer a specific question before an issue can be closed. These normally do not assume any skill level (although may sometimes require maintainers to have the final say on them) and are great opportunities for all members of our community to steer the direction of the project.
 
