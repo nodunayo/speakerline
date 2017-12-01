@@ -30,10 +30,11 @@ end
 
 group :test do
   gem 'rake'
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
