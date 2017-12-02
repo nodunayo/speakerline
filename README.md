@@ -12,7 +12,6 @@
 * [Goals of Speakerline](#goals-of-speakerline)
 * [Using the speakerline website](#using-the-speakerline-website)
 * [Setting up for local development](#setting-up-for-local-development)
-<!--  -->sub contents
   * [Getting started with Ruby and Postgres](#get-started-Ruby-Postgres)
   * [Getting the Rails app running](#getting-rails-app-running)
     * [Environment variables](#environment-variables)
