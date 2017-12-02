@@ -1,11 +1,27 @@
-# Speakerline
+<!-- # Speakerline -->
 
 [![Build Status](https://travis-ci.org/nodunayo/speakerline.svg?branch=master)](https://travis-ci.org/nodunayo/speakerline)
 [![Dependency Status](https://gemnasium.com/badges/github.com/nodunayo/speakerline.svg)](https://gemnasium.com/github.com/nodunayo/speakerline)
 
 > Showcasing speakers' proposals and timelines in a effort to demystify the CFP process and help new speakers get started
+#### Contents
 
-## Where did the idea come from?
+# Table of contents
+
+* [Where did the idea come from?](#where-did-the-idea-come-from)
+* [Goals of Speakerline](#goals-of-speakerline)
+* [Using the speakerline website](#using-the-speakerline-website)
+* [Setting up for local development](#setting-up-for-local-development)
+<!--  -->sub contents
+  * [Getting started with Ruby and Postgres](#get-started-Ruby-Postgres)
+  * [Getting the Rails app running](#getting-rails-app-running)
+    * [Environment variables](#environment-variables)
+  * [Running the tests](#running-the-tests)
+* [Contributing to Speakerline](#contributing-to-speakerline)
+* [Credits](#Credits)
+* [Copyright](#Copyright)
+
+## Where did the idea come from? <a name="where-did-the-idea-come-from"></a>
 
 [Ruby Central](http://rubycentral.org/) typically run Opportunity Scholarship programmes at their conferences.
 This is where people who would not normally attend conferences get a free ticket and get paired with a Guide.
@@ -21,7 +37,7 @@ for us, one of the Scholars asked if any of the speaking Guides would be open to
 
 This got me thinking: there are a bunch of people who want to see proposals and there are a bunch of people who are keen to share their proposals. Why don't we have a space to do that more easily?
 
-## Goals of Speakerline
+## Goals of Speakerline <a name="goals-of-speakerline"></a>
 
 At its most basic level, Speakerline is a place where you can see a range of proposals that have been submitted to conferences, and the outcome of those submissions.
 
@@ -36,15 +52,15 @@ As Speakerline develops, hopefully it will:
   * maybe the speaker already had one talk accepted at that conference!
 * give aspiring conference speakers the confidence to submit to any conference they wish to speak at.
 
-## Using the Speakerline website
+## Using the Speakerline website <a name="using-the-speakerline-website"></a>
 
 * [Explore proposals](http://speakerline.io/speakers)
 * [Add a speaker](http://speakerline.io/speakers/new)
 * [Add a proposal](http://speakerline.io/proposals/new)
 
-## Setting up for local development
+## Setting up for local development <a name="setting-up-for-local-development"></a>
 
-### Getting started with Ruby and Postgres
+### Getting started with Ruby and Postgres <a name="get-started-Ruby-Postgres"></a>
 
 First, you'll need to install Ruby 2.4.1. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install) to manage my Ruby versions.
 
@@ -71,7 +87,7 @@ On Windows, you can use the [Chocolatey package manager](http://chocolatey.org/)
 choco install postgresql
 ```
 
-### Getting the Rails app running
+### Getting the Rails app running <a name="getting-rails-app-running"></a>
 
 Once Ruby and Postgres are installed, we need to install the gems used by the app:
 
@@ -87,7 +103,7 @@ bundle exec rake db:create:all
 bundle exec rake db:migrate
 ```
 
-#### Environment variables
+#### Environment variables <a name="environment-variables"></a>
 
 Now we need to set up some environment variables.
 
@@ -109,7 +125,7 @@ All we have to do now is start up the Rails server and point our browser to <htt
 bundle exec rails s
 ```
 
-### Running the tests
+### Running the tests <a name="running-the-tests"></a>
 
 RSpec and Cucumber are used for [test-driven](https://en.wikipedia.org/wiki/Test-driven_development) and
 [behaviour-driven](https://en.wikipedia.org/wiki/Behavior-driven_development) development.
@@ -130,7 +146,7 @@ This will create the test database and populate its schema.
 
 
 
-### Contributing to Speakerline
+### Contributing to Speakerline <a name="contributing-to-speakerline"></a>
 
 I'd love any help with this project. Have a look at our [Contributing Guide](CONTRIBUTING.md)
 for more information on how you can get involved.
@@ -138,11 +154,11 @@ for more information on how you can get involved.
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating
 in this project you agree to abide by its terms.
 
-## Credits
+## Credits <a name="Credits"></a>
 
 * Thank you to [Andrew Nesbitt](https://twitter.com/teabass) for being patient and answering all of my Open Source questions.
 * Thank you to [24 Pull Requests](https://github.com/24pullrequests/24pullrequests). This README was heavily inspired by theirs!
 
-## Copyright
+## Copyright <a name="Copyright"></a>
 
 Copyright (c) 2017 Nadia Odunayo. See [LICENSE](https://github.com/nodunayo/speakerline/blob/master/LICENSE) for details.
