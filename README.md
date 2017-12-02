@@ -4,9 +4,8 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/nodunayo/speakerline.svg)](https://gemnasium.com/github.com/nodunayo/speakerline)
 
 > Showcasing speakers' proposals and timelines in a effort to demystify the CFP process and help new speakers get started
-#### Contents
 
-# Table of contents
+# Contents
 
 * [Where did the idea come from?](#where-did-the-idea-come-from)
 * [Goals of Speakerline](#goals-of-speakerline)
