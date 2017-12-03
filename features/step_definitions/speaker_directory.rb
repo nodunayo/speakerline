@@ -2,6 +2,19 @@ Given(/^the speaker 'Sandi Metz' is in the directory$/) do
   create(:speaker, name: 'Sandi Metz')
 end
 
+Given(/^Sandi already has a proposal$/) do
+  create(:proposal, speaker: Speaker.find_by(name: 'Sandi Metz'))
+end
+
+Given(/^the speaker 'Lazy Ted' is in the directory$/) do
+  create(:speaker, name: 'Lazy Ted')
+end
+
+Given(/^Ted does not have any proposals$/) do
+  id = Speaker.find_by(name: 'Lazy Ted').id
+  expect(Proposal.find_by(speaker_id: id)).to be_nil
+end
+
 Given(/^the speaker 'Saron Yitbarek' is in the directory$/) do
   create(:speaker, name: 'Saron Yitbarek')
 end
@@ -12,6 +25,10 @@ end
 
 Then(/^I should see 'Sandi Metz'$/) do
   expect(page).to have_content('Sandi Metz')
+end
+
+Then(/^I should not see 'Lazy Ted'$/) do
+  expect(page).not_to have_content('Lazy Ted')
 end
 
 Given(/^'Sandi Metz' has a proposal entitled 'All The Little Things'$/) do
@@ -37,6 +54,11 @@ When(/^I add 'Katrina Owen' to the directory$/) do
   visit new_speaker_path
   page.fill_in 'speaker_name', with: 'Katrina Owen'
   page.click_on 'Add'
+end
+
+When(/^I create a proposal for Katrina$/) do
+  speaker = Speaker.find_by(name: 'Katrina Owen')
+  create(:proposal, speaker: speaker)
 end
 
 Then(/^I should see 'Katrina Owen'$/) do
