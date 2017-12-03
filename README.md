@@ -1,8 +1,23 @@
 # Speakerline
 
 [![Build Status](https://travis-ci.org/nodunayo/speakerline.svg?branch=master)](https://travis-ci.org/nodunayo/speakerline)
+[![Dependency Status](https://gemnasium.com/badges/github.com/nodunayo/speakerline.svg)](https://gemnasium.com/github.com/nodunayo/speakerline)
 
 > Showcasing speakers' proposals and timelines in a effort to demystify the CFP process and help new speakers get started
+
+## Contents
+
+* [Where did the idea come from?](#where-did-the-idea-come-from)
+* [Goals of Speakerline](#goals-of-speakerline)
+* [Using the Speakerline website](#using-the-speakerline-website)
+* [Setting up for local development](#setting-up-for-local-development)
+  * [Getting started with Ruby and Postgres](#getting-started-with-ruby-and-postgres)
+  * [Getting the Rails app running](#getting-the-rails-app-running)
+    * [Environment variables](#environment-variables)
+  * [Running the tests](#running-the-tests)
+  * [Contributing to Speakerline](#contributing-to-speakerline)
+* [Credits](#credits)
+* [Copyright](#copyright)
 
 ## Where did the idea come from?
 
