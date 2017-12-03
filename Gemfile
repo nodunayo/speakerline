@@ -17,7 +17,7 @@ gem 'rack-attack'
 group :development, :test do
   gem 'rspec-rails'
   gem 'byebug', platform: :mri
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'dotenv-rails'
 end
 
