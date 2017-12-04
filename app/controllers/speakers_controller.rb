@@ -1,6 +1,6 @@
 class SpeakersController < ApplicationController
   def index
-    @speakers = Speaker.joins(:proposals).order('name ASC')
+    @speakers = Speaker.all.order('name ASC')
   end
 
   def show
