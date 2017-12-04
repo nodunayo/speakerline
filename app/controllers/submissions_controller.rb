@@ -11,7 +11,7 @@ class SubmissionsController < ApplicationController
       redirect_to proposal_path(@submission.proposal)
     else
       flash[:alert] = 'Failed to save submission'
-      redirect_to speakers_path
+      redirect_to new_submission_path(proposal: @submission.proposal.id)
     end
   end
 

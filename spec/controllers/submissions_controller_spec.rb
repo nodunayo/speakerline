@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe SubmissionsController do
   describe 'POST #create' do
+
+    let(:proposal) { create(:proposal) }
+
     context 'with valid attributes' do
 
-      let(:proposal) { create(:proposal) }
       let(:expected_submission) { Submission.new(proposal: proposal, result: 0) }
 
       before do
@@ -20,18 +22,21 @@ RSpec.describe SubmissionsController do
       it { should redirect_to(proposal_path(assigns(:submission).proposal)) }
     end
 
-    context 'with invalid attributes' do
-      let(:invalid_submission) { double }
+    context 'with a valid proposal attribute and invalid event and result attributes' do
+      let(:invalid_submission) { Submission.new(proposal: proposal, result: '') }
 
       before do
         allow(Submission).to receive(:new).and_return(invalid_submission)
         allow(invalid_submission).to receive(:save).and_return(false)
 
-        post :create, params: { submission: { result: '' } }
+        post :create, params: { submission: { event_id: '', proposal_id: proposal.id, result: '' } }
       end
 
       it { is_expected.to set_flash[:alert].to('Failed to save submission') }
-      it { should redirect_to(speakers_path) }
+      it { should redirect_to(new_submission_path(proposal: invalid_submission.proposal.id)) }
+      it 'should retain its proposal id' do
+        expect(response.location).to include("?proposal=#{invalid_submission.proposal.id}")
+      end
     end
   end
 end
