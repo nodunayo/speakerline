@@ -1,7 +1,7 @@
 ruby '2.4.1'
 source 'https://rubygems.org'
 
-gem 'rails', '5.1.2'
+gem 'rails', '5.1.4'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
