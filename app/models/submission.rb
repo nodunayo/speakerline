@@ -6,5 +6,5 @@ class Submission < ApplicationRecord
   validates_presence_of :proposal
   validates_presence_of :result
 
-  enum result: [ :accepted, :rejected ]
+  enum result: [ :accepted, :rejected, :waitlisted ]
 end
