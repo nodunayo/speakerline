@@ -3,7 +3,7 @@
 <%= form_for @proposal, url: {action: 'create'} do |f| %>
   <%= f.collection_select(:speaker_id, @speakers, :id, :name) %>
   <%= f.label(:title) %>
-  <%= f.text_field(:title) %>
+  <%= f.text_field(:title, :class => 'u-full-width medium-height') %>
   <%= f.label(:body) %>
   <%= f.text_area(:body, class: 'u-full-width medium-height', placeholder: "For formatting, you can use Markdown! :-)") %>
   <%= recaptcha_tags %>
