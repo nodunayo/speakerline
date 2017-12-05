@@ -16,7 +16,8 @@ class ProposalsController < ApplicationController
       redirect_to proposal_path(@proposal)
     else
       flash[:alert] = 'Failed to save proposal'
-      redirect_to new_proposal_path
+      @speakers = speakers
+      render 'new'
     end
   end
 
