@@ -73,6 +73,8 @@ through your first pull request. Find out more [about pull requests](https://hel
 
 - **bug**: An issue gets marked as a bug if (surprise!) the issue is linked to a bug in our code or something broken in our infrastructure. Bugs are usually the highest priority kind of issue as they will affect our users.
 
+ - **dependencies**: If you're into gems, bundler and dependency management, then these are the issues for you. These issues tend to be good first issues as they typically consist of a straightforward gem version update.
+
 - **design**: This relates to visual elements of the site that could be improved or are broken. These may be as simple as a change to a CSS colour or font size, but can stretch all the way to things that do not render as expected on mobile devices. These are usually good issues for people with front-end development experience to tackle.
 
 - **documentation**: If an issue requires changes or clarification to our documentation (README, CONTRIBUTING, wiki, code comments, etc.) then it will be marked with this label. These issues normally do not pertain to code changes so may be suitable for first-timers or those new to the project.
