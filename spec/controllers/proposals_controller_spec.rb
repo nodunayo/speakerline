@@ -20,7 +20,8 @@ RSpec.describe ProposalsController do
     end
 
     context 'with invalid attributes' do
-      let(:invalid_proposal) { Proposal.new(title: nil) }
+      render_views
+      let(:invalid_proposal) { Proposal.new(title: nil, body: 'My progress should be shown') }
 
       before do
         allow(Proposal).to receive(:new).and_return(invalid_proposal)
@@ -29,7 +30,7 @@ RSpec.describe ProposalsController do
       end
 
       it { is_expected.to set_flash[:alert].to('Failed to save proposal') }
-      it { should redirect_to(new_proposal_path) }
+      it { expect(response.body).to have_content 'My progress should be shown' }
     end
   end
 
