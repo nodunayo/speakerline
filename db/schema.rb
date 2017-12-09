@@ -15,14 +15,14 @@ ActiveRecord::Schema.define(version: 20170319134913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", id: :serial, force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "year", null: false
+    t.string "year", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "proposals", id: :serial, force: :cascade do |t|
+  create_table "proposals", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 20170319134913) do
     t.index ["speaker_id"], name: "index_proposals_on_speaker_id"
   end
 
-  create_table "speakers", id: :serial, force: :cascade do |t|
+  create_table "speakers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "submissions", id: :serial, force: :cascade do |t|
+  create_table "submissions", force: :cascade do |t|
     t.integer "result"
     t.integer "proposal_id"
     t.integer "event_id"
