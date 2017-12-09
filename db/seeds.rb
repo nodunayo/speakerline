@@ -9,15 +9,19 @@ case Rails.env
     Submission.destroy_all
     Proposal.destroy_all
     Event.destroy_all
+    EventInstance.destroy_all
     Speaker.destroy_all
 
     20.times { Speaker.create!(name: Faker::Name.unique.name) }
     puts "20 speakers added..."
 
-    ['2017', '2018', '2019'].each do | year |
-      5.times { Event.create!(name: Faker::Hacker.adjective.titleize + " " + Faker::Hacker.unique.noun.titleize + " Conf", year: year) }
+    5.times { Event.create!(name: "#{Faker::Hacker.adjective.titleize} #{Faker::Hacker.unique.noun.titleize} Conf") }
+    %w[2017 2018 2019].each do |year|
+      Event.all.each do |event|
+        EventInstance.create!(event: event, year: year)
+      end
     end
-    puts "15 events added..."
+    puts "5 events with 3 instances each added (15 total instances)..."
 
     [' the ', ' and the '].each do | mid_text |
       10.times { Proposal.create!(title: Faker::Hacker.ingverb.titleize + mid_text + Faker::Hacker.adjective.titleize + " " + Faker::Hacker.noun.titleize, body: Faker::VForVendetta.speech, speaker_id: Speaker.ids.sample) }
@@ -25,9 +29,9 @@ case Rails.env
     puts "20 proposals added..."
 
     Proposal.ids.each do | id |
-      event = Event.ids.sample(2)
-      Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_id: event[0])
-      Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_id: event[1])
+      event_instance = EventInstance.ids.sample(2)
+      Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_instance_id: event_instance[0])
+      Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_instance_id: event_instance[1])
     end
     puts "2 submissions for each proposal added..."
     puts "Finished seeding the development database!"

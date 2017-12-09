@@ -1,12 +1,8 @@
 class Event < ApplicationRecord
-  validates_presence_of :name
-  validates_presence_of :year
-  validates_numericality_of :year, only_integer: true
-  validates_uniqueness_of :name, scope: :year
+  validates :name, presence: true, uniqueness: { case_insensitive: true }
 
-  has_many :submissions
-
-  def name_and_year
-    "#{name} #{year}"
-  end
+  has_many :instances, foreign_key: :event_id,
+                       class_name:  'EventInstance',
+                       dependent:   :destroy
+  has_many :submissions, through: :instances
 end

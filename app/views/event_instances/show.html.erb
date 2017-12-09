@@ -1,0 +1,4 @@
+<h3><%= link_to @event_instance.event.name, @event_instance.event %> <%= @event_instance.year %></h3>
+
+<h5>Proposals</h5>
+<%= render partial: 'shared/instance_submissions', locals: { instance: @event_instance } %>

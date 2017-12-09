@@ -13,7 +13,7 @@
     <h4>Submissions </h4>
     <% @proposal.submissions.each do |submission| %>
       <p>
-        <%= link_to submission.event.name_and_year, submission.event %> -
+        <%= link_to submission.event_instance.name_and_year, submission.event_instance %> -
         <%= submission.result.capitalize %>
       </p>
   <% end %>
