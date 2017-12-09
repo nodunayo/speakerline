@@ -2,7 +2,7 @@ class SubmissionsController < ApplicationController
   def new
     @proposal = Proposal.find(params[:proposal])
     @submission = Submission.new(proposal_id: @proposal.id)
-    @events = Event.all.order('name ASC, year ASC')
+    @events = Event.all.order('name ASC')
   end
 
   def create
@@ -18,6 +18,6 @@ class SubmissionsController < ApplicationController
   private
 
   def submission_params
-    params.require(:submission).permit(:event_id, :proposal_id, :result).to_h
+    params.require(:submission).permit(:event_instance_id, :proposal_id, :result).to_h
   end
 end

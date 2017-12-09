@@ -10,16 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319134913) do
+ActiveRecord::Schema.define(version: 20171209171303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", id: :serial, force: :cascade do |t|
-    t.string "name", null: false
+  create_table "event_instances", id: :serial, force: :cascade do |t|
     t.integer "year", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_event_instances_on_event_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_events_on_name", unique: true
   end
 
   create_table "proposals", id: :serial, force: :cascade do |t|
@@ -40,14 +48,15 @@ ActiveRecord::Schema.define(version: 20170319134913) do
   create_table "submissions", id: :serial, force: :cascade do |t|
     t.integer "result"
     t.integer "proposal_id"
-    t.integer "event_id"
+    t.integer "event_instance_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_submissions_on_event_id"
+    t.index ["event_instance_id"], name: "index_submissions_on_event_instance_id"
     t.index ["proposal_id"], name: "index_submissions_on_proposal_id"
   end
 
+  add_foreign_key "event_instances", "events"
   add_foreign_key "proposals", "speakers"
-  add_foreign_key "submissions", "events"
+  add_foreign_key "submissions", "event_instances"
   add_foreign_key "submissions", "proposals"
 end

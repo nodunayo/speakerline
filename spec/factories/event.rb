@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :event do
-    name 'RailsConf'
-    year '2016'
+    name 'Kitchens In Conf'
   end
 end
