@@ -15,6 +15,7 @@
   * [Getting the Rails app running](#getting-the-rails-app-running)
     * [Environment variables](#environment-variables)
   * [Running the tests](#running-the-tests)
+  * [Seed development database](#seed-development-database)
   * [Contributing to Speakerline](#contributing-to-speakerline)
 * [Credits](#credits)
 * [Copyright](#copyright)
@@ -142,7 +143,15 @@ bundle exec rake db:test:prepare
 
 This will create the test database and populate its schema.
 
+### Seed the development database
 
+To seed the development database with some fake speaker, event, proposal and submission data, run:
+
+```bash
+bundle exec rake db:setup
+```
+
+Be aware this will wipe and replace any development data you have previously entered.
 
 ### Contributing to Speakerline
 
