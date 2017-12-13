@@ -12,7 +12,7 @@ case Rails.env
     Speaker.destroy_all
 
     20.times { Speaker.create!(name: Faker::Name.unique.name) }
-    puts "20 Speakers added..."
+    puts "20 speakers added..."
 
     ['2017', '2018', '2019'].each do | year |
       5.times { Event.create!(name: Faker::Hacker.adjective.titleize + " " + Faker::Hacker.unique.noun.titleize + " Conf", year: year) }
@@ -30,5 +30,5 @@ case Rails.env
       Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_id: event[1])
     end
     puts "2 submissions for each proposal added..."
-
+    puts "Finished seeding the development database!"
 end
