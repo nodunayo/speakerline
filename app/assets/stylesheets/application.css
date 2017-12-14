@@ -18,12 +18,15 @@ body {
   font-family: avenir next;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navigation {
   margin-top: 5%;
 }
 
 .navigation a {
-  text-decoration: none;
   color: #9B9B9B;
   margin-left: 20px
 }
