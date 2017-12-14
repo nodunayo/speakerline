@@ -18,6 +18,10 @@ body {
   font-family: avenir next;
 }
 
+h3 {
+  font-size: 24px;
+}
+
 a {
   text-decoration: none;
 }
@@ -44,7 +48,8 @@ a {
 
 hr {
   width: 100%;
-  margin: 5px;
+  margin: 5px 5px 25px 5px;
+
 }
 
 li .heading {
