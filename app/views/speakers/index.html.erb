@@ -1,3 +1,24 @@
-<% @speakers.each do |speaker| %>
-  <p><%= link_to speaker.name, speaker_path(speaker.id) %></p>
-<% end %>
+<% speakers_columns = @speakers.in_groups(4, false) %>
+
+<div class="row">
+  <div class="three columns">
+    <% speakers_columns[0].each do |speaker| %>
+      <li class="speaker" ><%= link_to speaker.name, speaker_path(speaker.id) %> </li>
+    <% end %>
+  </div>
+  <div class="three columns">
+    <% speakers_columns[1].each do |speaker| %>
+      <li class="speaker" ><%= link_to speaker.name, speaker_path(speaker.id) %> </li>
+    <% end %>
+  </div>
+  <div class="three columns">
+    <% speakers_columns[2].each do |speaker| %>
+      <li class="speaker" ><%= link_to speaker.name, speaker_path(speaker.id) %> </li>
+    <% end %>
+  </div>
+  <div class="three columns">
+    <% speakers_columns[3].each do |speaker| %>
+      <li class="speaker" ><%= link_to speaker.name, speaker_path(speaker.id) %> </li>
+    <% end %>
+  </div>
+</div>
