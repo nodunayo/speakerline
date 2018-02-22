@@ -148,6 +148,12 @@ All of the tests can be run with:
 bundle exec rake
 ```
 
+or to run only the failing (Rspec) examples
+
+```bash
+bundle exec rspec --only-failures
+```
+
 To set up the test environment, run:
 
 ```bash

@@ -1,10 +1,12 @@
-<h3><%= @event.name_and_year %></h3>
+<h3><%= @event.name %></h3>
 
 <h5>Proposals</h5>
-<% @event.submissions.each do |submission| %>
-  <p>
-    <%= link_to submission.proposal.title, submission.proposal %> -
-    <%= link_to submission.proposal.speaker.name, submission.proposal.speaker %> -
-    <%= submission.result.capitalize %>
-  </p>
+
+<%-# Output instances, with the most recent first -%>
+<% instances = @event.instances.sort_by { |i| -i.year } %>
+<% instances.each do |instance| %>
+  <div id="<%= @event.name.parameterize %>-<%= instance.year %>">
+    <h6><%= instance.year %></h6>
+    <%= render partial: 'shared/instance_submissions', locals: { instance: instance } %>
+  </div>
 <% end %>

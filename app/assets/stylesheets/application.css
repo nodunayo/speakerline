@@ -73,12 +73,30 @@ ul .inline {
   margin-top: 40px;
 }
 
-select#submission_event_id {
+select#submission_event_instance_id {
   display: block;
 }
 
 .g-recaptcha {
   margin-bottom: 1.5rem;
+}
+
+/**
+ * .fieldset redeclares some Normalize styles in a .fieldset class
+ * so they can be used to override Skeleton styles
+ */
+
+fieldset.fieldset {
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+  margin: 0 2px;
+  margin-bottom: 15px;
+  padding: 0.5em 0.8em 0.75em;
+}
+
+fieldset.fieldset legend {
+  border: 0; /* 1 */
+  padding: .2em;
 }
 
 @media only screen and (min-width: 1000px) {

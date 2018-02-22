@@ -9,7 +9,7 @@ When(/^I add her proposal with the following information:$/) do |table|
   page.fill_in(:proposal_body, with: proposal_information['body'])
   page.click_on('Add proposal')
 end
-  
+
 When(/^I visit the proposal page for 'Reading Code Good'$/) do
   visit speakers_path
   page.click_on('Saron Yitbarek')

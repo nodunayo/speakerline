@@ -1,0 +1,11 @@
+<%-# Sort submissions by title before sorting by result -%>
+<% submissions = instance.submissions.sort_by { |s| s.proposal.title } %>
+
+<% submissions.sort_by(&:result).each do |submission| %>
+  <p>
+    <%= link_to submission.proposal.title, submission.proposal %> -
+    <%= link_to submission.proposal.speaker.name, submission.proposal.speaker %> -
+    <%= submission.result.capitalize %>
+  </p>
+<% end %>
+
