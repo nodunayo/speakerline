@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'pages#homepage'
 
   resources :speakers
-  resources :proposals,       only: [:new, :create, :show, :edit, :update]
+  resources :proposals
   resources :submissions,     only: [:new, :create]
   resources :events,          only: [:index, :show]
   resources :event_instances, only: [:new, :create, :show]
