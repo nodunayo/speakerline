@@ -14,15 +14,6 @@ Given(/^I am on the 'Reading Code Good' page$/) do
   page.click_on('Reading Code Good')
 end
 
-Given(/^I am on Saron Yitbarek's speaker page$/) do
-  visit speakers_path
-  page.click_on('Saron Yitbarek')
-end
-
-When(/^I click on 'Reading Code Good'$/) do
-  page.click_on('Reading Code Good')
-end
-
 Then(/^I should see 'Come learn how to read code good'$/) do
   expect(page).to have_content('Come learn how to read code good')
 end
