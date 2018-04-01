@@ -15,7 +15,7 @@
       <p>
         <%= link_to submission.event_instance.name_and_year, submission.event_instance %> -
         <%= submission.result.capitalize %>
-        <%= link_to 'Edit', edit_submission_path(submission), id: 'edit-submission' %>
+        <%= link_to '[Edit]', edit_submission_path(submission), id: 'edit-submission' %>
       </p>
   <% end %>
     <%= link_to 'Add submission', new_submission_path(proposal: @proposal.id) %>

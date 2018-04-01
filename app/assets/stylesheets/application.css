@@ -77,6 +77,10 @@ select#submission_event_instance_id {
   display: block;
 }
 
+#edit-submission {
+  font-size: 11px;
+}
+
 .g-recaptcha {
   margin-bottom: 1.5rem;
 }
