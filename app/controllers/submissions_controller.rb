@@ -15,6 +15,22 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def edit
+    @submission = Submission.find(params[:id])
+    @proposal = @submission.proposal
+  end
+
+  def update
+    @submission = Submission.find(params[:id])
+    @proposal = @submission.proposal
+    if verify_recaptcha(model: @submission) && @submission.update_attributes(submission_params)
+      redirect_to proposal_path(@proposal)
+    else
+      flash[:alert] = 'Failed to update submission'
+      render 'edit'
+    end
+  end
+
   private
 
   def submission_params

@@ -1,0 +1,14 @@
+<h3>Edit submission</h3>
+<p><%= "#{@proposal.title} at #{@submission.event_instance.name_and_year}" %></p>
+
+<%= form_for @submission, url: {action: 'update'} do |f| %>
+  <%= f.hidden_field(:proposal_id, value: @proposal.id) %>
+  <%= f.label(:result_accepted, "Accepted") %>
+  <%= f.radio_button(:result, :accepted) %>
+  <%= f.label(:result_rejected, "Rejected") %>
+  <%= f.radio_button(:result, :rejected) %>
+  <%= f.label(:result_waitlisted, "Waitlisted") %>
+  <%= f.radio_button(:result, :waitlisted) %>
+  <%= recaptcha_tags %>
+  <%= f.submit "Update submission" %>
+<% end %>

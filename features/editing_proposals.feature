@@ -1,6 +1,6 @@
 Feature: Editing a Proposal
 
-Scenario: Editing an Existing proposal
+Scenario: Editing an existing proposal
   Given there is a speaker called 'Saron Yitbarek' who has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good.'
   And I am on the 'Reading Code Good' page
   When I click 'Edit Proposal'
