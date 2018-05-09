@@ -23,7 +23,7 @@ class EventInstance < ApplicationRecord
     if received_bad_event_params
       errors.add(:base, 'choose either an existing event or to create a new one')
     else
-      event || create_event!(name: new_parent_event_name)
+      event || build_event(name: new_parent_event_name)
     end
   end
 
