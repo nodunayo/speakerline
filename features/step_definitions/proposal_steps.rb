@@ -14,12 +14,6 @@ Given(/^there is a proposal called 'Reading Code Good'$/) do
   create(:proposal, id: 1, title: 'Reading Code Good', speaker: speaker)
 end
 
-Given(/^I am on the 'Reading Code Good' page$/) do
-  visit speakers_path
-  page.click_on('Saron Yitbarek')
-  page.click_on('Reading Code Good')
-end
-
 Given(/^Sandi already has a proposal$/) do
   create(:proposal, speaker: Speaker.find_by(name: 'Sandi Metz'))
 end
