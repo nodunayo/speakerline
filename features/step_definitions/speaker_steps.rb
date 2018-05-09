@@ -1,18 +1,10 @@
-Given(/^the speaker 'Katrina Owen' is not in the directory$/) do
+Given('the speaker {string} is not in the directory') do |name|
   visit speakers_path
-  expect(page).not_to have_content('Katrina Owen')
+  expect(page).not_to have_content(name)
 end
 
-Given(/^the speaker 'Sandi Metz' is in the directory$/) do
-  create(:speaker, name: 'Sandi Metz')
-end
-
-Given(/^the speaker 'Lazy Ted' is in the directory$/) do
-  create(:speaker, name: 'Lazy Ted')
-end
-
-Given(/^the speaker 'Saron Yitbarek' is in the directory$/) do
-  create(:speaker, name: 'Saron Yitbarek')
+Given('the speaker {string} is in the directory') do |name|
+  create(:speaker, name: name)
 end
 
 When(/^I go to the speaker directory page$/) do
