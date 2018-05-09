@@ -5,9 +5,8 @@ Given(/^there is a proposal called 'This is a great talk' that has been submitte
   create(:submission, proposal_id: 3, event_instance_id: 18)
 end
 
-Given(/^there is a speaker called 'Saron Yitbarek' who has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good\.'$/) do
-  speaker = create(:speaker, name: 'Saron Yitbarek')
-  create(:proposal, title: 'Reading Code Good', body: 'Come learn how to read code good', speaker: speaker)
+Given('he/she/they has/have a proposal called {string} with the body {string}') do |title, body|
+  create(:proposal, title: title, body: body, speaker: @speaker)
 end
 
 Given(/^there is a proposal called 'Reading Code Good'$/) do

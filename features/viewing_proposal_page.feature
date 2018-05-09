@@ -1,10 +1,11 @@
 Feature: Proposal Page
 
   Scenario: Viewing a proposal body
-    Given there is a speaker called 'Saron Yitbarek' who has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good.'
+    Given there is a speaker called 'Saron Yitbarek'
+    And she has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good'
     When I am on the 'Reading Code Good' page
     Then I should see 'Come learn how to read code good'
-    
+
   Scenario: Viewing where a proposal has been accepted or rejected
     Given Saron Yitbarek's 'Reading Code Good' was accepted at RailsConf 2014
     When I am on the 'Reading Code Good' page
