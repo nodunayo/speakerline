@@ -1,16 +1,11 @@
-Given(/^I am on the 'Add an Event' page$/) do
-  visit new_event_instance_path
-end
-
-Given(/^there is not an event called 'NuConf'$/) do
-  if ev = Event.find_by(name:'NuConf')
-    ev.destroy
-  end
-end
-
 Given(/^there is an event called (\w+) that has an instance for the year (\d+)$/) do |conf, year|
   event = create(:event, name: conf)
   create(:event_instance, event: event, year: year)
+end
+
+Given(/^there is an (\d+) instance for the event "([^"]*)" in the system$/) do |year, event_name|
+  create(:event, name: event_name, id: 42)
+  create(:event_instance, event_id: 42, year: year)
 end
 
 When(/^I add an event instance with the following information:$/) do |table|
@@ -26,9 +21,13 @@ When(/^I add an event instance with the following information:$/) do |table|
   page.click_on('Add event')
 end
 
-When(/^I add that the proposal was accepted for (\w+) in (\d+)$/) do |conf, year|
-  page.click_on('Add submission')
-  page.select("#{conf} #{year}", from: :submission_event_instance_id)
-  page.choose('submission_result_accepted')
-  page.click_on('Add submission')
+When(/^I am on the ([ \w]+) event instance page for (\d+)$/) do |event, year|
+  instance = Event.find_by(name: event).instances.find_by(year: year)
+  visit event_instance_path(instance)
+end
+
+Then(/^I should see 'This is a great talk' in the 2017 instance block$/) do
+  within('#boo-ruby-2017') do
+    expect(page).to have_content('This is a great talk')
+  end
 end
