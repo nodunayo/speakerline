@@ -1,11 +1,6 @@
-Given(/^there is an event called (\w+) that has an instance for the year (\d+)$/) do |conf, year|
-  event = create(:event, name: conf)
+Given('there is an event called {string} that has an instance for the year {int}') do |event_name, year|
+  event = create(:event, name: event_name)
   create(:event_instance, event: event, year: year)
-end
-
-Given(/^there is an (\d+) instance for the event "([^"]*)" in the system$/) do |year, event_name|
-  create(:event, name: event_name, id: 42)
-  create(:event_instance, event_id: 42, year: year)
 end
 
 When(/^I add an event instance with the following information:$/) do |table|

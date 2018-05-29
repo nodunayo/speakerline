@@ -12,7 +12,7 @@ Feature: Proposal Page
     Then I should see a record of the RailsConf 2014 acceptance
 
   Scenario: Adding a submission to a proposal
-    Given there is an 2017 instance for the event "Boo Ruby" in the system
+    Given there is an event called 'Boo Ruby' that has an instance for the year 2017
     And there is a proposal called 'Reading Code Good'
     When I visit the proposal page for 'Reading Code Good'
     And I add that the proposal was rejected from Boo Ruby in 2017
