@@ -6,4 +6,4 @@ Scenario: Editing an existing submission
   And I click to edit the submission
   And I change the submission to 'rejected'
   Then I should be on the 'Reading Code Good' page
-  And I should see a record of the RailsConf 2014 rejection
+  And I should see a record of the 'RailsConf' 2014 rejection

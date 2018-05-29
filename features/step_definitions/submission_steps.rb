@@ -33,14 +33,10 @@ Then("I should be on the {string} page") do |string|
   expect(page).to have_content(string)
 end
 
-Then(/^I should see a record of the (\w+) (\d+) rejection$/) do |conf, year|
-  expect(page).to have_content("#{conf} #{year} - Rejected")
+Then("I should see a record of the {string} {int} rejection") do |event, year|
+  expect(page).to have_content("#{event} #{year} - Rejected")
 end
 
-Then(/^I should see a record of the (\w+) (\d+) acceptance$/) do |conf, year|
-  expect(page).to have_content("#{conf} #{year} - Accepted")
-end
-
-Then(/^I should see a record of the Boo Ruby 2017 rejection$/) do
-  expect(page).to have_content('Boo Ruby 2017 - Rejected')
+Then("I should see a record of the {string} {int} acceptance") do |event, year|
+  expect(page).to have_content("#{event} #{year} - Accepted")
 end
