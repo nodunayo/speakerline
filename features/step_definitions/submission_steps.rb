@@ -19,7 +19,7 @@ end
 
 When("I change the submission to {string}") do |string|
   choose("submission_result_#{string}")
-  click_on("Update submission")
+  page.click_on("Update submission")
 end
 
 When(/^I add that the proposal was rejected from Boo Ruby in 2017$/) do
