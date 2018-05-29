@@ -6,7 +6,7 @@ RSpec.describe PagesController do
   describe "GET #homepage" do
     it 'returns success' do
       get :homepage
-      expect(response).to be_a_success
+      expect(response).to be_successful
     end
   end
 end
