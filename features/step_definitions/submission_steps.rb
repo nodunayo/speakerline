@@ -6,10 +6,10 @@ Given(/^Saron Yitbarek's 'Reading Code Good' was accepted at RailsConf 2014$/) d
   create(:submission, event_instance: event_instance, proposal: proposal, result: 0)
 end
 
-When(/^I add that the proposal was accepted for (\w+) in (\d+)$/) do |conf, year|
+When("I add that the proposal was {word} for {string} in {int}") do |result, event, year|
   page.click_on('Add submission')
-  page.select("#{conf} #{year}", from: :submission_event_instance_id)
-  page.choose('submission_result_accepted')
+  page.select("#{event} #{year}", from: :submission_event_instance_id)
+  page.choose("submission_result_#{result}")
   page.click_on('Add submission')
 end
 
@@ -22,12 +22,6 @@ When("I change the submission to {string}") do |string|
   page.click_on("Update submission")
 end
 
-When(/^I add that the proposal was rejected from Boo Ruby in 2017$/) do
-  page.click_on('Add submission')
-  page.select('Boo Ruby 2017', from: :submission_event_instance_id)
-  page.choose('submission_result_rejected')
-  page.click_on('Add submission')
-end
 
 Then("I should be on the {string} page") do |string|
   expect(page).to have_content(string)

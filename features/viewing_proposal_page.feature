@@ -15,5 +15,5 @@ Feature: Proposal Page
     Given there is an event called 'Boo Ruby' that has an instance for the year 2017
     And there is a proposal called 'Reading Code Good'
     When I visit the proposal page for 'Reading Code Good'
-    And I add that the proposal was rejected from Boo Ruby in 2017
+    And I add that the proposal was rejected for 'Boo Ruby' in 2017
     Then I should see a record of the 'Boo Ruby' 2017 rejection

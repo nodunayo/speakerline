@@ -8,7 +8,7 @@ Feature: Adding an Event Instance
       | name | NuConf |
       | year | 1985   |
     And I visit the proposal page for 'Reading Code Good'
-    When I add that the proposal was accepted for NuConf in 1985
+    When I add that the proposal was accepted for 'NuConf' in 1985
     Then I should see a record of the 'NuConf' 1985 acceptance
 
   Scenario: Adding a new event instance for an existing event to a proposal
@@ -19,5 +19,5 @@ Feature: Adding an Event Instance
       | name | RailsConf |
       | year | 2015      | 
     And I visit the proposal page for 'Reading Code Good'
-    When I add that the proposal was accepted for RailsConf in 2015
+    When I add that the proposal was accepted for 'RailsConf' in 2015
     Then I should see a record of the 'RailsConf' 2015 acceptance
