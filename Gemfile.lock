@@ -163,8 +163,8 @@ GEM
     public_suffix (3.0.2)
     puma (3.11.4)
     rack (2.0.5)
-    rack-attack (5.3.1)
-      rack
+    rack-attack (5.4.0)
+      rack (>= 1.0, < 3)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
