@@ -15,8 +15,8 @@ When(/^I go to the speaker directory page$/) do
   visit speakers_path
 end
 
-When(/^I add 'Katrina Owen' to the directory$/) do
+When('I add {string} to the directory') do |speaker_name|
   visit new_speaker_path
-  page.fill_in 'speaker_name', with: 'Katrina Owen'
+  page.fill_in 'speaker_name', with: speaker_name
   page.click_on 'Add'
 end
