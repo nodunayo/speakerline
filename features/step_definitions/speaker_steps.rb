@@ -24,7 +24,3 @@ When(/^I add 'Katrina Owen' to the directory$/) do
   page.fill_in 'speaker_name', with: 'Katrina Owen'
   page.click_on 'Add'
 end
-
-Then(/^I should not see 'Lazy Ted'$/) do
-  expect(page).not_to have_content('Lazy Ted')
-end

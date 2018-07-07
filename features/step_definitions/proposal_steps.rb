@@ -63,7 +63,3 @@ When(/^I create a proposal for Katrina$/) do
   speaker = Speaker.find_by(name: 'Katrina Owen')
   create(:proposal, speaker: speaker)
 end
-
-Then(/I should not see 'Reading Code Good'/) do
-  expect(page).to_not have_content("Reading Code Good")
-end
