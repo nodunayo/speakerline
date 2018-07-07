@@ -25,14 +25,6 @@ When(/^I add 'Katrina Owen' to the directory$/) do
   page.click_on 'Add'
 end
 
-Then(/^I should see 'Katrina Owen'$/) do
-  expect(page).to have_content('Katrina Owen')
-end
-
-Then(/^I should see 'Sandi Metz'$/) do
-  expect(page).to have_content('Sandi Metz')
-end
-
 Then(/^I should not see 'Lazy Ted'$/) do
   expect(page).not_to have_content('Lazy Ted')
 end

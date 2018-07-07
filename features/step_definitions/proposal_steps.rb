@@ -64,22 +64,6 @@ When(/^I create a proposal for Katrina$/) do
   create(:proposal, speaker: speaker)
 end
 
-Then(/I should see 'Reading Code Well'/) do
-  expect(page).to have_content("Reading Code Well")
-end
-
 Then(/I should not see 'Reading Code Good'/) do
   expect(page).to_not have_content("Reading Code Good")
-end
-
-Then('I should see the proposal {string}') do |proposal_name|
-  expect(page).to have_content(proposal_name)
-end
-
-Then(/^I should see 'All The Little Things'$/) do
-  expect(page).to have_content('All The Little Things')
-end
-
-Then(/^I should see 'Come learn how to read code good'$/) do
-  expect(page).to have_content('Come learn how to read code good')
 end
