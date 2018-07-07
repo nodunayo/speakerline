@@ -47,16 +47,8 @@ When(/^I visit the proposal page for 'Reading Code Good'$/) do
   page.click_on('Reading Code Good')
 end
 
-When(/^I click 'Edit Proposal'/) do
-  page.click_on('Edit proposal')
-end
-
 When(/^I change the title to 'Reading Code Well'/) do
   page.fill_in(:proposal_title, with: 'Reading Code Well')
-end
-
-When(/^I click 'Update Proposal'/) do
-  page.click_on('Update proposal')
 end
 
 When(/^I create a proposal for Katrina$/) do

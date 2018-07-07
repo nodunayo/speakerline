@@ -2,10 +2,8 @@ Given(/^I am on the 'Add an Event' page$/) do
   visit new_event_instance_path
 end
 
-Given(/^there is not an event called 'NuConf'$/) do
-  if ev = Event.find_by(name:'NuConf')
-    ev.destroy
-  end
+Given('there is not an event called {string}') do |event_name|
+  ev.destroy if ev = Event.find_by(name: event_name)
 end
 
 When(/^I am on the 'Boo Ruby' event page$/) do

@@ -13,11 +13,8 @@ When("I add that the proposal was {word} for {string} in {int}") do |result, eve
   page.click_on('Add submission')
 end
 
-When("I click to edit the submission") do
-  click_link('edit-submission')
-end
-
-When("I change the submission to {string}") do |string|
+When("I edit the submission to {string}") do |string|
+  page.click_on('edit-submission')
   choose("submission_result_#{string}")
   page.click_on("Update submission")
 end

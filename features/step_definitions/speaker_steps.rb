@@ -15,10 +15,6 @@ When(/^I go to the speaker directory page$/) do
   visit speakers_path
 end
 
-When(/^I click on 'Sandi Metz'$/) do
-  page.click_link('Sandi Metz')
-end
-
 When(/^I add 'Katrina Owen' to the directory$/) do
   visit new_speaker_path
   page.fill_in 'speaker_name', with: 'Katrina Owen'

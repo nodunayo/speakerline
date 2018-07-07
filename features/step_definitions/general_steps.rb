@@ -5,3 +5,7 @@ end
 Then('I should not see {string}') do |content|
   expect(page).to_not have_content(content)
 end
+
+When('I click on {string}') do |label|
+  page.click_on(label)
+end
