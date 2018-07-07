@@ -1,10 +1,10 @@
+Given('there is a speaker called {string}') do |name|
+  @speaker = create(:speaker, name: name)
+end
+
 Given('the speaker {string} is not in the directory') do |name|
   visit speakers_path
   expect(page).not_to have_content(name)
-end
-
-Given('there is a speaker called {string}') do |name|
-  @speaker = create(:speaker, name: name)
 end
 
 Given('the speaker {string} is in the directory') do |name|

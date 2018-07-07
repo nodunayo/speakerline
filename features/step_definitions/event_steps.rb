@@ -12,7 +12,7 @@ When(/^I am on the 'Boo Ruby' event page$/) do
   visit event_path(17)
 end
 
-Then(/^I should see a link to the main ([ \w]+) event page$/) do |event|
-  event = Event.find_by(name: event)
+Then('I should see a link to the main {string} event page') do |event_name|
+  event = Event.find_by(name: event_name)
   expect(page).to  have_link(event.name, href: event_path(event))
 end

@@ -72,8 +72,8 @@ Then(/I should not see 'Reading Code Good'/) do
   expect(page).to_not have_content("Reading Code Good")
 end
 
-Then(/^I should see the proposal '([ \w]+)'$/) do |proposal|
-  expect(page).to have_content(proposal)
+Then('I should see the proposal {string}') do |proposal_name|
+  expect(page).to have_content(proposal_name)
 end
 
 Then(/^I should see 'All The Little Things'$/) do

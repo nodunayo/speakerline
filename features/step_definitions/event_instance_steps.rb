@@ -16,9 +16,9 @@ When(/^I add an event instance with the following information:$/) do |table|
   page.click_on('Add event')
 end
 
-When(/^I am on the ([ \w]+) event instance page for (\d+)$/) do |event, year|
-  instance = Event.find_by(name: event).instances.find_by(year: year)
-  visit event_instance_path(instance)
+When('I am on the {string} event instance page for the year {int}') do |event_name, year|
+  instance = Event.find_by(name: event_name).instances.find_by(year: year)
+  page.visit event_instance_path(instance)
 end
 
 Then(/^I should see 'This is a great talk' in the 2017 instance block$/) do
