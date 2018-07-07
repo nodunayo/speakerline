@@ -14,19 +14,8 @@ Given(/^there is a proposal called 'Reading Code Good'$/) do
   create(:proposal, id: 1, title: 'Reading Code Good', speaker: speaker)
 end
 
-Given(/^Sandi already has a proposal$/) do
-  create(:proposal, speaker: Speaker.find_by(name: 'Sandi Metz'))
-end
-
-Given(/^Ted does not have any proposals$/) do
-  id = Speaker.find_by(name: 'Lazy Ted').id
-  expect(Proposal.find_by(speaker_id: id)).to be_nil
-end
-
-Given(/^'Sandi Metz' has a proposal entitled 'All The Little Things'$/) do
-  speaker = create(:speaker, name: 'Sandi Metz')
-  create(:proposal, title: 'All The Little Things', body: 'This is a talk about things in code we cannot
-         see', speaker: speaker)
+Given('he/she/they does/do not have any proposals') do
+  expect(Proposal.find_by(speaker_id: @speaker.id)).to be_nil
 end
 
 Given(/^I am on the 'Add a Proposal' page$/) do
@@ -51,7 +40,6 @@ When(/^I change the title to 'Reading Code Well'/) do
   page.fill_in(:proposal_title, with: 'Reading Code Well')
 end
 
-When(/^I create a proposal for Katrina$/) do
-  speaker = Speaker.find_by(name: 'Katrina Owen')
-  create(:proposal, speaker: speaker)
+When('I create a proposal for her/him/them') do
+  create(:proposal, speaker: @speaker)
 end
