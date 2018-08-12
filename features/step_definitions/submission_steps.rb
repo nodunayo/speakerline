@@ -1,7 +1,7 @@
 Given("{string} was accepted for {string} in {int}") do |proposal_title, event_name, year|
-  event = create(:event, name: event_name)
-  event_instance = create(:event_instance, event: event, year: year)
-  create(:submission, result: :accepted, proposal_id: @proposal.id, event_instance_id: event_instance.id)
+  @event = create(:event, name: event_name)
+  event_instance = create(:event_instance, event: @event, year: year)
+  @submission = create(:submission, result: :accepted, proposal_id: @proposal.id, event_instance_id: event_instance.id)
 end
 
 When("I add that the proposal was {word} for {string} in {int}") do |result, event, year|

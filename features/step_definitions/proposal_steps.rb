@@ -1,17 +1,10 @@
-Given(/^there is a proposal called 'This is a great talk' that has been submitted to 'Boo Ruby 2017'$/) do
-  event = create(:event, name: 'Boo Ruby', id: 17)
-  create(:event_instance, event_id: 17, year: 2017, id: 18)
-  create(:proposal, title: 'This is a great talk', id: 3)
-  create(:submission, proposal_id: 3, event_instance_id: 18)
-end
-
 Given('he/she/they has/have a proposal called {string} with the body {string}') do |title, body|
   @proposal = create(:proposal, title: title, body: body, speaker: @speaker)
 end
 
 Given('there is a proposal called {string}') do |title|
   speaker = create(:speaker)
-  @proposal = create(:proposal, id: 1, title: title, speaker: speaker)
+  @proposal = create(:proposal, title: title, speaker: speaker)
 end
 
 Given('he/she/they does/do not have any proposals') do

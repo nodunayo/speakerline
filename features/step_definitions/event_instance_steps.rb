@@ -21,8 +21,9 @@ When('I am on the {string} event instance page for the year {int}') do |event_na
   page.visit event_instance_path(instance)
 end
 
-Then(/^I should see 'This is a great talk' in the 2017 instance block$/) do
-  within('#boo-ruby-2017') do
-    expect(page).to have_content('This is a great talk')
+Then('I should see {string} in the {int} instance block') do |proposal_title, year|
+  event_id = @event.name.downcase.split.join('-')
+  within("##{event_id}-#{year}") do
+    expect(page).to have_content(proposal_title)
   end
 end
