@@ -8,8 +8,7 @@ Given('the speaker {string} is not in the directory') do |name|
 end
 
 Given('the speaker {string} is in the directory') do |speaker_name|
-  create(:speaker, name: speaker_name)
-  @speaker = Speaker.find_by(name: speaker_name)
+  @speaker = create(:speaker, name: speaker_name)
 end
 
 When('I add {string} to the directory') do |speaker_name|

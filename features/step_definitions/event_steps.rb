@@ -3,7 +3,7 @@ Given(/^I am on the 'Add an Event' page$/) do
 end
 
 Given('there is not an event called {string}') do |event_name|
-  ev.destroy if ev = Event.find_by(name: event_name)
+  event.destroy if event = Event.find_by(name: event_name)
 end
 
 When(/^I am on the 'Boo Ruby' event page$/) do
