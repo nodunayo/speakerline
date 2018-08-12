@@ -15,7 +15,7 @@ Given(/^I am on the 'Add a Proposal' page$/) do
   visit new_proposal_path
 end
 
-When(/^I add her proposal with the following information:$/) do |table|
+When('I add her/his/their proposal with the following information:') do |table|
   proposal_information = table.raw.to_h
   page.select(@speaker.name, from: :proposal_speaker_id)
   page.fill_in(:proposal_title, with: proposal_information['title'])

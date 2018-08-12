@@ -10,6 +10,6 @@ When('I click on {string}') do |label|
   page.click_on(label)
 end
 
-Then("I should be on the {string} page") do |string|
-  expect(page).to have_content(string)
+Then("I should be on the {string} page") do |page_title|
+  expect(page).to have_content(page_title)
 end
