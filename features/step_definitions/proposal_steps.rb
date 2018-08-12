@@ -11,7 +11,7 @@ end
 
 Given('there is a proposal called {string}') do |title|
   speaker = create(:speaker)
-  create(:proposal, id: 1, title: title, speaker: speaker)
+  @proposal = create(:proposal, id: 1, title: title, speaker: speaker)
 end
 
 Given('he/she/they does/do not have any proposals') do

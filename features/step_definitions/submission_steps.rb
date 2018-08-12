@@ -5,6 +5,7 @@ Given("{string} was accepted for {string} in {int}") do |proposal_title, event_n
 end
 
 When("I add that the proposal was {word} for {string} in {int}") do |result, event, year|
+  visit proposal_path(@proposal)
   page.click_on('Add submission')
   page.select("#{event} #{year}", from: :submission_event_instance_id)
   page.choose("submission_result_#{result}")
