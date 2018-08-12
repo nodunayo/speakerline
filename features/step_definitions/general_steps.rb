@@ -9,3 +9,7 @@ end
 When('I click on {string}') do |label|
   page.click_on(label)
 end
+
+Then("I should be on the {string} page") do |string|
+  expect(page).to have_content(string)
+end

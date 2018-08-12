@@ -18,11 +18,6 @@ When("I edit the submission to {string}") do |string|
   page.click_on("Update submission")
 end
 
-
-Then("I should be on the {string} page") do |string|
-  expect(page).to have_content(string)
-end
-
 Then("I should see a record of the {string} {int} rejection") do |event, year|
   expect(page).to have_content("#{event} #{year} - Rejected")
 end
