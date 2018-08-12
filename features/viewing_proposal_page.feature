@@ -7,7 +7,9 @@ Feature: Proposal Page
     Then I should see 'Come learn how to read code good'
 
   Scenario: Viewing where a proposal has been accepted or rejected
-    Given Saron Yitbarek's 'Reading Code Good' was accepted at RailsConf 2014
+    Given there is a speaker called 'Saron Yitbarek'
+    And she has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good'
+    And 'Reading Code Good' was accepted for 'RailsConf' in 2014
     When I visit the proposal page for 'Reading Code Good'
     Then I should see a record of the 'RailsConf' 2014 acceptance
 

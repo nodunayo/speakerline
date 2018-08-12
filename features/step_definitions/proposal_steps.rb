@@ -6,12 +6,12 @@ Given(/^there is a proposal called 'This is a great talk' that has been submitte
 end
 
 Given('he/she/they has/have a proposal called {string} with the body {string}') do |title, body|
-  create(:proposal, title: title, body: body, speaker: @speaker)
+  @proposal = create(:proposal, title: title, body: body, speaker: @speaker)
 end
 
-Given(/^there is a proposal called 'Reading Code Good'$/) do
-  speaker = create(:speaker, name: 'Saron Yitbarek')
-  create(:proposal, id: 1, title: 'Reading Code Good', speaker: speaker)
+Given('there is a proposal called {string}') do |title|
+  speaker = create(:speaker)
+  create(:proposal, id: 1, title: title, speaker: speaker)
 end
 
 Given('he/she/they does/do not have any proposals') do
@@ -24,20 +24,19 @@ end
 
 When(/^I add her proposal with the following information:$/) do |table|
   proposal_information = table.raw.to_h
-  page.select('Saron Yitbarek', from: :proposal_speaker_id)
+  page.select(@speaker.name, from: :proposal_speaker_id)
   page.fill_in(:proposal_title, with: proposal_information['title'])
   page.fill_in(:proposal_body, with: proposal_information['body'])
   page.click_on('Add proposal')
 end
 
-When(/^I visit the proposal page for 'Reading Code Good'$/) do
-  visit speakers_path
-  page.click_on('Saron Yitbarek')
-  page.click_on('Reading Code Good')
+When('I visit the proposal page for {string}') do |title|
+  proposal = Proposal.find_by(title: title)
+  visit proposal_path(proposal)
 end
 
-When(/^I change the title to 'Reading Code Well'/) do
-  page.fill_in(:proposal_title, with: 'Reading Code Well')
+When('I change the title to {string}') do |title|
+  page.fill_in(:proposal_title, with: title)
 end
 
 When('I create a proposal for her/him/them') do

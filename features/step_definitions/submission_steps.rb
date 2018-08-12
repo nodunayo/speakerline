@@ -1,9 +1,7 @@
-Given(/^Saron Yitbarek's 'Reading Code Good' was accepted at RailsConf 2014$/) do
-  speaker = create(:speaker, name: 'Saron Yitbarek')
-  proposal = create(:proposal, title: 'Reading Code Good', body: 'Come learn how to read code good', speaker: speaker)
-  create(:event, name: 'RailsConf', id: 5)
-  event_instance = create(:event_instance, event_id: 5, year: '2014')
-  create(:submission, event_instance: event_instance, proposal: proposal, result: 0)
+Given("{string} was accepted for {string} in {int}") do |proposal_title, event_name, year|
+  event = create(:event, name: event_name)
+  event_instance = create(:event_instance, event: event, year: year)
+  create(:submission, result: :accepted, proposal_id: @proposal.id, event_instance_id: event_instance.id)
 end
 
 When("I add that the proposal was {word} for {string} in {int}") do |result, event, year|
