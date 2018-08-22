@@ -1,14 +1,10 @@
-Given('there is a speaker called {string}') do |name|
-  @speaker = create(:speaker, name: name)
+Given('the speaker {string} is in the directory') do |speaker_name|
+  @speaker = create(:speaker, name: speaker_name)
 end
 
 Given('the speaker {string} is not in the directory') do |name|
   visit speakers_path
   expect(page).not_to have_content(name)
-end
-
-Given('the speaker {string} is in the directory') do |speaker_name|
-  @speaker = create(:speaker, name: speaker_name)
 end
 
 When('I add {string} to the directory') do |speaker_name|

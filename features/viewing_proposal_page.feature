@@ -1,13 +1,13 @@
 Feature: Proposal Page
 
   Scenario: Viewing a proposal body
-    Given there is a speaker called 'Saron Yitbarek'
+    Given the speaker 'Saron Yitbarek' is in the directory
     And she has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good'
     When I visit the proposal page for 'Reading Code Good'
     Then I should see 'Come learn how to read code good'
 
   Scenario: Viewing where a proposal has been accepted or rejected
-    Given there is a speaker called 'Saron Yitbarek'
+    Given the speaker 'Saron Yitbarek' is in the directory
     And she has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good'
     And 'Reading Code Good' was accepted for 'RailsConf' in 2014
     When I visit the proposal page for 'Reading Code Good'
