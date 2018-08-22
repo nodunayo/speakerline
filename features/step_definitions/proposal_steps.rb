@@ -23,6 +23,10 @@ When('I add her/his/their proposal with the following information:') do |table|
   page.click_on('Add proposal')
 end
 
+When('I create a proposal for her/him/them') do
+  create(:proposal, speaker: @speaker)
+end
+
 When('I visit the proposal page for {string}') do |title|
   proposal = Proposal.find_by(title: title)
   visit proposal_path(proposal)
@@ -30,8 +34,4 @@ end
 
 When('I change the title to {string}') do |title|
   page.fill_in(:proposal_title, with: title)
-end
-
-When('I create a proposal for her/him/them') do
-  create(:proposal, speaker: @speaker)
 end
