@@ -1,4 +1,5 @@
 class EventInstancesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def new
     @event_instance = EventInstance.new

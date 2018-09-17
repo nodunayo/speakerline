@@ -1,4 +1,6 @@
 class SubmissionsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def new
     @proposal = Proposal.find(params[:proposal])
     @submission = Submission.new(proposal_id: @proposal.id)
