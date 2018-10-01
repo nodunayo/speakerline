@@ -1,5 +1,4 @@
 class ProposalsController < ApplicationController
-  skip_before_action :verify_authenticity_token
   include ApplicationHelper
 
   def show

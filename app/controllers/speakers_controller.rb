@@ -1,6 +1,4 @@
 class SpeakersController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
     @speakers = Speaker.joins(:proposals).distinct.order('name ASC')
   end
