@@ -1,5 +1,4 @@
 class EventInstancesController < ApplicationController
-
   def new
     @event_instance = EventInstance.new
   end
