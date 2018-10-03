@@ -1,5 +1,6 @@
 class EventInstancesController < ApplicationController
   def new
+    @events = Event.all.order(name: :asc)
     @event_instance = EventInstance.new
   end
 
