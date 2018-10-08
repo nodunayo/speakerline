@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :submission do
-    result :accepted
+    result { :accepted }
     event_instance
     proposal
   end
