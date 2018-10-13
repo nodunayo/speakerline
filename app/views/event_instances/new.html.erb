@@ -6,7 +6,7 @@
     <fieldset class="fieldset">
       <legend>Event</legend>
       <%= f.label :event, "Choose an existing event" %>
-      <%= f.collection_select(:event_id, Event.all, :id, :name, prompt: "Add year to an existing event") %>
+      <%= f.collection_select(:event_id, @events, :id, :name, prompt: "Add year to an existing event") %>
 
       <p>&mdash; or &mdash;</p>
 
