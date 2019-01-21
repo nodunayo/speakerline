@@ -27,6 +27,23 @@ a {
   text-decoration: none;
 }
 
+hr {
+  width: 100%;
+  margin: 5px 5px 25px 5px;
+
+}
+
+li .heading {
+  font-size: 48px;
+  color: #333333;
+  font-weight: 500;
+  margin-left: 0px
+}
+
+.medium-height {
+  height: 15em
+}
+
 .navigation {
   margin-top: 5%;
 }
@@ -50,22 +67,8 @@ a {
   font-size: 18px;
 }
 
-
-hr {
-  width: 100%;
-  margin: 5px 5px 25px 5px;
-
-}
-
-li .heading {
-  font-size: 48px;
-  color: #333333;
-  font-weight: 500;
-  margin-left: 0px
-}
-
-.medium-height {
-  height: 15em
+.row {
+  word-wrap: break-word;
 }
 
 ul .inline {
