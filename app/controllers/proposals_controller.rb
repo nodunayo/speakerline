@@ -1,6 +1,10 @@
 class ProposalsController < ApplicationController
   include ApplicationHelper
 
+  def index
+    @proposals = Proposal.order('title ASC')
+  end
+
   def show
     @proposal = Proposal.find(params[:id])
   end
