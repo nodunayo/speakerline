@@ -1,0 +1,27 @@
+<% proposals_columns = @proposals.in_groups(4, false) %>
+<%= link_to new_proposal_path do %>
+  <button class="button-add-proposal">Add a proposal</button>
+<% end %>
+
+<div class="row">
+  <div class="three columns">
+    <% proposals_columns[0].each do |proposal| %>
+      <li class="proposal" ><%= link_to proposal.title, proposal_path(proposal.id) %> </li>
+    <% end %>
+  </div>
+  <div class="three columns">
+    <% proposals_columns[1].each do |proposal| %>
+      <li class="proposal" ><%= link_to proposal.title, proposal_path(proposal.id) %> </li>
+    <% end %>
+  </div>
+  <div class="three columns">
+    <% proposals_columns[2].each do |proposal| %>
+      <li class="proposal" ><%= link_to proposal.title, proposal_path(proposal.id) %> </li>
+    <% end %>
+  </div>
+  <div class="three columns">
+    <% proposals_columns[3].each do |proposal| %>
+      <li class="proposal" ><%= link_to proposal.title, proposal_path(proposal.id) %> </li>
+    <% end %>
+  </div>
+</div>

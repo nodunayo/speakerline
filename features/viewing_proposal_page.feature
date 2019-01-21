@@ -1,5 +1,10 @@
 Feature: Proposal Page
 
+  Scenario: Viewing all proposal titles
+    Given there is a proposal called 'A Wonderful Proposal'
+    When I visit the proposals page
+    Then I should see 'A Wonderful Proposal'
+
   Scenario: Viewing a proposal body
     Given the speaker 'Saron Yitbarek' is in the directory
     And she has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good'
