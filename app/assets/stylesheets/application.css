@@ -33,13 +33,6 @@ hr {
 
 }
 
-li .heading {
-  font-size: 48px;
-  color: #333333;
-  font-weight: 500;
-  margin-left: 0px
-}
-
 .medium-height {
   height: 15em
 }
@@ -55,6 +48,13 @@ li .heading {
 
 .navigation a:hover {
   color: #000000;
+}
+
+li .heading {
+  font-size: 48px;
+  color: #333333;
+  font-weight: 500;
+  margin-left: 0px
 }
 
 .navigation ul {
