@@ -1,7 +1,36 @@
+<% events_columns = @events.in_groups(4, false) %>
 <%= link_to new_event_instance_path do %>
   <button class="button-add">Add an event</button>
 <% end %>
 
-<% @events.each do |event| %>
-  <p><%= link_to event.name, event %></p>
-<% end %>
+<div class="row">
+  <div class="four columns">
+    <% events_columns[0].each do |event| %>
+      <p><%= link_to event.name, event %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="four columns">
+    <% events_columns[1].each do |event| %>
+      <p><%= link_to event.name, event %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="four columns">
+    <% events_columns[2].each do |event| %>
+      <p><%= link_to event.name, event %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="four columns">
+    <% events_columns[3].each do |event| %>
+      <p><%= link_to event.name, event %></p>
+    <% end %>
+  </div>
+</div>
