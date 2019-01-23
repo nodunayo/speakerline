@@ -178,4 +178,4 @@ in this project you agree to abide by its terms.
 
 ## Copyright
 
-Copyright (c) 2017 Nadia Odunayo. See [LICENSE](https://github.com/nodunayo/speakerline/blob/master/LICENSE) for details.
+Copyright (c) 2019 Nadia Odunayo. See [LICENSE](https://github.com/nodunayo/speakerline/blob/master/LICENSE) for details.
