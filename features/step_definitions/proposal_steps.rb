@@ -21,9 +21,11 @@ end
 
 When('I add her/his/their proposal with the following information:') do |table|
   proposal_information = table.raw.to_h
+  @tags = proposal_information['tags']
   page.select(@speaker.name, from: :proposal_speaker_id)
   page.fill_in(:proposal_title, with: proposal_information['title'])
   page.fill_in(:proposal_body, with: proposal_information['body'])
+  page.fill_in(:proposal_tag_list, with: @tags)
   page.click_on('Add proposal')
 end
 
@@ -38,4 +40,10 @@ end
 
 When('I change the title to {string}') do |title|
   page.fill_in(:proposal_title, with: title)
+end
+
+Then("I should see the tags") do
+  @tags.split(', ').each do |tag|
+    expect(page).to have_content("##{tag}")
+  end
 end

@@ -1,11 +1,17 @@
 <div class='row'>
   <div class="one-half column">
-    <h3><%= @proposal.title %></h3>
-    <h5><%= link_to @proposal.speaker.name, speaker_path(@proposal.speaker) %></h5>
+    <h4><%= @proposal.title %>,
+      by <%= link_to @proposal.speaker.name, speaker_path(@proposal.speaker) %>
+      <div class="tags">
+       <% @proposal.tag_list.each do |tag| %>
+         <span class="tag">#<%= tag %></span>
+       <% end %>
+      </div>
+    </h4>
 
     <p><%= markdown(@proposal.body) %></p>
     <p>
-      <%= link_to 'Edit proposal', edit_proposal_path(@proposal) %>
+    <%= link_to 'Edit proposal', edit_proposal_path(@proposal) %>
     </p>
   </div>
 
@@ -13,11 +19,11 @@
     <h4>Submissions </h4>
     <% @proposal.submissions.each do |submission| %>
       <p>
-        <%= link_to submission.event_instance.name_and_year, submission.event_instance %> -
-        <%= submission.result.capitalize %>
-        <%= link_to '[Edit]', edit_submission_path(submission), id: 'edit-submission' %>
+      <%= link_to submission.event_instance.name_and_year, submission.event_instance %> -
+      <%= submission.result.capitalize %>
+      <%= link_to '[Edit]', edit_submission_path(submission), id: 'edit-submission' %>
       </p>
-  <% end %>
+    <% end %>
     <%= link_to 'Add submission', new_submission_path(proposal: @proposal.id) %>
   </div>
 </div>

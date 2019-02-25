@@ -1,0 +1,11 @@
+.tag {
+  background-color: #F0F8FF;
+  padding: 3px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+#proposal_tag_list {
+  width: 300px;
+}

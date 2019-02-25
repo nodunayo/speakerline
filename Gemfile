@@ -1,6 +1,7 @@
 ruby '2.6.0'
 source 'https://rubygems.org'
 
+gem 'acts-as-taggable-on', '~> 6.0'
 gem 'rails', '5.2.2'
 gem 'pg', '1.1.4'
 gem 'puma'

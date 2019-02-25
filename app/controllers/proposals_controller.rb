@@ -44,7 +44,7 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:title, :body, :speaker_id).to_h
+    params.require(:proposal).permit(:title, :body, :tag_list, :speaker_id).to_h
   end
 
   def speakers

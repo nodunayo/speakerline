@@ -6,5 +6,7 @@ Feature: Adding a Proposal
     When I add her proposal with the following information:
       | title | Reading Code Good                |
       | body  | Come learn how to read code good |
+      | tags  | studying, groups, friends |
     And I visit the proposal page for 'Reading Code Good'
     Then I should see 'Come learn how to read code good'
+    And I should see the tags
