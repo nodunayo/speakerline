@@ -4,7 +4,7 @@
   <%= f.collection_select(:speaker_id, @speakers, :id, :name) %>
   <%= f.label(:title) %>
   <%= f.text_field(:title, :class => 'u-full-width medium-height') %>
-  <%= f.label(:tags, 'Tags (comma-separated, max 3)') %>
+  <%= f.label(:tags, 'Tags (comma-separated, max 3, e.g. "ruby, rails, testing")') %>
   <%= f.text_field(:tag_list) %>
   <%= f.label(:body) %>
   <%= f.text_area(:body, class: 'u-full-width medium-height', placeholder: "For formatting, you can use Markdown! :-)") %>
