@@ -4,7 +4,7 @@
       by <%= link_to @proposal.speaker.name, speaker_path(@proposal.speaker) %>
       <div class="tags">
        <% @proposal.tag_list.each do |tag| %>
-         <span class="tag">#<%= tag %></span>
+         <span class="tag">#<%= tag.gsub(" ", "") %></span>
        <% end %>
       </div>
     </h4>
