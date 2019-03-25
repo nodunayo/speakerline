@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :speaker do
-    name { "Sandi Metz" }
+    name { Faker::Name.name }
   end
 end

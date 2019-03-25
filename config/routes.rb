@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :submissions
   resources :events,          only: [:index, :show]
   resources :event_instances, only: [:new, :create, :show]
+  resources :tags, only: [:show]
 end

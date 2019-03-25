@@ -3,8 +3,7 @@ Given('he/she/they has/have a proposal called {string} with the body {string}') 
 end
 
 Given('there is a proposal called {string}') do |title|
-  speaker = create(:speaker)
-  @proposal = create(:proposal, title: title, speaker: speaker)
+  @proposal = create(:proposal, title: title, speaker: create(:speaker))
 end
 
 Given('he/she/they does/do not have any proposals') do
@@ -13,6 +12,16 @@ end
 
 Given(/^I am on the 'Add a Proposal' page$/) do
   visit new_proposal_path
+end
+
+Given("there is a proposal called {string} with the tag {string}") do |title, tag|
+  @proposal = create(:proposal, title: title, speaker: create(:speaker))
+  @proposal.tag_list.add(tag)
+  @proposal.save
+end
+
+When("I visit the {string} tag page") do |tag|
+  visit tag_path(tag)
 end
 
 When("I visit the proposals page") do

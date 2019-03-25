@@ -1,0 +1,5 @@
+<h5>Proposals tagged with #<%= @tag %></h5>
+
+<% @proposals.each do |proposal| %>
+  <p><%= link_to proposal.title, proposal %></p>
+<% end %>

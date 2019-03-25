@@ -20,6 +20,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -27,7 +28,6 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'faker'
 end
 
 group :test do
