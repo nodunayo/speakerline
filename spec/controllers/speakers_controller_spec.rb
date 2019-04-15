@@ -49,11 +49,18 @@ RSpec.describe SpeakersController do
       before do
         allow(Speaker).to receive(:new).and_return(invalid_speaker)
         allow(invalid_speaker).to receive(:save).and_return(false)
-        post :create, params: { speaker: { name: '' } }
       end
 
-      it { is_expected.to set_flash[:alert].to('Failed to save speaker') }
-      it { should redirect_to(new_speaker_path) }
+      it 'does not save the speaker in the database' do
+        expect{
+          post :create, params: { speaker: { name: '' } }
+        }.to_not change(Speaker, :count)
+      end
+
+      it 'renders the new template' do
+        post :create, params: { speaker: { name: '' } }
+        expect(subject).to render_template(:new)
+      end
     end
   end
 end

@@ -16,8 +16,7 @@ class SpeakersController < ApplicationController
     if verify_recaptcha(model: @speaker) && @speaker.save
       redirect_to speakers_path
     else
-      flash[:alert] = 'Failed to save speaker'
-      redirect_to new_speaker_path
+      render :new
     end
   end
 
