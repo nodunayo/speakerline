@@ -19,7 +19,6 @@ class ProposalsController < ApplicationController
     if verify_recaptcha(model: @proposal) && @proposal.save
       redirect_to proposal_path(@proposal)
     else
-      flash[:alert] = 'Failed to save proposal'
       @speakers = speakers
       render 'new'
     end
@@ -32,11 +31,10 @@ class ProposalsController < ApplicationController
 
   def update
     @proposal = Proposal.find(params[:id])
-    @speakers = speakers
     if verify_recaptcha(model: @proposal) && @proposal.update_attributes(proposal_params)
       redirect_to proposal_path(@proposal)
     else
-      flash[:alert] = 'Failed to update proposal'
+      @speakers = speakers
       render 'edit'
     end
   end

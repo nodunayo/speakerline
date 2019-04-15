@@ -1,3 +1,14 @@
+<% if @proposal.errors.any? %>
+  <div id="error_explanation">
+    <h5>We couldn't update this proposal because:</h5>
+    <ul>
+      <% @proposal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h3>Edit a proposal</h3>
 
 <%= form_for @proposal, url: {action: 'update'} do |f| %>

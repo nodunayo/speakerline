@@ -26,11 +26,23 @@ RSpec.describe ProposalsController do
       before do
         allow(Proposal).to receive(:new).and_return(invalid_proposal)
         allow(invalid_proposal).to receive(:save).and_return(false)
-        post :create, params: { proposal: { title: '' } }
       end
 
-      it { is_expected.to set_flash[:alert].to('Failed to save proposal') }
-      it { expect(response.body).to have_content 'My progress should be shown' }
+      it 'does not save the proposal in the database' do
+        expect{
+          post :create, params: { proposal: { title: '' } }
+        }.to_not change(Proposal, :count)
+      end
+
+      it 'renders the new template' do
+        post :create, params: { proposal: { title: '' } }
+        expect(subject).to render_template(:new)
+      end
+
+      it 'saves the user\'s progress' do
+        post :create, params: { proposal: { title: '' } }
+        expect(response.body).to have_content 'My progress should be shown'
+      end
     end
   end
 
@@ -64,7 +76,6 @@ RSpec.describe ProposalsController do
         expect(existing_proposal.title).to eq("I am an old proposal")
       end
 
-      it { is_expected.to set_flash[:alert].to('Failed to update proposal') }
       it { should render_template(:edit) }
 
     end
