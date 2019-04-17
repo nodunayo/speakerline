@@ -1,3 +1,14 @@
+<% if @event_instance.errors.any? %>
+  <div id="error_explanation">
+    <h5>We couldn't save this event because:</h5>
+    <ul>
+      <% @event_instance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @event_instance do |f| %>
 
   <div class="row">

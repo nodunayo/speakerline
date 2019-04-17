@@ -17,7 +17,7 @@ RSpec.describe EventInstance do
   end
 
   # Numericality implicitly tests presence; by default it will reject nil
-  it { should validate_numericality_of(:year).only_integer }
+  it { should validate_numericality_of(:year).only_integer.with_message("has to be a number") }
 
   it 'should validate uniqueness of year scoped to the parent event' do
     event = create(:event)

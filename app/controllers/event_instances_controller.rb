@@ -9,8 +9,8 @@ class EventInstancesController < ApplicationController
     if verify_recaptcha(model: @event_instance) && @event_instance.save
       redirect_to speakers_path
     else
-      flash[:alert] = 'Failed to save event'
-      redirect_to new_event_instance_path
+      @events = Event.all.order(name: :asc)
+      render 'new'
     end
   end
 

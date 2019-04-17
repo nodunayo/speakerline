@@ -9,9 +9,9 @@ class EventInstance < ApplicationRecord
 
   before_validation :set_parent_event
 
-  validates :event, presence: true
-  validates :year, uniqueness:   { scope: :event, message: 'should happen once per year' },
-                   numericality: { only_integer: true }
+  validates :year, presence: true,
+                   uniqueness:   { scope: :event, message: 'should happen once per year' },
+                   numericality: { only_integer: true, message: 'has to be a number' }
 
   def name_and_year
     "#{event.name} #{year}"
@@ -21,7 +21,7 @@ class EventInstance < ApplicationRecord
 
   def set_parent_event
     if received_bad_event_params
-      errors.add(:base, 'choose either an existing event or to create a new one')
+      errors.add(:base, 'Choose either an existing event or create a new one')
     else
       event || build_event(name: new_parent_event_name)
     end
