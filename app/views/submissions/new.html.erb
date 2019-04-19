@@ -1,3 +1,14 @@
+<% if @submission.errors.any? %>
+  <div id="error_explanation">
+    <h5>We couldn't save this submission because:</h5>
+    <ul>
+      <% @submission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h3>Add a submission</h3>
 
 <%= form_for @submission, url: {action: 'create'} do |f| %>

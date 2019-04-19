@@ -4,7 +4,7 @@ class Submission < ApplicationRecord
 
   validates_presence_of :event_instance
   validates_presence_of :proposal
-  validates_presence_of :result
+  validates_presence_of :result, message: 'has not been chosen. Choose whether the proposal was accepted, rejected, or waitlisted'
 
   enum result: [ :accepted, :rejected, :waitlisted ]
 end

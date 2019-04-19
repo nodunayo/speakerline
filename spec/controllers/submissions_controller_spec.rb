@@ -27,13 +27,17 @@ RSpec.describe SubmissionsController do
         allow(Submission).to receive(:new).and_return(invalid_submission)
         allow(invalid_submission).to receive(:save).and_return(false)
 
-        post :create, params: { submission: { event_instance_id: '', proposal_id: proposal.id, result: '' } }
       end
 
-      it { is_expected.to set_flash[:alert].to('Failed to save submission') }
-      it { should redirect_to(new_submission_path(proposal: invalid_submission.proposal.id)) }
-      it 'should retain its proposal id' do
-        expect(response.location).to include("?proposal=#{invalid_submission.proposal.id}")
+      it 'does not save the proposal in the database' do
+        expect{
+          post :create, params: { submission: { event_instance_id: '', proposal_id: proposal.id, result: '' } }
+        }.to_not change(Submission, :count)
+      end
+
+      it 'renders the new template' do
+        post :create, params: { submission: { event_instance_id: '', proposal_id: proposal.id, result: '' } }
+        expect(subject).to render_template(:new)
       end
     end
   end
@@ -52,20 +56,6 @@ RSpec.describe SubmissionsController do
       end
 
       it { should redirect_to(proposal_path(proposal)) }
-    end
-
-    context 'with invalid attributes' do
-      before do
-        put :update, params: { id: existing_submission.id, submission: { result: '' } }
-        existing_submission.reload
-      end
-
-      it 'fails to update the submission details' do
-        expect(existing_submission.result).to eq('accepted')
-      end
-
-      it { is_expected.to set_flash[:alert].to('Failed to update submission') }
-      it { should render_template(:edit) }
     end
   end
 end

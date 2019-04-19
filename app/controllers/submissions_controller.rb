@@ -10,8 +10,9 @@ class SubmissionsController < ApplicationController
     if verify_recaptcha(model: @submission) && @submission.save
       redirect_to proposal_path(@submission.proposal)
     else
-      flash[:alert] = 'Failed to save submission'
-      redirect_to new_submission_path(proposal: @submission.proposal.id)
+      @proposal = @submission.proposal
+      @events = Event.all.order('name ASC')
+      render 'new'
     end
   end
 
