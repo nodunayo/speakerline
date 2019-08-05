@@ -24,7 +24,7 @@ case Rails.env
     puts "5 events with 3 instances each added (15 total instances)..."
 
     [' the ', ' and the '].each do | mid_text |
-      10.times { Proposal.create!(title: Faker::Hacker.ingverb.titleize + mid_text + Faker::Hacker.adjective.titleize + " " + Faker::Hacker.noun.titleize, body: Faker::Movies::VForVendettaspeech, speaker_id: Speaker.ids.sample) }
+      10.times { Proposal.create!(title: Faker::Hacker.ingverb.titleize + mid_text + Faker::Hacker.adjective.titleize + " " + Faker::Hacker.noun.titleize, body: Faker::Movies::VForVendetta, speaker_id: Speaker.ids.sample) }
     end
     puts "20 proposals added..."
 
