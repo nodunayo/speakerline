@@ -2,7 +2,7 @@ ruby '2.6.0'
 source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'rails', '5.2.4.1'
+gem 'rails', '6.0.2.1'
 gem 'pg', '1.2.0'
 gem 'puma'
 gem 'sass-rails'
@@ -16,7 +16,7 @@ gem 'erubis'
 gem 'rack-attack'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '4.0.0.beta3'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'

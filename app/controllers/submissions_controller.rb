@@ -24,7 +24,7 @@ class SubmissionsController < ApplicationController
   def update
     @submission = Submission.find(params[:id])
     @proposal = @submission.proposal
-    if verify_recaptcha(model: @submission) && @submission.update_attributes(submission_params)
+    if verify_recaptcha(model: @submission) && @submission.update(submission_params)
       redirect_to proposal_path(@proposal)
     else
       flash[:alert] = 'Failed to update submission'

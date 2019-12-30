@@ -31,7 +31,7 @@ class ProposalsController < ApplicationController
 
   def update
     @proposal = Proposal.find(params[:id])
-    if verify_recaptcha(model: @proposal) && @proposal.update_attributes(proposal_params)
+    if verify_recaptcha(model: @proposal) && @proposal.update(proposal_params)
       redirect_to proposal_path(@proposal)
     else
       @speakers = speakers
