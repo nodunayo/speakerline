@@ -76,7 +76,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     crass (1.0.5)
     cucumber (3.1.2)
       builder (>= 2.1.2)
@@ -162,7 +162,7 @@ GEM
     mimemagic (0.3.3)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.13.0)
+    minitest (5.14.0)
     multi_json (1.14.1)
     multi_test (0.1.2)
     nested_form (0.3.2)
@@ -259,7 +259,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    shoulda-matchers (4.2.0)
+    shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
     simplecov (0.18.1)
       docile (~> 1.1)
