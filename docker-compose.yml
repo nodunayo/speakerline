@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    command: sh start
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/opt/app
+    depends_on:
+      - db
+    environment:
+      - RECAPTCHA_SITE_KEY=aaaaa
+      - RAILS_ADMIN_USERNAME=rails
+      - RAILS_ADMIN_PASSWORD=rails
+  db:
+    image: postgres:11.2
+    ports:
+      - "5432:5432"
