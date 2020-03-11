@@ -1,5 +1,7 @@
 version: "3"
 
+volumes:
+  rails_tmp:
 services:
   app:
     build:
@@ -10,6 +12,7 @@ services:
       - 3000:3000
     volumes:
       - ./:/opt/app
+      - rails_tmp:/opt/app/tmp
     depends_on:
       - db
     environment:
