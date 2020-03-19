@@ -2,7 +2,7 @@ ruby '2.6.5'
 source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on', '~> 6.0'
-gem 'rails', '6.0.2.1'
+gem 'rails', '6.0.2.2'
 gem 'pg', '1.2.2'
 gem 'puma'
 gem 'sass-rails'
