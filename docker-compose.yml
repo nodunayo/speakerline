@@ -1,0 +1,29 @@
+version: "3"
+
+volumes:
+  rails_tmp:
+  bundle:
+services:
+  app:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    command: sh start
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/opt/app
+      - bundle:/usr/local/bundle
+      - rails_tmp:/opt/app/tmp
+    depends_on:
+      - db
+    environment:
+      - RECAPTCHA_SITE_KEY=aaaaa
+      - RAILS_ADMIN_USERNAME=rails
+      - RAILS_ADMIN_PASSWORD=rails
+      - DATABASE_HOST=db
+      - DATABASE_USER=postgres
+  db:
+    image: postgres:11.2
+    ports:
+      - "5432:5432"
