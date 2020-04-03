@@ -60,6 +60,8 @@ As Speakerline develops, hopefully it will:
 
 ## Setting up for local development
 
+Alternatively you can skip to [setting up with docker](setting-up-with-docker)
+
 ### Getting started with Ruby and Postgres
 
 First, you'll need to install Ruby 2.6.0. I like to use [chruby](https://github.com/postmodern/chruby) and [ruby-install](https://github.com/postmodern/ruby-install) to manage my Ruby versions.
@@ -162,6 +164,21 @@ bundle exec rake db:test:prepare
 
 This will create the test database and populate its schema.
 
+## Setting up with docker
+
+If you have Docker installed you can run Speakerline using docker.
+
+To start the server run.
+
+```
+docker-compose up
+```
+
+All commands can be run inside the app container. e.g. to run tests:
+
+```
+docker-compose run app bundle exec rspec
+```
 
 ### Contributing to Speakerline
 
