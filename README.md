@@ -17,7 +17,8 @@
     * [Seeding the development database](#seeding-the-development-database)
     * [Starting the Rails server](#starting-the-rails-server)
   * [Running the tests](#running-the-tests)
-  * [Contributing to Speakerline](#contributing-to-speakerline)
+ * [Setting up with Docker](#setting-up-with-docker)
+* [Contributing to Speakerline](#contributing-to-speakerline)
 * [Credits](#credits)
 * [Copyright](#copyright)
 
@@ -59,8 +60,6 @@ As Speakerline develops, hopefully it will:
 * [Add a proposal](http://speakerline.io/proposals/new)
 
 ## Setting up for local development
-
-Alternatively you can skip to [setting up with docker](setting-up-with-docker)
 
 ### Getting started with Ruby and Postgres
 
@@ -164,23 +163,23 @@ bundle exec rake db:test:prepare
 
 This will create the test database and populate its schema.
 
-## Setting up with docker
+## Setting up with Docker
 
-If you have Docker installed you can run Speakerline using docker.
+Alternatively, you can run Speakerline using Docker.
 
-To start the server run.
+To start the server run:
 
 ```
 docker-compose up
 ```
 
-All commands can be run inside the app container. e.g. to run tests:
+All commands can be run inside the app container, e.g. to run the tests:
 
 ```
 docker-compose run app bundle exec rspec
 ```
 
-### Contributing to Speakerline
+## Contributing to Speakerline
 
 I'd love any help with this project. Have a look at our [Contributing Guide](CONTRIBUTING.md)
 for more information on how you can get involved.
