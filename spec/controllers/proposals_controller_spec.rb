@@ -47,12 +47,22 @@ RSpec.describe ProposalsController do
   end
 
   describe 'PUT #update' do
+    context 'when the user is not signed in' do
+      let(:proposal) { create(:proposal) }
+
+      it 'does not allow the user to access the Proposal#edit page' do
+        put :update, params: { id: proposal.id, proposal: { title: 'New Title' } }
+
+        expect(response).not_to redirect_to(proposal_path)
+      end
+    end
+
     context 'with valid attributes' do
 
       let(:existing_proposal) { create(:proposal, title: "I am an old proposal") }
 
       before do
-        put :update, params: { id: existing_proposal.id, proposal: { title: "I am a new proposal" } }
+        put :update, params: { id: existing_proposal.id, proposal: { title: "I am a new proposal" } }, session: { current_user_id: "123" }
         existing_proposal.reload
       end
 
@@ -68,7 +78,7 @@ RSpec.describe ProposalsController do
       let(:existing_proposal) { create(:proposal, title: "I am an old proposal") }
 
       before do
-        put :update, params: { id: existing_proposal.id, proposal: { title: "" } }
+        put :update, params: { id: existing_proposal.id, proposal: { title: "" } }, session: { current_user_id: "123" }
         existing_proposal.reload
       end
 
@@ -78,6 +88,18 @@ RSpec.describe ProposalsController do
 
       it { should render_template(:edit) }
 
+    end
+  end
+
+  describe 'GET #edit' do
+    context 'when the user is not signed in' do
+      let(:proposal) { create(:proposal) }
+
+      it 'does not allow the user to access the Proposal#edit page' do
+        get :edit, params: { id: proposal.id }
+
+        expect(response.status).to eq(302)
+      end
     end
   end
 end

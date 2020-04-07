@@ -25,17 +25,25 @@ class ProposalsController < ApplicationController
   end
 
   def edit
-    @proposal = Proposal.find(params[:id])
-    @speakers = speakers
+    if session[:current_user_id]
+      @proposal = Proposal.find(params[:id])
+      @speakers = speakers
+    else
+      redirect_to "#{ENV["DID_AUTHENTICATION_ENDPOINT"]}?client_id=#{ENV["DID_CLIENT_ID"] || "test_0xKvM6N9"}&redirect_uri=#{session_callback_url}"
+    end
   end
 
   def update
-    @proposal = Proposal.find(params[:id])
-    if verify_recaptcha(model: @proposal) && @proposal.update(proposal_params)
-      redirect_to proposal_path(@proposal)
+    if session[:current_user_id]
+      @proposal = Proposal.find(params[:id])
+      if verify_recaptcha(model: @proposal) && @proposal.update(proposal_params)
+        redirect_to proposal_path(@proposal)
+      else
+        @speakers = speakers
+        render 'edit'
+      end
     else
-      @speakers = speakers
-      render 'edit'
+      redirect_to "#{ENV["DID_AUTHENTICATION_ENDPOINT"]}?client_id=#{ENV["DID_CLIENT_ID"] || "test_0xKvM6N9"}&redirect_uri=#{session_callback_url}"
     end
   end
 
