@@ -23,8 +23,6 @@ class SessionController < ApplicationController
       redirect_to root_path
     else
       userinfo = data["userinfo"]
-      puts userinfo["email"]
-      puts userinfo["email_verified"]
 
       session[:current_user_id] = userinfo["sub"]
       redirect_to root_path
