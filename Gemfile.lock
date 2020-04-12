@@ -117,6 +117,8 @@ GEM
       railties (>= 4.2.0)
     faker (2.11.0)
       i18n (>= 1.6, < 2)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
     gherkin (5.1.0)
     globalid (0.4.2)
@@ -165,6 +167,7 @@ GEM
     minitest (5.14.0)
     multi_json (1.14.1)
     multi_test (0.1.2)
+    multipart-post (2.1.1)
     nested_form (0.3.2)
     nio4r (2.5.2)
     nokogiri (1.10.9)
@@ -311,6 +314,7 @@ DEPENDENCIES
   erubis
   factory_bot_rails
   faker
+  faraday (~> 1.0, >= 1.0.1)
   jquery-rails
   listen
   pg (= 1.2.3)

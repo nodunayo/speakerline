@@ -37,7 +37,7 @@ hr {
 }
 
 .medium-height {
-  height: 15em
+  height: 15em;
 }
 
 .navigation {
@@ -45,19 +45,32 @@ hr {
 }
 
 .navigation a {
-  color: #9B9B9B;
-  margin-left: 20px
+  color: #9b9b9b;
+  margin-left: 20px;
 }
 
 .navigation a:hover {
   color: #000000;
 }
 
+.navigation form {
+  display: inline-block;
+}
+.navigation button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: none;
+  padding: 0;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
 li .heading {
   font-size: 48px;
   color: #333333;
   font-weight: 500;
-  margin-left: 0px
+  margin-left: 0px;
 }
 
 .navigation ul {
@@ -75,7 +88,7 @@ li .heading {
 }
 
 ul .inline {
-  display: inline
+  display: inline;
 }
 
 .tagline {
@@ -111,7 +124,7 @@ fieldset.fieldset {
 
 fieldset.fieldset legend {
   border: 0; /* 1 */
-  padding: .2em;
+  padding: 0.2em;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -131,8 +144,11 @@ fieldset.fieldset legend {
   .navigation a {
     margin-left: 0px;
   }
+  .navigation button {
+    margin-left: 0px;
+  }
 
   .tagline {
-    width: 100%
+    width: 100%;
   }
 }

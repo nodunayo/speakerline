@@ -3,7 +3,8 @@ Feature: Editing a Proposal
   Scenario: Editing an existing proposal
     Given the speaker 'Saron Yitbarek' is in the directory
     And she has a proposal called 'Reading Code Good' with the body 'Come learn how to read code good'
-    When I visit the proposal page for 'Reading Code Good'
+    When I am signed in
+    And I visit the proposal page for 'Reading Code Good'
     And I click on 'Edit proposal'
     And I change the title to 'Reading Code Well'
     And I click on 'Update proposal'

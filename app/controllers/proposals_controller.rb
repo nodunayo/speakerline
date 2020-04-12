@@ -25,11 +25,20 @@ class ProposalsController < ApplicationController
   end
 
   def edit
-    @proposal = Proposal.find(params[:id])
-    @speakers = speakers
+    if session[:current_user_id]
+      @proposal = Proposal.find(params[:id])
+      @speakers = speakers
+    else
+      redirect_to authentication_endpoint
+    end
   end
 
   def update
+    if !session[:current_user_id]
+      redirect_to authentication_endpoint
+      return
+    end
+
     @proposal = Proposal.find(params[:id])
     if verify_recaptcha(model: @proposal) && @proposal.update(proposal_params)
       redirect_to proposal_path(@proposal)

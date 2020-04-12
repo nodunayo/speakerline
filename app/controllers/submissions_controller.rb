@@ -1,11 +1,17 @@
 class SubmissionsController < ApplicationController
   def new
-    @proposal = Proposal.find(params[:proposal])
-    @submission = Submission.new(proposal_id: @proposal.id)
-    @events = Event.all.order('name ASC')
+    if session[:current_user_id]
+      @proposal = Proposal.find(params[:proposal])
+      @submission = Submission.new(proposal_id: @proposal.id)
+      @events = Event.all.order('name ASC')
+    else
+      redirect_to authentication_endpoint
+    end
   end
 
   def create
+    return if !session[:current_user_id]
+
     @submission = Submission.new(submission_params)
     if verify_recaptcha(model: @submission) && @submission.save
       redirect_to proposal_path(@submission.proposal)
@@ -17,11 +23,20 @@ class SubmissionsController < ApplicationController
   end
 
   def edit
-    @submission = Submission.find(params[:id])
-    @proposal = @submission.proposal
+    if session[:current_user_id]
+      @submission = Submission.find(params[:id])
+      @proposal = @submission.proposal
+    else
+      redirect_to authentication_endpoint
+    end
   end
 
   def update
+    if !session[:current_user_id]
+      redirect_to authentication_endpoint
+      return
+    end
+
     @submission = Submission.find(params[:id])
     @proposal = @submission.proposal
     if verify_recaptcha(model: @submission) && @submission.update(submission_params)
