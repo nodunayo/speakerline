@@ -5,7 +5,7 @@ class SubmissionsController < ApplicationController
       @submission = Submission.new(proposal_id: @proposal.id)
       @events = Event.all.order('name ASC')
     else
-      redirect_to "#{ENV["DID_AUTHENTICATION_ENDPOINT"]}?client_id=#{ENV["DID_CLIENT_ID"] || "test_0xKvM6N9"}&redirect_uri=#{session_callback_url}"
+      redirect_to authentication_endpoint
     end
   end
 
@@ -27,13 +27,13 @@ class SubmissionsController < ApplicationController
       @submission = Submission.find(params[:id])
       @proposal = @submission.proposal
     else
-      redirect_to "#{ENV["DID_AUTHENTICATION_ENDPOINT"]}?client_id=#{ENV["DID_CLIENT_ID"] || "test_0xKvM6N9"}&redirect_uri=#{session_callback_url}"
+      redirect_to authentication_endpoint
     end
   end
 
   def update
     if !session[:current_user_id]
-      redirect_to "#{ENV["DID_AUTHENTICATION_ENDPOINT"]}?client_id=#{ENV["DID_CLIENT_ID"] || "test_0xKvM6N9"}&redirect_uri=#{session_callback_url}"
+      redirect_to authentication_endpoint
       return
     end
 
