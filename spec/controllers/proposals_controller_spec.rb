@@ -50,7 +50,7 @@ RSpec.describe ProposalsController do
     context 'when the user is not signed in' do
       let(:proposal) { create(:proposal) }
 
-      it 'does not allow the user to access the Proposal#edit page' do
+      it 'does not allow the user to update the proposal' do
         put :update, params: { id: proposal.id, proposal: { title: 'New Title' } }
 
         expect(response).not_to redirect_to(proposal_path)
