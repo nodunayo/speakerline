@@ -17,7 +17,7 @@ gem 'rack-attack'
 gem 'faraday', '~> 1.0', '>= 1.0.1'
 
 group :development, :test do
-  gem 'rspec-rails', '4.0.1'
+  gem 'rspec-rails', '4.0.2'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
