@@ -1,7 +1,7 @@
 ruby '2.6.5'
 source 'https://rubygems.org'
 
-gem 'acts-as-taggable-on', '~> 6.0'
+gem 'acts-as-taggable-on', '~> 7.0'
 gem 'rails', '6.0.3.4'
 gem 'pg', '1.2.3'
 gem 'puma'
@@ -17,7 +17,7 @@ gem 'rack-attack'
 gem 'faraday', '~> 1.0', '>= 1.0.1'
 
 group :development, :test do
-  gem 'rspec-rails', '4.0.1'
+  gem 'rspec-rails', '4.0.2'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
