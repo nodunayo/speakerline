@@ -13,7 +13,7 @@ class SessionController < ApplicationController
     response = Faraday.post(
       "https://auth.did.app/oidc/token",
       client_id: ENV["DID_CLIENT_ID"] || "test_0xKvM6N9",
-      client_secret: ENV["DID_CLIENT_SECRET"] || "test_y2650o6pLoxNejD9",
+      client_secret: ENV["DID_CLIENT_ID"] || "test_y2650o6pLoxNejD9",
       code: code
     )
     data = JSON.parse(response.body)
