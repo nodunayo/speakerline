@@ -13,17 +13,14 @@ class SessionController < ApplicationController
     data = JSON.parse(response.body)
     error = data["error"]
     if error
-      flash[:alert] = "Something went wrong signing you in"
-      redirect_to root_path
-    else
-      userinfo = data["userinfo"]
-      puts userinfo["email"]
-      puts userinfo["email_verified"]
-
-      session[:current_user_id] = userinfo["sub"]
-      redirect_to root_path
+      # Do something with the error
     end
+    userinfo = data["userinfo"]
+    puts userinfo["email"]
+    puts userinfo["email_verified"]
 
+    session[:current_user_id] = userinfo["sub"]
+    redirect_to root_path
   end
 
   def terminate
