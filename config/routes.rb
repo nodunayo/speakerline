@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :event_instances, only: [:new, :create, :show]
   resources :tags, only: [:show]
 
-  get '/session/callback', to: 'session#callback', as: 'session_callback'
+  get '/session/callback', to: 'session#callback'
   get '/session/terminate', to: 'session#terminate', as: 'sign_out'
 end

@@ -1,7 +1,3 @@
-When("I am signed in") do
-  visit session_callback_path
-end
-
 When('I click on {string}') do |label|
   page.click_on(label)
 end

@@ -28,9 +28,9 @@
               <% if session[:current_user_id] %>
               <%= link_to 'Sign out', sign_out_path %>
               <% else %>
-                <form action="<%= ENV["DID_AUTHENTICATION_ENDPOINT"] %>" method="get">
+              <form action="https://auth.did.app/oidc/authorize" method="get">
                 <input name="client_id" value="<%= ENV["DID_CLIENT_ID"] || "test_0xKvM6N9" %>" type="hidden" />
-                <input name="redirect_uri" value="<%= session_callback_url %>" type="hidden" />
+                <input name="redirect_uri" value="http://localhost:3000/session/callback" type="hidden" />
 
                 <button type="submit">Sign in</button>
               </form>
