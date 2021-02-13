@@ -28,12 +28,12 @@
               <% if session[:current_user_id] %>
               <%= link_to 'Sign out', sign_out_path %>
               <% else %>
-              <form action="https://auth.did.app/oidc/authorize" method="get">
+              <form action="https://auth.did.app/oidc/authorize" method="get" style="display: inline-block;">
                 <input name="client_id" value="test_0xKvM6N9" type="hidden" />
                 <input name="redirect_uri" value="http://localhost:3000/session/callback" type="hidden" />
                 <!-- <input name="response_mode" value="form_post" type="hidden" /> -->
 
-                <button type="submit">Sign in</button>
+                <button type="submit" style="border: none;font-family: inherit;font-size: inherit;text-transform: none;padding: 0 0 0 1em;">Sign in</button>
               </form>
               <% end %>
             </li>
