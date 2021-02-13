@@ -29,13 +29,13 @@ class ProposalsController < ApplicationController
       @proposal = Proposal.find(params[:id])
       @speakers = speakers
     else
-      redirect_to authentication_endpoint
+      redirect_to "#{ENV["DID_AUTHENTICATION_ENDPOINT"]}?client_id=#{ENV["DID_CLIENT_ID"] || "test_0xKvM6N9"}&redirect_uri=#{session_callback_url}"
     end
   end
 
   def update
     if !session[:current_user_id]
-      redirect_to authentication_endpoint
+      redirect_to "#{ENV["DID_AUTHENTICATION_ENDPOINT"]}?client_id=#{ENV["DID_CLIENT_ID"] || "test_0xKvM6N9"}&redirect_uri=#{session_callback_url}"
       return
     end
 
