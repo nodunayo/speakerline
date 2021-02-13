@@ -24,19 +24,6 @@
             <li><%= link_to 'Speakers', speakers_path %></li>
             <li><%= link_to 'Proposals', proposals_path %></li>
             <li><%= link_to 'Events', events_path %></li>
-            <li>
-              <% if session[:current_user_id] %>
-              <%= link_to 'Sign out', sign_out_path %>
-              <% else %>
-              <form action="https://auth.did.app/oidc/authorize" method="get">
-                <input name="client_id" value="test_0xKvM6N9" type="hidden" />
-                <input name="redirect_uri" value="http://localhost:3000/session/callback" type="hidden" />
-                <!-- <input name="response_mode" value="form_post" type="hidden" /> -->
-
-                <button type="submit">Sign in</button>
-              </form>
-              <% end %>
-            </li>
           </div>
         </ul>
       </div>
