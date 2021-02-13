@@ -3,41 +3,15 @@ require 'rails_helper'
 RSpec.describe SubmissionsController do
   let(:proposal) { create(:proposal) }
 
-  describe 'GET #new' do
-    context 'when the user is not signed in' do
-      it 'does not allow the user to access the Submission#new page' do
-        get :new, params: { proposal: proposal.id }
-
-        expect(response.status).to eq(302)
-      end
-    end
-
-  end
-
   describe 'POST #create' do
-    context 'when the user is not signed in' do
-      let(:expected_submission) { Submission.new(proposal: proposal, result: 0) }
-
-      before do
-        allow(Submission).to receive(:new).and_return(expected_submission)
-        post :create, params: { submission: { event_instance_id: 17, proposal_id: 7, result: 0 } }
-      end
-
-      it 'does not create a new submission' do
-        expect(Submission).not_to have_received(:new).with(event_instance_id: '17', proposal_id: '7', result: '0')
-      end
-    end
-
     context 'with valid attributes' do
       let(:expected_submission) { Submission.new(proposal: proposal, result: 0) }
 
       before do
         allow(Submission).to receive(:new).and_return(expected_submission)
         allow(expected_submission).to receive(:save).and_return(true)
-        post :create, params: { submission: { event_instance_id: 17, proposal_id: 7, result: 0 } }, session: { current_user_id: "123" }
-
+        post :create, params: { submission: { event_instance_id: 17, proposal_id: 7, result: 0 } }
       end
-
 
       it 'creates a new submission' do
         expect(Submission).to have_received(:new).with(event_instance_id: '17', proposal_id: '7', result: '0')
@@ -52,31 +26,18 @@ RSpec.describe SubmissionsController do
       before do
         allow(Submission).to receive(:new).and_return(invalid_submission)
         allow(invalid_submission).to receive(:save).and_return(false)
+
       end
 
       it 'does not save the proposal in the database' do
         expect{
-          post :create, params: { submission: { event_instance_id: '', proposal_id: proposal.id, result: '' } }, session: { current_user_id: "123" }
-
+          post :create, params: { submission: { event_instance_id: '', proposal_id: proposal.id, result: '' } }
         }.to_not change(Submission, :count)
       end
 
       it 'renders the new template' do
-        post :create, params: { submission: { event_instance_id: '', proposal_id: proposal.id, result: '' } }, session: { current_user_id: "123" }
-
+        post :create, params: { submission: { event_instance_id: '', proposal_id: proposal.id, result: '' } }
         expect(subject).to render_template(:new)
-      end
-    end
-  end
-
-  describe 'GET #edit' do
-    let(:existing_submission) { create(:submission, proposal: proposal, result: 0) }
-    context 'when the user is not signed in' do
-
-      it 'does not allow the user to access the Submission#edit page' do
-        get :edit, params: { id: existing_submission.id }
-
-        expect(response.status).to eq(302)
       end
     end
   end
@@ -84,17 +45,9 @@ RSpec.describe SubmissionsController do
   describe 'PUT #update' do
     let(:existing_submission) { create(:submission, proposal: proposal, result: 0) }
 
-    context 'when the user is not signed in' do
-      it 'does not allow the user to update the submission' do
-        put :update, params: { id: existing_submission.id, submission: { result: 'rejected' } }
-
-        expect(response).not_to redirect_to(proposal_path(proposal))
-      end
-    end
-
     context 'with valid attributes' do
       before do
-        put :update, params: { id: existing_submission.id, submission: { result: 'rejected' } }, session: { current_user_id: "123" }
+        put :update, params: { id: existing_submission.id, submission: { result: 'rejected' } }
         existing_submission.reload
       end
 
