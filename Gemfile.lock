@@ -64,7 +64,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    acts-as-taggable-on (7.0.0)
+    acts-as-taggable-on (8.1.0)
       activerecord (>= 5.0, < 6.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
@@ -197,7 +197,7 @@ GEM
       thor
       thread_safe
     public_suffix (4.0.6)
-    puma (5.3.1)
+    puma (5.3.2)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -334,7 +334,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 7.0)
+  acts-as-taggable-on (~> 8.1)
   byebug
   cucumber-rails
   database_cleaner
