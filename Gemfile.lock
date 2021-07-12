@@ -66,7 +66,7 @@ GEM
       zeitwerk (~> 2.3)
     acts-as-taggable-on (8.1.0)
       activerecord (>= 5.0, < 6.2)
-    addressable (2.7.0)
+    addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     bindex (0.8.1)
     builder (3.2.4)
