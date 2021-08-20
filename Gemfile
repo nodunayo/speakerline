@@ -16,7 +16,7 @@ gem 'erubis'
 gem 'rack-attack'
 
 group :development, :test do
-  gem 'rspec-rails', '5.0.1'
+  gem 'rspec-rails', '5.0.2'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
