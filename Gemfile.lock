@@ -64,8 +64,8 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    acts-as-taggable-on (8.1.0)
-      activerecord (>= 5.0, < 6.2)
+    acts-as-taggable-on (9.0.1)
+      activerecord (>= 6.0, < 7.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     bindex (0.8.1)
@@ -184,7 +184,7 @@ GEM
     mime-types-data (3.2021.0704)
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
-    minitest (5.14.4)
+    minitest (5.15.0)
     multi_test (0.1.2)
     nested_form (0.3.2)
     nio4r (2.5.8)
@@ -325,13 +325,13 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 8.1)
+  acts-as-taggable-on (~> 9.0)
   byebug
   cucumber-rails
   database_cleaner
