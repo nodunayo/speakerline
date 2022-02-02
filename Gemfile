@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on', '~> 8.1'
 gem 'rails', '6.1.4.3'
-gem 'pg', '1.2.3'
+gem 'pg', '1.3.1'
 gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
