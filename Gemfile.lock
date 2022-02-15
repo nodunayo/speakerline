@@ -184,7 +184,7 @@ GEM
     mime-types-data (3.2021.0704)
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
-    minitest (5.14.4)
+    minitest (5.15.0)
     multi_test (0.1.2)
     nested_form (0.3.2)
     nio4r (2.5.8)
@@ -283,7 +283,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    shoulda-matchers (5.0.0)
+    shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
     simplecov (0.21.2)
       docile (~> 1.1)
