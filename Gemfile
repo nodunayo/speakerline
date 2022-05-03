@@ -1,5 +1,6 @@
-ruby '2.6.6'
 source 'https://rubygems.org'
+
+ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'rails', '6.1.5.1'
