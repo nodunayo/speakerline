@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'rails', '6.1.5.1'
-gem 'pg', '1.3.4'
+gem 'pg', '1.3.5'
 gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
@@ -16,7 +16,7 @@ gem 'erubis'
 gem 'rack-attack'
 
 group :development, :test do
-  gem 'rspec-rails', '5.1.1'
+  gem 'rspec-rails', '5.1.2'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
