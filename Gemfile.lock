@@ -140,7 +140,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faker (2.21.0)
+    faker (2.22.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -148,7 +148,7 @@ GEM
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.5.0)
       rails-dom-testing (>= 1, < 3)
