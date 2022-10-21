@@ -15,7 +15,9 @@ gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
-gem 'net-smtp'
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 
 group :development, :test do
   gem 'rspec-rails', '6.0.1'
