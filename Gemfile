@@ -4,7 +4,7 @@ ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'rails', '6.1.7'
-gem 'pg', '1.4.3'
+gem 'pg', '1.4.4'
 gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
