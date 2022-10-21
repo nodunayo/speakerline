@@ -4,7 +4,7 @@ ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 9.0'
 gem 'rails', '6.1.7'
-gem 'pg', '1.4.3'
+gem 'pg', '1.4.4'
 gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
@@ -15,6 +15,7 @@ gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
+gem 'net-smtp'
 
 group :development, :test do
   gem 'rspec-rails', '5.1.2'
@@ -28,7 +29,7 @@ group :development do
   gem 'web-console'
   gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.1.0'
 end
 
 group :test do
