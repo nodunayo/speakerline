@@ -15,6 +15,7 @@ gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
+gem 'net-smtp'
 
 group :development, :test do
   gem 'rspec-rails', '5.1.2'
@@ -28,7 +29,7 @@ group :development do
   gem 'web-console'
   gem 'listen'
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.1.0'
 end
 
 group :test do
