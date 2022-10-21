@@ -15,6 +15,7 @@ gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
+gem 'net-smtp'
 
 group :development, :test do
   gem 'rspec-rails', '5.1.2'
