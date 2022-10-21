@@ -18,7 +18,7 @@ gem 'rack-attack'
 gem 'net-smtp'
 
 group :development, :test do
-  gem 'rspec-rails', '5.1.2'
+  gem 'rspec-rails', '6.0.1'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
