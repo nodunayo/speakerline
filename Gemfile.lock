@@ -194,7 +194,7 @@ GEM
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (1.4.4)
+    pg (1.4.5)
     public_suffix (5.0.0)
     puma (6.0.0)
       nio4r (~> 2.0)
@@ -348,7 +348,7 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
-  pg (= 1.4.4)
+  pg (= 1.4.5)
   puma
   rack-attack
   rails (= 6.1.7)
