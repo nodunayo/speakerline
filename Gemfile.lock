@@ -349,6 +349,7 @@ DEPENDENCIES
   redcarpet
   rspec-rails (= 6.0.1)
   sass-rails
+  sassc-rails
   shoulda-matchers
   simplecov
   spring
