@@ -129,7 +129,6 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     erubis (2.7.0)
-    execjs (2.7.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -306,8 +305,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -355,7 +352,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.1.0)
   turbolinks
-  uglifier
   web-console
 
 RUBY VERSION
