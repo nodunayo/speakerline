@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 9.0'
-gem 'rails', '6.1.7'
+gem 'rails', '7.0.4'
 gem 'pg', '1.4.5'
 gem 'puma'
 gem 'sass-rails'
@@ -14,9 +14,6 @@ gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
-gem 'net-smtp', require: false
-gem 'net-imap', require: false
-gem 'net-pop', require: false
 
 group :development, :test do
   gem 'rspec-rails', '6.0.1'
