@@ -251,7 +251,7 @@ GEM
       ffi (~> 1.0)
     recaptcha (5.12.3)
       json
-    redcarpet (3.5.1)
+    redcarpet (3.6.0)
     regexp_parser (2.6.1)
     rexml (3.2.5)
     rspec-core (3.12.0)
