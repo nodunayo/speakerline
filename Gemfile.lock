@@ -198,7 +198,7 @@ GEM
     nokogiri (1.15.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    pg (1.5.3)
+    pg (1.5.4)
     public_suffix (5.0.1)
     puma (6.3.1)
       nio4r (~> 2.0)
@@ -341,7 +341,7 @@ DEPENDENCIES
   faker
   jquery-rails
   listen
-  pg (= 1.5.3)
+  pg (= 1.5.4)
   puma
   rack-attack
   rails (= 7.0.7)
