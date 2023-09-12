@@ -198,9 +198,9 @@ GEM
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    pg (1.5.3)
+    pg (1.5.4)
     public_suffix (5.0.1)
-    puma (6.3.0)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -250,7 +250,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    recaptcha (5.14.0)
+    recaptcha (5.15.0)
     redcarpet (3.6.0)
     regexp_parser (2.6.1)
     rexml (3.2.5)
@@ -314,7 +314,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    web-console (4.2.0)
+    web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -341,7 +341,7 @@ DEPENDENCIES
   faker
   jquery-rails
   listen
-  pg (= 1.5.3)
+  pg (= 1.5.4)
   puma
   rack-attack
   rails (= 7.0.8)
