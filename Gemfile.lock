@@ -273,7 +273,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    shoulda-matchers (5.3.0)
+    shoulda-matchers (6.0.0)
       activesupport (>= 5.2.0)
     simplecov (0.22.0)
       docile (~> 1.1)
