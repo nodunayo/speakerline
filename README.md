@@ -100,8 +100,7 @@ bundle install
 Once all the gems are installed, we'll need to create the databases and tables used by the app:
 
 ```bash
-bundle exec rake db:create:all
-bundle exec rake db:migrate
+bin/rails db:create db:migrate
 ```
 
 #### Environment variables
