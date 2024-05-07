@@ -123,7 +123,7 @@ Select 'reCAPTCHA V2' and add 'localhost' to the list of domains.
 To seed the development database with some fake speaker, event, proposal, and submission data, run:
 
 ```bash
-bundle exec rake db:setup
+bin/rails db:setup
 ```
 
 Be aware: this will overwrite any development data you have previously saved.
@@ -133,7 +133,7 @@ Be aware: this will overwrite any development data you have previously saved.
 All we have to do now is start up the Rails server and point our browser to <http://localhost:3000>
 
 ```bash
-bundle exec rails s
+bin/rails s
 ```
 
 ### Running the tests
@@ -144,7 +144,7 @@ RSpec and Cucumber are used for [test-driven](https://en.wikipedia.org/wiki/Test
 All of the tests can be run with:
 
 ```bash
-bundle exec rake
+bin/rails spec
 ```
 
 or to run only the failing (Rspec) examples
@@ -156,7 +156,7 @@ bundle exec rspec --only-failures
 To set up the test environment, run:
 
 ```bash
-bundle exec rake db:test:prepare
+bin/rails db:test:prepare
 ```
 
 This will create the test database and populate its schema.
