@@ -93,7 +93,6 @@ choco install postgresql
 Once Ruby and Postgres are installed, we need to install the gems used by the app:
 
 ```bash
-gem install bundler
 bundle install
 ```
 
