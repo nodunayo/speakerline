@@ -20,28 +20,49 @@ RSpec.describe ProposalsController do
     end
 
     context 'with invalid attributes' do
-      render_views
-      let(:invalid_proposal) { Proposal.new(title: nil, body: 'My progress should be shown') }
+      context "too many tags" do
+        render_views
+        let(:invalid_params) { { proposal: { title: "This is a test", body: "Really cool stuff here", tag_list: "ruby,rails,react,vue,hotwire"}} }
 
-      before do
-        allow(Proposal).to receive(:new).and_return(invalid_proposal)
-        allow(invalid_proposal).to receive(:save).and_return(false)
+        it "does not save the proposal in the database" do
+          expect { post :create, params: invalid_params }.to_not change(Proposal, :count)
+        end
+
+        it "renders the new template" do
+          post :create, params: invalid_params
+          expect(subject).to render_template(:new)
+        end
+
+        it "renders the tag list with comma-separation" do
+          post :create, params: invalid_params
+          expect(response.body).to have_field("Tags (comma-separated, max 3)", with: "ruby, rails, react, vue, hotwire")
+        end
       end
 
-      it 'does not save the proposal in the database' do
-        expect{
+      context "without a title" do
+        render_views
+        let(:invalid_proposal) { Proposal.new(title: nil, body: 'My progress should be shown') }
+
+        before do
+          allow(Proposal).to receive(:new).and_return(invalid_proposal)
+          allow(invalid_proposal).to receive(:save).and_return(false)
+        end
+
+        it 'does not save the proposal in the database' do
+          expect{
+            post :create, params: { proposal: { title: '' } }
+          }.to_not change(Proposal, :count)
+        end
+
+        it 'renders the new template' do
           post :create, params: { proposal: { title: '' } }
-        }.to_not change(Proposal, :count)
-      end
+          expect(subject).to render_template(:new)
+        end
 
-      it 'renders the new template' do
-        post :create, params: { proposal: { title: '' } }
-        expect(subject).to render_template(:new)
-      end
-
-      it 'saves the user\'s progress' do
-        post :create, params: { proposal: { title: '' } }
-        expect(response.body).to have_content 'My progress should be shown'
+        it 'saves the user\'s progress' do
+          post :create, params: { proposal: { title: '' } }
+          expect(response.body).to have_content 'My progress should be shown'
+        end
       end
     end
   end

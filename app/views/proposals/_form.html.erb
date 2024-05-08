@@ -1,0 +1,22 @@
+<% if @proposal.errors.any? %>
+  <div id="error_explanation">
+    <h5>We couldn't update this proposal because:</h5>
+    <ul>
+      <% @proposal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @proposal do |f| %>
+  <%= f.collection_select(:speaker_id, @speakers, :id, :name) %>
+  <%= f.label(:title) %>
+  <%= f.text_field(:title, class: "u-full-width medium-height") %>
+  <%= f.label(:tags, "Tags (comma-separated, max 3)", for: :proposal_tag_list) %>
+  <%= f.text_field(:tag_list, value: @proposal.tag_list.join(", ")) %>
+  <%= f.label(:body) %>
+  <%= f.text_area(:body, class: "u-full-width medium-height", placeholder: "For formatting, you can use Markdown! :-)") %>
+  <%= recaptcha_tags %>
+  <%= f.submit "Save proposal" %>
+<% end %>
