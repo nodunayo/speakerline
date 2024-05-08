@@ -206,6 +206,8 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.16.4-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.16.4-x86_64-linux)
+      racc (~> 1.4)
     pg (1.5.6)
     psych (5.1.2)
       stringio
@@ -349,6 +351,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   acts-as-taggable-on (~> 10.0)
