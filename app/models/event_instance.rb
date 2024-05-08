@@ -17,6 +17,14 @@ class EventInstance < ApplicationRecord
     "#{event.name} #{year}"
   end
 
+  # Sorts by result (accepted, waitlisted, rejected), then by proposal title.
+  # Consider moving to a scope if we want this order in more places.
+  def sorted_submissions
+    submissions.joins(:proposal)
+               .in_order_of(:result, [:accepted, :waitlisted, :rejected])
+               .order('proposals.title')
+  end
+
   private
 
   def set_parent_event
