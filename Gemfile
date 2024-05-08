@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 10.0'
-gem 'rails', '7.1.3'
-gem 'pg', '1.5.4'
+gem 'rails', '7.1.3.2'
+gem 'pg', '1.5.6'
 gem 'puma'
 gem 'sass-rails'
 gem 'recaptcha', require: 'recaptcha/rails'
