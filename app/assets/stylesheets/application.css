@@ -32,6 +32,11 @@ hr {
   margin: 5px 5px 25px 5px;
 }
 
+.main-content {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .flash {
   font-weight: 500;
   margin-top: 20px;
@@ -98,7 +103,8 @@ li .heading {
 .navigation ul li {
   display: inline;
   font-size: 18px;
-  margin-left: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
   padding-bottom: 10px;
 }
 
