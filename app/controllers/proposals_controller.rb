@@ -10,8 +10,9 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    @proposal = Proposal.new
     @speakers = speakers
+    preselected_speaker = @speakers.where(id: params[:speaker_id]).first
+    @proposal = Proposal.new(speaker_id: preselected_speaker&.id)
   end
 
   def create
