@@ -3,6 +3,9 @@ class ProposalsController < ApplicationController
 
   def index
     @proposals = Proposal.order('title ASC')
+    if params[:search].present?
+      @proposals = @proposals.search(params[:search])
+    end
   end
 
   def show
