@@ -1,26 +1,5 @@
-<% if @proposal.errors.any? %>
-  <div id="error_explanation">
-    <h5>We couldn't save this proposal because:</h5>
-    <ul>
-      <% @proposal.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <h3>Add a proposal</h3>
 
-<%= form_for @proposal, url: {action: 'create'} do |f| %>
-  <%= f.collection_select(:speaker_id, @speakers, :id, :name) %>
-  <%= f.label(:title) %>
-  <%= f.text_field(:title, :class => 'u-full-width medium-height') %>
-  <%= f.label(:tags, 'Tags (comma-separated, max 3, e.g. "ruby, rails, testing")') %>
-  <%= f.text_field(:tag_list) %>
-  <%= f.label(:body) %>
-  <%= f.text_area(:body, class: 'u-full-width medium-height', placeholder: "For formatting, you can use Markdown! :-)") %>
-  <%= recaptcha_tags %>
-  <%= f.submit "Add proposal" %>
-<% end %>
+<%= render "form" %>
 
 <p><%= link_to 'Back to Speaker Directory', speakers_path %></p>
