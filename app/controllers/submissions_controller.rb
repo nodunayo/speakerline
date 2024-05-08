@@ -17,6 +17,7 @@ class SubmissionsController < ApplicationController
   end
 
   def edit
+    @events = Event.all.order('name ASC')
     @submission = Submission.find(params[:id])
     @proposal = @submission.proposal
   end

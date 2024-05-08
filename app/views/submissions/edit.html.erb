@@ -1,8 +1,9 @@
 <h3>Edit submission</h3>
-<p><%= "#{@proposal.title} at #{@submission.event_instance.name_and_year}" %></p>
+<p>"<%= @proposal.title %>" at <%= @submission.event_instance.name_and_year %></p>
 
 <%= form_for @submission, url: {action: 'update'} do |f| %>
   <%= f.hidden_field(:proposal_id, value: @proposal.id) %>
+  <%= f.grouped_collection_select(:event_instance_id, @events, :instances, :name, :id, :name_and_year) %>
   <%= f.label(:result_accepted, "Accepted") %>
   <%= f.radio_button(:result, :accepted) %>
   <%= f.label(:result_rejected, "Rejected") %>
