@@ -1,5 +1,16 @@
 class SubmissionsController < ApplicationController
+  def index
+    flash[:notice] = 'To view submissions, do so from a specific proposal.'
+    redirect_to proposals_path
+  end
+
   def new
+    unless params[:proposal].present?
+      flash[:notice] = 'When creating a submission, you must do so from a specific proposal.'
+      redirect_to proposals_path
+      return
+    end
+
     @proposal = Proposal.find(params[:proposal])
     @submission = Submission.new(proposal_id: @proposal.id)
     @events = Event.all.order('name ASC')
