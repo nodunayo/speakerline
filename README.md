@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/nodunayo/speakerline.svg?branch=master)](https://travis-ci.org/nodunayo/speakerline)
 [![Depfu](https://badges.depfu.com/badges/5515ef52032873777824e0923cd8258f/overview.svg)](https://depfu.com/github/nodunayo/speakerline)
 
-> Showcasing speakers' proposals and timelines in a effort to demystify the CFP process and help new speakers get started
+> Showcasing speakers' proposals and timelines in an effort to demystify the CFP process and help new speakers get started
 
 ## Contents
 
