@@ -158,7 +158,7 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #157D9D; }
+  color: #147694; }
 a:hover {
   color: #105165; }
 
@@ -219,8 +219,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #157D9D;
-  border-color: #157D9D; }
+  background-color: #147694;
+  border-color: #147694; }
 
 
 /* Forms
