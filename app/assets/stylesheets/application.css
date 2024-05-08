@@ -45,8 +45,7 @@ hr {
 }
 
 .navigation a {
-  color: #9b9b9b;
-  margin-left: 20px;
+  color: #757575;
 }
 
 .navigation a:hover {
@@ -81,6 +80,12 @@ li .heading {
 .navigation ul li {
   display: inline;
   font-size: 18px;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+.navigation ul li.active {
+  border-bottom: 1px solid #757575;
 }
 
 .row {
