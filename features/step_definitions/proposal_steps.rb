@@ -35,7 +35,7 @@ When('I add her/his/their proposal with the following information:') do |table|
   page.fill_in(:proposal_title, with: proposal_information['title'])
   page.fill_in(:proposal_body, with: proposal_information['body'])
   page.fill_in(:proposal_tag_list, with: @tags)
-  page.click_on('Add proposal')
+  page.click_on('Save proposal')
 end
 
 When('I create a proposal for her/him/them') do
