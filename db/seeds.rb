@@ -11,6 +11,7 @@ case Rails.env
     Event.destroy_all
     EventInstance.destroy_all
     Speaker.destroy_all
+    ActsAsTaggableOn::Tag.destroy_all
 
     20.times { Speaker.create!(name: Faker::Name.unique.name) }
     puts "20 speakers added..."
@@ -28,11 +29,25 @@ case Rails.env
     end
     puts "20 proposals added..."
 
+    ["ruby", "javascript", "bookclub", "interactive", "oop", "objects", "rails", "junior", "culture", "management"].each do |tag|
+      ActsAsTaggableOn::Tag.create!(name: tag)
+    end
+    puts "10 tags added..."
+
+    tag_names = ActsAsTaggableOn::Tag.pluck(:name)
+
+    Proposal.all.each do | proposal |
+      proposal.tag_list.add(tag_names.sample)
+      proposal.save!
+    end
+    puts "Proposals each tagged with one tag..."
+
     Proposal.ids.each do | id |
       event_instance = EventInstance.ids.sample(2)
       Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_instance_id: event_instance[0])
       Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_instance_id: event_instance[1])
     end
     puts "2 submissions for each proposal added..."
+
     puts "Finished seeding the development database!"
 end

@@ -1,4 +1,10 @@
-<h5>Proposals tagged with #<%= @tag.name.gsub(" ", "") %></h5>
+<% tag_name = "##{@tag.name.gsub(" ", "")}" %>
+
+<h5>Proposals tagged with <%= tag_name %></h5>
+
+<% if @proposals.length.zero? %>
+  <p>There are no proposals tagged with <%= tag_name %>. <%= link_to "Add yours now!", new_proposal_path %></p>
+<% end %>
 
 <% @proposals.each do |proposal| %>
   <p><%= link_to proposal.title, proposal %></p>
