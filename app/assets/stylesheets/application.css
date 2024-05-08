@@ -32,6 +32,23 @@ hr {
   margin: 5px 5px 25px 5px;
 }
 
+.flash {
+  font-weight: 500;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.flash.notice {
+  background-color: #DCF5F9;
+  border: 1px solid #147694; /* same color as the standard link color */
+
+}
+
+.flash.alert {
+  background-color: #FCEDE9;
+  border: 1px solid #9d3515; /* same color as the error color */
+}
+
 .button-add {
   margin-bottom: 30px;
 }
@@ -42,6 +59,7 @@ hr {
 
 .navigation {
   margin-top: 5%;
+  position: relative;
 }
 
 .navigation a {
@@ -146,9 +164,15 @@ fieldset.fieldset legend {
     margin-right: 0;
   }
 
+  .navigation ul li.active {
+    border-bottom: 0;
+    font-weight: 500;
+  }
+
   .navigation a {
     margin-left: 0px;
   }
+
   .navigation button {
     margin-left: 0px;
   }

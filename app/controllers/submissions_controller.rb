@@ -12,6 +12,8 @@ class SubmissionsController < ApplicationController
     else
       @proposal = @submission.proposal
       @events = Event.all.order('name ASC')
+      flash[:alert] = 'Failed to create submission; please check for errors.'
+
       render 'new'
     end
   end
@@ -24,10 +26,12 @@ class SubmissionsController < ApplicationController
   def update
     @submission = Submission.find(params[:id])
     @proposal = @submission.proposal
+
     if verify_recaptcha(model: @submission) && @submission.update(submission_params)
       redirect_to proposal_path(@proposal)
     else
-      flash[:alert] = 'Failed to update submission'
+      flash[:alert] = 'Failed to update submission; please check for errors.'
+
       render 'edit'
     end
   end
