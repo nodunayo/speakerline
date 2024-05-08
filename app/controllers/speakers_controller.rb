@@ -14,6 +14,8 @@ class SpeakersController < ApplicationController
   def create
     @speaker = Speaker.new(speaker_params)
     if verify_recaptcha(model: @speaker) && @speaker.save
+      flash[:notice] = 'Speaker created successfully!'
+
       redirect_to speakers_path
     else
       render :new

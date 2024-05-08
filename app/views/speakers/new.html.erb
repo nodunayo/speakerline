@@ -1,14 +1,10 @@
-<% if @speaker.errors.any? %>
-  <div id="error_explanation">
-    <h5>We couldn't save this speaker because:</h5>
-    <ul>
-      <% @speaker.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 <h3>Add a speaker</h3>
+
+<% if @speaker.errors.any? %>
+  <%= render "shared/form_error_display", errors: @speaker.errors,
+                                          object_type: "speaker" %>
+<% end %>
+
 <%= form_for @speaker, url: {action: 'create'} do |f| %>
   <%= f.text_field :name, placeholder: "Speaker's name" %>
   <%= recaptcha_tags %>

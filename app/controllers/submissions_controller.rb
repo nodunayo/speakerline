@@ -8,10 +8,13 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(submission_params)
     if verify_recaptcha(model: @submission) && @submission.save
+      flash[:notice] = 'Submission created successfully!'
+
       redirect_to proposal_path(@submission.proposal)
     else
       @proposal = @submission.proposal
       @events = Event.all.order('name ASC')
+
       render 'new'
     end
   end
@@ -25,9 +28,10 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
     @proposal = @submission.proposal
     if verify_recaptcha(model: @submission) && @submission.update(submission_params)
+      flash[:notice] = 'Submission updated successfully!'
+
       redirect_to proposal_path(@proposal)
     else
-      flash[:alert] = 'Failed to update submission'
       render 'edit'
     end
   end

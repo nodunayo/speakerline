@@ -7,9 +7,12 @@ class EventInstancesController < ApplicationController
   def create
     @event_instance = EventInstance.new(event_instance_params)
     if verify_recaptcha(model: @event_instance) && @event_instance.save
-      redirect_to speakers_path
+      flash[:notice] = 'Event created successfully!'
+
+      redirect_to events_path
     else
       @events = Event.all.order(name: :asc)
+
       render 'new'
     end
   end
