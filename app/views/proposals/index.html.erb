@@ -1,8 +1,7 @@
 <% proposals_columns = @proposals.in_groups(4, false) %>
 <form method="GET">
   <div class="row">
-    <label for="search" class="two columns">Search</label>
-    <div class="four columns">
+    <div class="six columns">
       <input class="u-full-width" type="text" placeholder="Title or Body" id="search" name="search" value="<%= params[:search] %>">
     </div>
     <input class="button-primary two columns" type="submit" value="Search">
