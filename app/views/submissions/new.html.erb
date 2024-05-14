@@ -1,25 +1,29 @@
-<% if @submission.errors.any? %>
-  <div id="error_explanation">
-    <h5>We couldn't save this submission because:</h5>
-    <ul>
-      <% @submission.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <h3>Add a submission</h3>
+
+<% if @submission.errors.any? %>
+  <%= render "shared/form_error_display", errors: @submission.errors,
+                                          object_type: "submission" %>
+<% end %>
 
 <%= form_for @submission, url: {action: 'create'} do |f| %>
   <%= f.hidden_field(:proposal_id, value: @proposal.id) %>
   <%= f.grouped_collection_select(:event_instance_id, @events, :instances, :name, :id, :name_and_year) %>
-  <%= f.label(:result_accepted, "Accepted") %>
-  <%= f.radio_button(:result, :accepted) %>
-  <%= f.label(:result_rejected, "Rejected") %>
-  <%= f.radio_button(:result, :rejected) %>
-  <%= f.label(:result_waitlisted, "Waitlisted") %>
-  <%= f.radio_button(:result, :waitlisted) %>
+
+  <%= f.label :result_accepted do %>
+    <%= f.radio_button(:result, :accepted) %>
+    Accepted
+  <% end %>
+
+  <%= f.label :result_rejected do %>
+    <%= f.radio_button(:result, :rejected) %>
+    Rejected
+  <% end %>
+
+  <%= f.label :result_waitlisted do %>
+    <%= f.radio_button(:result, :waitlisted) %>
+    Waitlisted
+  <% end %>
+
   <%= recaptcha_tags %>
   <%= f.submit "Add submission" %>
 <% end %>
