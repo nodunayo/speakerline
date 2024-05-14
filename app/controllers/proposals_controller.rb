@@ -20,6 +20,8 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params)
     if verify_recaptcha(model: @proposal) && @proposal.save
+      flash[:notice] = 'Proposal created successfully!'
+
       redirect_to proposal_path(@proposal)
     else
       @speakers = speakers
@@ -35,6 +37,8 @@ class ProposalsController < ApplicationController
   def update
     @proposal = Proposal.find(params[:id])
     if verify_recaptcha(model: @proposal) && @proposal.update(proposal_params)
+      flash[:notice] = 'Proposal updated successfully!'
+
       redirect_to proposal_path(@proposal)
     else
       @speakers = speakers

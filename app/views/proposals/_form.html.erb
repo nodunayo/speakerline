@@ -1,12 +1,6 @@
 <% if @proposal.errors.any? %>
-  <div id="error_explanation">
-    <h5>We couldn't update this proposal because:</h5>
-    <ul>
-      <% @proposal.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
+  <%= render "shared/form_error_display", errors: @proposal.errors,
+                                          object_type: "proposal" %>
 <% end %>
 
 <%= form_for @proposal do |f| %>
