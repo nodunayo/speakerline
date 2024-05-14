@@ -28,6 +28,12 @@ When("I visit the proposals page") do
   visit proposals_path
 end
 
+When('I search proposals with the following information:') do |table|
+  search_information = table.raw.to_h
+  page.fill_in(:search, with: search_information['search'])
+  page.click_on('Search')
+end
+
 When('I add her/his/their proposal with the following information:') do |table|
   proposal_information = table.raw.to_h
   @tags = proposal_information['tags']
@@ -35,7 +41,7 @@ When('I add her/his/their proposal with the following information:') do |table|
   page.fill_in(:proposal_title, with: proposal_information['title'])
   page.fill_in(:proposal_body, with: proposal_information['body'])
   page.fill_in(:proposal_tag_list, with: @tags)
-  page.click_on('Add proposal')
+  page.click_on('Save proposal')
 end
 
 When('I create a proposal for her/him/them') do

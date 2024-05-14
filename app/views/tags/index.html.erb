@@ -1,0 +1,29 @@
+<% tags_columns = @tags.in_groups(4, false) %>
+
+<p>New tags are created by adding them to a proposal.</p>
+
+<div class="row">
+  <div class="three columns">
+    <% tags_columns[0].each do |tag| %>
+      <p><%= link_to "##{tag.name}", tag_path(tag.name) %></p>
+    <% end %>
+  </div>
+
+  <div class="three columns">
+    <% tags_columns[1].each do |tag| %>
+      <p><%= link_to "##{tag.name}", tag_path(tag.name) %></p>
+    <% end %>
+  </div>
+
+  <div class="three columns">
+    <% tags_columns[2].each do |tag| %>
+      <p><%= link_to "##{tag.name}", tag_path(tag.name) %></p>
+    <% end %>
+  </div>
+
+  <div class="three columns">
+    <% tags_columns[3].each do |tag| %>
+      <p><%= link_to "##{tag.name}", tag_path(tag.name) %></p>
+    <% end %>
+  </div>
+</div>

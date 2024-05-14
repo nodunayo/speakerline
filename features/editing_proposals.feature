@@ -6,7 +6,7 @@ Feature: Editing a Proposal
     When I visit the proposal page for 'Reading Code Good'
     And I click on 'Edit proposal'
     And I change the title to 'Reading Code Well'
-    And I click on 'Update proposal'
+    And I click on 'Save proposal'
     Then I should see 'Reading Code Well'
     And I should not see 'Reading Code Good'
 
