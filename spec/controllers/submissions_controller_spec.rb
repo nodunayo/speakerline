@@ -7,7 +7,7 @@ RSpec.describe SubmissionsController do
     it 'redirects to the proposals create page' do
       get :index
       expect(response).to redirect_to(proposals_path)
-      expect(flash[:notice]).to eq('To view submissions, do so from a specific proposal.')
+      expect(flash[:notice]).to eq('Submissions can be accessed from their respective proposal pages.')
     end
   end
 
@@ -15,7 +15,7 @@ RSpec.describe SubmissionsController do
     it 'redirects to the proposals create page' do
       get :new
       expect(response).to redirect_to(proposals_path)
-      expect(flash[:notice]).to eq('When creating a submission, you must do so from a specific proposal.')
+      expect(flash[:notice]).to eq('Submissions are tied to specific proposals. Please create them from a proposal page.')
     end
   end
 

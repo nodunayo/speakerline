@@ -1,12 +1,12 @@
 class SubmissionsController < ApplicationController
   def index
-    flash[:notice] = 'To view submissions, do so from a specific proposal.'
+    flash[:notice] = 'Submissions can be accessed from their respective proposal pages.'
     redirect_to proposals_path
   end
 
   def new
     unless params[:proposal].present?
-      flash[:notice] = 'When creating a submission, you must do so from a specific proposal.'
+      flash[:notice] = 'Submissions are tied to specific proposals. Please create them from a proposal page.'
       redirect_to proposals_path
       return
     end
