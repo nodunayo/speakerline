@@ -3,6 +3,22 @@ require 'rails_helper'
 RSpec.describe SubmissionsController do
   let(:proposal) { create(:proposal) }
 
+  describe 'GET #index' do
+    it 'redirects to the proposals create page' do
+      get :index
+      expect(response).to redirect_to(proposals_path)
+      expect(flash[:notice]).to eq('To view submissions, do so from a specific proposal.')
+    end
+  end
+
+  describe 'GET #new' do
+    it 'redirects to the proposals create page' do
+      get :new
+      expect(response).to redirect_to(proposals_path)
+      expect(flash[:notice]).to eq('When creating a submission, you must do so from a specific proposal.')
+    end
+  end
+
   describe 'POST #create' do
     context 'with valid attributes' do
       let(:expected_submission) { Submission.new(proposal: proposal, result: 0) }
