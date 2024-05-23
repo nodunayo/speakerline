@@ -17,7 +17,7 @@ RSpec.describe EventInstancesController do
         it 'creates a new instance' do
           expect(EventInstance).to have_received(:new).with(strong_params(event_id: event.id.to_s, year: '2017'))
         end
-        it { should redirect_to(speakers_path) }
+        it { should redirect_to(events_path) }
       end
 
       context 'for a new event' do
@@ -31,7 +31,7 @@ RSpec.describe EventInstancesController do
           expect(EventInstance).to have_received(:new).with(strong_params(new_parent_event_name: 'The Nu Conference',
                                                                           year:                  '2018'))
         end
-        it { should redirect_to(speakers_path) }
+        it { should redirect_to(events_path) }
       end
     end
 
