@@ -5,6 +5,7 @@ class Proposal < ApplicationRecord
   validates_presence_of :title
   validates_presence_of :body
 
+  scope :search, -> (query) { where("title ILIKE ? OR body ILIKE ?", "%#{query}%", "%#{query}%") }
 
   acts_as_taggable
   validate :maximum_amount_of_tags

@@ -1,6 +1,14 @@
 <h3><%= @speaker.name %></h3>
 
-<h5>Proposals</h5>
+
+<div class="u-cf u-full-width">
+  <h5 class="u-pull-left">Proposals</h5>
+
+  <%= link_to new_proposal_path(speaker_id: @speaker.id), class: "u-pull-right block" do %>
+    <button class="button-add">Add proposal</button>
+  <% end %>
+</div>
+
 <% @speaker.proposals.each do |proposal| %>
   <p><%= link_to proposal.title, proposal_path(proposal.id) %></p>
 <% end %>

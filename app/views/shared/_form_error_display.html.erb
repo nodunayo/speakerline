@@ -1,0 +1,13 @@
+<%-# locals: errors, object_type %>
+
+<fieldset class="fieldset" id="error_explanation">
+  <legend class="error">Warning</legend>
+  
+  <p>We couldn't save this <%= object_type %>, because:</p>
+
+  <ul>
+    <% errors.full_messages.each do |msg| %>
+      <li class="error"><%= msg %></li>
+    <% end %>
+  </ul>
+</fieldset>

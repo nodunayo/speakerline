@@ -3,6 +3,9 @@ class ProposalsController < ApplicationController
 
   def index
     @proposals = Proposal.order('title ASC')
+    if params[:search].present?
+      @proposals = @proposals.search(params[:search])
+    end
   end
 
   def show
@@ -10,13 +13,16 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    @proposal = Proposal.new
     @speakers = speakers
+    preselected_speaker = @speakers.where(id: params[:speaker_id]).first
+    @proposal = Proposal.new(speaker_id: preselected_speaker&.id)
   end
 
   def create
     @proposal = Proposal.new(proposal_params)
     if verify_recaptcha(model: @proposal) && @proposal.save
+      flash[:notice] = 'Proposal created successfully!'
+
       redirect_to proposal_path(@proposal)
     else
       @speakers = speakers
@@ -32,6 +38,8 @@ class ProposalsController < ApplicationController
   def update
     @proposal = Proposal.find(params[:id])
     if verify_recaptcha(model: @proposal) && @proposal.update(proposal_params)
+      flash[:notice] = 'Proposal updated successfully!'
+
       redirect_to proposal_path(@proposal)
     else
       @speakers = speakers

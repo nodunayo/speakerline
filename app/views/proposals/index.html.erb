@@ -1,7 +1,16 @@
 <% proposals_columns = @proposals.in_groups(4, false) %>
-<%= link_to new_proposal_path do %>
-  <button class="button-add">Add a proposal</button>
-<% end %>
+<form method="GET">
+  <div class="row">
+    <div class="six columns">
+      <input class="u-full-width" type="text" placeholder="Title or Body" id="search" name="search" value="<%= params[:search] %>">
+    </div>
+    <input class="button-primary two columns" type="submit" value="Search">
+
+    <%= link_to new_proposal_path, class: "two columns" do %>
+      <button class="button-add">Add proposal</button>
+    <% end %>
+  </div>
+</form>
 
 <div class="row">
   <div class="three columns">

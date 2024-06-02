@@ -70,4 +70,30 @@ RSpec.describe EventInstance do
       end
     end
   end
+
+  describe '#sorted_submissions' do
+    let(:event) { create(:event) }
+    let(:event_instance) { create(:event_instance, event:, year: '2024') }
+
+    context 'when submissions have different results' do
+      it 'sorts by the custom order' do
+        sub1 = create(:submission, event_instance:, result: :rejected)
+        sub2 = create(:submission, event_instance:, result: :accepted)
+        sub3 = create(:submission, event_instance:, result: :waitlisted)
+
+        expect(event_instance.sorted_submissions).to eq([sub2, sub3, sub1])
+      end
+    end
+
+    context 'when submissions have the same result' do
+      it 'sorts by proposal title' do
+        prop1 = create(:proposal, title: 'BBB')
+        prop2 = create(:proposal, title: 'AAA')
+        sub1 = create(:submission, event_instance:, result: :accepted, proposal: prop1)
+        sub2 = create(:submission, event_instance:, result: :accepted, proposal: prop2)
+
+        expect(event_instance.sorted_submissions).to eq([sub2, sub1])
+      end
+    end
+  end
 end
