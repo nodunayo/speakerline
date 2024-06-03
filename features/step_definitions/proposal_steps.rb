@@ -6,6 +6,14 @@ Given('there is a proposal called {string}') do |title|
   @proposal = create(:proposal, title: title, speaker: create(:speaker))
 end
 
+Given('I have a proposal called {string} with the body {string}') do |title, body|
+  @proposal = create(:proposal, title: title, body: body, speaker: @current_user.speaker)
+end
+
+Given('I have a proposal called {string}') do |title|
+  @proposal = create(:proposal, title: title, speaker: @current_user.speaker)
+end
+
 Given('he/she/they does/do not have any proposals') do
   expect(Proposal.find_by(speaker_id: @speaker.id)).to be_nil
 end
@@ -34,10 +42,9 @@ When('I search proposals with the following information:') do |table|
   page.click_on('Search')
 end
 
-When('I add her/his/their proposal with the following information:') do |table|
+When('I add a proposal with the following information:') do |table|
   proposal_information = table.raw.to_h
   @tags = proposal_information['tags']
-  page.select(@speaker.name, from: :proposal_speaker_id)
   page.fill_in(:proposal_title, with: proposal_information['title'])
   page.fill_in(:proposal_body, with: proposal_information['body'])
   page.fill_in(:proposal_tag_list, with: @tags)

@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'support/factory_girl'
 require 'faker'
+require 'passwordless/test_helpers'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

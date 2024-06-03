@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_08_172840) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_02_001859) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_172840) do
     t.index ["name"], name: "index_events_on_name", unique: true
   end
 
+  create_table "passwordless_sessions", force: :cascade do |t|
+    t.string "authenticatable_type"
+    t.bigint "authenticatable_id"
+    t.datetime "timeout_at", precision: nil, null: false
+    t.datetime "expires_at", precision: nil, null: false
+    t.datetime "claimed_at", precision: nil
+    t.string "token_digest", null: false
+    t.string "identifier", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["authenticatable_type", "authenticatable_id"], name: "authenticatable"
+    t.index ["identifier"], name: "index_passwordless_sessions_on_identifier", unique: true
+  end
+
   create_table "proposals", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -42,6 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_172840) do
     t.string "name"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.integer "user_id"
   end
 
   create_table "submissions", id: :serial, force: :cascade do |t|
@@ -77,6 +92,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_172840) do
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index "lower((email)::text)", name: "index_users_on_lowercase_email", unique: true
   end
 
   add_foreign_key "event_instances", "events"
