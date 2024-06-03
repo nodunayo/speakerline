@@ -11,4 +11,8 @@ module ApplicationHelper
     markdown = Redcarpet::Markdown.new(renderer, options)
     markdown.render(text).html_safe
   end
+
+  def current_user_owns?(proposal)
+    @editable ||= current_user && proposal.speaker_id == current_user.speaker.id
+  end
 end

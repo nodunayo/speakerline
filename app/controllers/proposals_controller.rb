@@ -1,6 +1,9 @@
 class ProposalsController < ApplicationController
   include ApplicationHelper
 
+  before_action :require_user!, only: [:new, :create, :edit, :update]
+  before_action :set_proposal, only: [:edit, :update]
+
   def index
     @proposals = Proposal.order('title ASC')
     if params[:search].present?
@@ -13,36 +16,32 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    @speakers = speakers
-    preselected_speaker = @speakers.where(id: params[:speaker_id]).first
-    @proposal = Proposal.new(speaker_id: preselected_speaker&.id)
+    @proposal = Proposal.new
   end
 
   def create
     @proposal = Proposal.new(proposal_params)
-    if verify_recaptcha(model: @proposal) && @proposal.save
+
+    if @proposal.save
       flash[:notice] = 'Proposal created successfully!'
 
       redirect_to proposal_path(@proposal)
     else
-      @speakers = speakers
       render 'new'
     end
   end
 
   def edit
     @proposal = Proposal.find(params[:id])
-    @speakers = speakers
   end
 
   def update
     @proposal = Proposal.find(params[:id])
-    if verify_recaptcha(model: @proposal) && @proposal.update(proposal_params)
+    if @proposal.update(proposal_params)
       flash[:notice] = 'Proposal updated successfully!'
 
       redirect_to proposal_path(@proposal)
     else
-      @speakers = speakers
       render 'edit'
     end
   end
@@ -50,10 +49,12 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:title, :body, :tag_list, :speaker_id).to_h
+    params.require(:proposal).permit(:title, :body, :tag_list).
+      merge(speaker_id: current_user.speaker.id).to_h
   end
 
-  def speakers
-    Speaker.all.order('name ASC')
+  def set_proposal
+    @proposal = current_user.proposals.where(id: params[:id]).first
+    redirect_to proposals_path if @proposal.blank?
   end
 end

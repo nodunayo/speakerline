@@ -1,7 +1,8 @@
 Feature: Adding an Event Instance
 
   Scenario: Adding a new event instance for a new event to a proposal
-    Given there is a proposal called 'Reading Code Good'
+    Given I am logged in
+    And I have a proposal called 'Reading Code Good'
     And there is not an event called 'NuConf'
     And I am on the 'Add an Event' page
     When I add an event instance with the following information:
@@ -12,7 +13,8 @@ Feature: Adding an Event Instance
     Then I should see a record of the 'NuConf' 1985 acceptance
 
   Scenario: Adding a new event instance for an existing event to a proposal
-    Given there is a proposal called 'Reading Code Good'
+    Given I am logged in
+    And I have a proposal called 'Reading Code Good'
     And there is an event called 'RailsConf' that has an instance for the year 2014
     And I am on the 'Add an Event' page
     When I add an event instance with the following information:

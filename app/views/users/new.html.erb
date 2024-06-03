@@ -1,0 +1,12 @@
+<h2>Register</h2>
+<%= form_with(model: @user, data: { turbo: 'false' }) do |f| %>
+  <%= f.label :email %>
+  <%= email_field_tag :email, @user.email, required: true, autofocus: true %>
+
+  <%= f.label :name %>
+  <%= text_field_tag :name, @user.speaker.name, required: true %>
+
+  <div><%= f.submit "Save" %></div>
+<% end %>
+
+Or <%= link_to "click here", users_sign_in_path %> to sign in.

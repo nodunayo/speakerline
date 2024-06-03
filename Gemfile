@@ -14,6 +14,7 @@ gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
+gem 'passwordless'
 
 group :development, :test do
   gem 'rspec-rails', '6.1.2'
@@ -21,6 +22,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
   gem 'faker'
+  gem 'letter_opener'
 end
 
 group :development do

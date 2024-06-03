@@ -12,6 +12,7 @@ case Rails.env
     EventInstance.destroy_all
     Speaker.destroy_all
     ActsAsTaggableOn::Tag.destroy_all
+    User.destroy_all
 
     20.times { Speaker.create!(name: Faker::Name.unique.name) }
     puts "20 speakers added..."
@@ -48,6 +49,10 @@ case Rails.env
       Submission.create!(result: [ 0, 1, 2 ].sample, proposal_id: id, event_instance_id: event_instance[1])
     end
     puts "2 submissions for each proposal added..."
+
+    speaker = Speaker.first
+    User.create(email: Faker::Internet.email, speaker: speaker)
+    puts "created 1 user to log in with..."
 
     puts "Finished seeding the development database!"
 end
