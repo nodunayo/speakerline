@@ -4,7 +4,7 @@ ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 10.0'
 gem 'rails', '7.1.3.3'
-gem 'pg', '1.5.6'
+gem 'pg', '1.5.7'
 gem 'puma'
 gem 'sass-rails'
 gem 'recaptcha', require: 'recaptcha/rails'
