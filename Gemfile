@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 10.0'
-gem 'rails', '7.1.3.3'
-gem 'pg', '1.5.6'
+gem 'rails', '7.1.4'
+gem 'pg', '1.5.8'
 gem 'puma'
 gem 'sass-rails'
 gem 'recaptcha', require: 'recaptcha/rails'
@@ -16,7 +16,7 @@ gem 'erubis'
 gem 'rack-attack'
 
 group :development, :test do
-  gem 'rspec-rails', '6.1.2'
+  gem 'rspec-rails', '7.0.1'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
