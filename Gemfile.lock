@@ -159,7 +159,7 @@ GEM
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
-    irb (1.14.0)
+    irb (1.14.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jquery-rails (4.6.0)
@@ -252,7 +252,7 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails_admin (3.2.0)
+    rails_admin (3.2.1)
       activemodel-serializers-xml (>= 1.0)
       csv
       kaminari (>= 0.14, < 2.0)
