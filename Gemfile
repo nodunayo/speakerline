@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby File.read(".ruby-version").strip
 
-gem 'acts-as-taggable-on', '~> 11.0'
+gem 'acts-as-taggable-on', '~> 12.0'
 gem 'rails', '7.2.2'
 gem 'pg'
 gem 'puma'
@@ -16,7 +16,7 @@ gem 'erubis'
 gem 'rack-attack'
 
 group :development, :test do
-  gem 'rspec-rails', '7.0.1'
+  gem 'rspec-rails', '7.1.0'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
