@@ -1,8 +1,12 @@
 <%-# Sort submissions by title before sorting by result -%>
-<% instance.sorted_submissions.includes(proposal: :speaker).each do |submission| %>
+<% instance.sorted_submissions.includes(proposal: :speakers).each do |submission| %>
   <p>
     <%= link_to submission.proposal.title, submission.proposal %> -
-    <%= link_to submission.proposal.speaker.name, submission.proposal.speaker %> -
+    <% last_speaker_id = submission.proposal.speakers.last.id %>
+    <% submission.proposal.speakers.each do |speaker| %>
+      <%= link_to speaker.name, speaker %><%= ", " unless last_speaker_id == speaker.id %>
+    <% end %>
+    -
     <%= submission.result.capitalize %>
   </p>
 <% end %>

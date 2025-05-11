@@ -1,5 +1,6 @@
 class Proposal < ApplicationRecord
-  belongs_to :speaker
+  has_many :proposal_speakers
+  has_many :speakers, through: :proposal_speakers
   has_many :submissions
 
   validates_presence_of :title

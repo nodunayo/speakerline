@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_08_172840) do
+ActiveRecord::Schema[7.2].define(version: 2025_05_11_200328) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_172840) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["name"], name: "index_events_on_name", unique: true
+  end
+
+  create_table "proposal_speakers", force: :cascade do |t|
+    t.bigint "proposal_id"
+    t.bigint "speaker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proposal_id"], name: "index_proposal_speakers_on_proposal_id"
+    t.index ["speaker_id"], name: "index_proposal_speakers_on_speaker_id"
   end
 
   create_table "proposals", id: :serial, force: :cascade do |t|
@@ -80,6 +89,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_172840) do
   end
 
   add_foreign_key "event_instances", "events"
+  add_foreign_key "proposal_speakers", "proposals"
+  add_foreign_key "proposal_speakers", "speakers"
   add_foreign_key "proposals", "speakers"
   add_foreign_key "submissions", "event_instances"
   add_foreign_key "submissions", "proposals"
