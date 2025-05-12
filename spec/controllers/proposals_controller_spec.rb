@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe ProposalsController do
   describe 'POST #create' do
     context 'with valid attributes' do
-
-      let(:expected_proposal) { Proposal.new(id: 7, title: 'A great talk', body: 'Come listen to a great talk', tag_list: 'talks, proposals', speaker_id: 5 ) }
+      let(:speaker) { create(:speaker) }
+      let(:expected_proposal) { Proposal.new(id: 7, title: 'A great talk', body: 'Come listen to a great talk', tag_list: 'talks, proposals', speaker_ids: [speaker.id] ) }
 
       before do
         allow(Proposal).to receive(:new).and_return(expected_proposal)
         allow(expected_proposal).to receive(:save).and_return(true)
-        post :create, params: { proposal: { title: 'A great talk', body: 'Come listen to a great talk', tag_list: 'talks, proposals',speaker_id: 5 } }
+        post :create, params: { proposal: { title: 'A great talk', body: 'Come listen to a great talk', tag_list: 'talks, proposals',speaker_ids: [speaker.id] } }
       end
 
       it 'creates a new proposal' do
-        expect(Proposal).to have_received(:new).with(title: 'A great talk', body: 'Come listen to a great talk', tag_list: 'talks, proposals', speaker_id: '5')
+        expect(Proposal).to have_received(:new).with(title: 'A great talk', body: 'Come listen to a great talk', tag_list: 'talks, proposals', speaker_ids: [speaker.id.to_s])
       end
 
       it { should redirect_to(proposal_path(expected_proposal)) }
