@@ -1,7 +1,12 @@
 <div class='row'>
   <div class="one-half column">
     <h4><%= @proposal.title %>,
-      by <%= link_to @proposal.speaker.name, speaker_path(@proposal.speaker) %>
+      by
+      <% last_speaker_id = @proposal.speakers.last.id %>
+      <% @proposal.speakers.each do |speaker| %>
+        <%= link_to speaker.name, speaker_path(speaker) %><%= ", " unless speaker.id == last_speaker_id %>
+      <% end %>
+    </h4>
     <div class="tags">
       <% @proposal.tag_list.each do |tag| %>
         <span class="tag"><a href="/tags/<%= tag %>">#<%= tag.gsub(" ", "") %></a></span>

@@ -4,7 +4,7 @@
 <% end %>
 
 <%= form_for @proposal do |f| %>
-  <%= f.collection_select(:speaker_id, @speakers, :id, :name) %>
+  <%= f.collection_select(:speaker_ids, @speakers, :id, :name, {}, { multiple: true }) %>
   <%= f.label(:title) %>
   <%= f.text_field(:title, class: "u-full-width medium-height") %>
   <%= f.label(:tags, "Tags (comma-separated, max 3)", for: :proposal_tag_list) %>
