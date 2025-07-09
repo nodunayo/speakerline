@@ -8,8 +8,8 @@ RSpec.describe SpeakersController do
         create(:speaker, name: "LazyTed")
         create(:speaker, name: "Angel")
 
-        create(:proposal, speaker: Speaker.find_by(name: "Angel"))
-        create(:proposal, speaker: Speaker.find_by(name: "Zebra"))
+        create(:proposal, speakers: [Speaker.find_by(name: "Angel")])
+        create(:proposal, speakers: [Speaker.find_by(name: "Zebra")])
 
         get :index
       end
