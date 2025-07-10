@@ -102,21 +102,19 @@ Once all the gems are installed, we'll need to create the databases and tables u
 bin/rails db:create db:migrate
 ```
 
-#### Environment variables
+#### Configuration
 
-Now we need to set up some environment variables.
-
-I like to use [dotenv](https://github.com/bkeepers/dotenv) to manage them.
+Now we need to set up the application configuration using Rails 8 encrypted credentials.
 
 Currently, the admin endpoint is authenticated using basic access authentication.
 
-Set `RAILS_ADMIN_USERNAME` and `RAILS_ADMIN_PASSWORD` in a file named `.env`.
+The credentials are stored in the `config/credentials` directory. To edit, run:
 
-You'll also need to set `RECAPTCHA_SITE_KEY` and `RECAPTCHA_SECRET_KEY`. To get values for these, visit
-[https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) and choose the
-'Register a new site' option.
+```bash
+bin/rails credentials:edit --environment development
+```
 
-Select 'reCAPTCHA V2' and add 'localhost' to the list of domains.
+To get reCAPTCHA keys, visit [https://www.google.com/recaptcha/admin](https://www.google.com/recaptcha/admin) and choose the 'Register a new site' option. Select 'reCAPTCHA V2' and add 'localhost' to the list of domains.
 
 #### Seeding the development database
 

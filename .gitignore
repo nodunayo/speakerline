@@ -22,6 +22,7 @@ examples.txt
 # Ignore Byebug command history file.
 .byebug_history
 
-.env
-
 /coverage/*
+
+/config/credentials/development.key
+/config/credentials/test.key
