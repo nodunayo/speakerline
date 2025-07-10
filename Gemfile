@@ -19,7 +19,6 @@ group :development, :test do
   gem 'rspec-rails', '8.0.1'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
-  gem 'dotenv-rails'
   gem 'faker'
 end
 

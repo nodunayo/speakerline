@@ -138,10 +138,6 @@ GEM
     date (3.4.1)
     diff-lcs (1.6.2)
     docile (1.4.0)
-    dotenv (3.1.8)
-    dotenv-rails (3.1.8)
-      dotenv (= 3.1.8)
-      railties (>= 6.1)
     drb (2.2.3)
     erb (5.0.1)
     erubi (1.13.1)
@@ -374,7 +370,6 @@ DEPENDENCIES
   byebug
   cucumber-rails
   database_cleaner
-  dotenv-rails
   erubis
   factory_bot_rails
   faker
