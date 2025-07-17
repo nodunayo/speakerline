@@ -49,6 +49,11 @@ Rails.application.configure do
   # Replace the default in-process and non-durable queuing backend for Active Job.
   # config.active_job.queue_adapter = :resque
 
+  config.action_mailer.delivery_method = :mailpace
+  config.action_mailer.mailpace_settings = { api_token: Rails.application.credentials.mailpace_api_token }
+  config.action_mailer.default_url_options = { host: "speakerline.io" }
+  routes.default_url_options[:host] ||= "speakerline.io"
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

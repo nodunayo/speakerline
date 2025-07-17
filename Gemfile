@@ -7,13 +7,14 @@ gem 'rails', '8.0.2'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
-gem 'recaptcha', require: 'recaptcha/rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'rails_admin'
 gem 'redcarpet'
 gem 'erubis'
 gem 'rack-attack'
+gem 'passwordless'
+gem 'mailpace-rails'
 
 group :development, :test do
   gem 'rspec-rails', '8.0.1'
@@ -21,6 +22,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
   gem 'faker'
+  gem 'letter_opener'
 end
 
 group :development do
