@@ -156,6 +156,10 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httparty (0.23.1)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -195,11 +199,18 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mailpace-rails (0.4.3)
+      actionmailbox (>= 6.0.0)
+      actionmailer (>= 6.0.0)
+      activestorage (>= 6.0.0)
+      httparty (>= 0.18.1)
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.23.0)
     multi_test (1.1.0)
+    multi_xml (0.7.2)
+      bigdecimal (~> 3.1)
     nested_form (0.3.2)
     net-imap (0.5.9)
       date
@@ -283,7 +294,6 @@ GEM
       ffi (~> 1.0)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
-    recaptcha (5.16.0)
     redcarpet (3.6.0)
     regexp_parser (2.8.2)
     reline (0.5.7)
@@ -384,6 +394,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen
+  mailpace-rails
   passwordless
   pg
   puma
@@ -392,7 +403,6 @@ DEPENDENCIES
   rails-controller-testing
   rails_admin
   rake
-  recaptcha
   redcarpet
   rspec-rails (= 8.0.1)
   sass-rails
