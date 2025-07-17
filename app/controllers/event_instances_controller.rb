@@ -1,4 +1,6 @@
 class EventInstancesController < ApplicationController
+  before_action :require_user!, only: [:new, :create]
+
   def new
     @events = Event.all.order(name: :asc)
     @event_instance = EventInstance.new

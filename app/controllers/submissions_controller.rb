@@ -1,4 +1,6 @@
 class SubmissionsController < ApplicationController
+  before_action :require_user!, only: [:new, :create, :edit, :update]
+
   def index
     flash[:notice] = 'Submissions can be accessed from their respective proposal pages.'
     redirect_to proposals_path
