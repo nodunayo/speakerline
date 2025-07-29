@@ -12,11 +12,3 @@ Feature: Speaker Directory
     And he does not have any proposals
     When I go to the speaker directory page
     Then I should not see 'Lazy Ted'
-
-  Scenario: Add a speaker to the directory
-    Given the speaker 'Katrina Owen' is not in the directory
-    When I add 'Katrina Owen' to the directory
-    And I create a proposal for her
-    And I go to the speaker directory page
-    Then I should see 'Katrina Owen'
-

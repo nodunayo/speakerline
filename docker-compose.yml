@@ -18,7 +18,6 @@ services:
     depends_on:
       - db
     environment:
-      - RECAPTCHA_SITE_KEY=aaaaa
       - RAILS_ADMIN_USERNAME=rails
       - RAILS_ADMIN_PASSWORD=rails
       - DATABASE_HOST=db

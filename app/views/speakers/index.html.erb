@@ -1,6 +1,9 @@
 <% speakers_columns = @speakers.in_groups(4, false) %>
-<%= link_to new_speaker_path do %>
-  <button class="button-add">Add a speaker</button>
+
+<% unless current_user %>
+  <%= link_to users_sign_in_path do %>
+    <button class="button-add">Sign up to add yourself as a Speaker</button>
+  <% end %>
 <% end %>
 
 <div class="row">

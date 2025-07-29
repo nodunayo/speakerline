@@ -130,10 +130,6 @@ select#submission_event_instance_id {
   font-size: 11px;
 }
 
-.g-recaptcha {
-  margin-bottom: 1.5rem;
-}
-
 /**
  * .fieldset redeclares some Normalize styles in a .fieldset class
  * so they can be used to override Skeleton styles

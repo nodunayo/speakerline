@@ -1,4 +1,6 @@
 class SubmissionsController < ApplicationController
+  before_action :require_user!, only: [:new, :create, :edit, :update]
+
   def index
     flash[:notice] = 'Submissions can be accessed from their respective proposal pages.'
     redirect_to proposals_path
@@ -18,7 +20,7 @@ class SubmissionsController < ApplicationController
 
   def create
     @submission = Submission.new(submission_params)
-    if verify_recaptcha(model: @submission) && @submission.save
+    if @submission.save
       flash[:notice] = 'Submission created successfully!'
 
       redirect_to proposal_path(@submission.proposal)
@@ -40,7 +42,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
     @proposal = @submission.proposal
 
-    if verify_recaptcha(model: @submission) && @submission.update(submission_params)
+    if @submission.update(submission_params)
       flash[:notice] = 'Submission updated successfully!'
 
       redirect_to proposal_path(@proposal)
