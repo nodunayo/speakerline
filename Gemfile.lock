@@ -231,7 +231,9 @@ GEM
     passwordless (1.7.0)
       bcrypt (>= 3.1.11)
       rails (>= 5.1.4)
-    pg (1.5.9)
+    pg (1.6.1-arm64-darwin)
+    pg (1.6.1-x86_64-darwin)
+    pg (1.6.1-x86_64-linux)
     psych (5.1.2)
       stringio
     public_suffix (5.0.3)
