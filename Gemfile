@@ -17,7 +17,7 @@ gem 'passwordless'
 gem 'mailpace-rails'
 
 group :development, :test do
-  gem 'rspec-rails', '8.0.1'
+  gem 'rspec-rails', '8.0.2'
   gem 'byebug', platform: :mri
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
