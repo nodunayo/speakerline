@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby File.read(".ruby-version").strip
 
 gem 'acts-as-taggable-on', '~> 12.0'
-gem 'rails', '8.0.2'
+gem 'rails', '8.0.2.1'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
