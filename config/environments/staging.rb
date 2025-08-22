@@ -50,7 +50,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter = :resque
 
   config.action_mailer.delivery_method = :mailpace
-  config.action_mailer.mailpace_settings = { api_token: Railsapplication.credentials.mailpace_api_token }
+  config.action_mailer.mailpace_settings = { api_token: Rails.application.credentials.mailpace_api_token }
   config.action_mailer.default_url_options = { host: "staging.speakerline.io" }
   routes.default_url_options[:host] ||= "https://staging.speakerline.io"
 
