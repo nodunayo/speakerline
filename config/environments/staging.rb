@@ -50,16 +50,13 @@ Rails.application.configure do
   # config.active_job.queue_adapter = :resque
 
   config.action_mailer.delivery_method = :mailpace
-  config.action_mailer.mailpace_settings = { api_token: Rails.application.credentials.mailpace_api_token }
-  config.action_mailer.default_url_options = { host: "https://speakerline-staging.herokuapp.com/" }
-  routes.default_url_options[:host] ||= "https://speakerline-staging.herokuapp.com/"
+  config.action_mailer.mailpace_settings = { api_token: Railsapplication.credentials.mailpace_api_token }
+  config.action_mailer.default_url_options = { host: "staging.speakerline.io" }
+  routes.default_url_options[:host] ||= "https://staging.speakerline.io"
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-
-  # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "speakerline-staging.herokuapp.com" }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   # config.action_mailer.smtp_settings = {
