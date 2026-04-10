@@ -139,9 +139,9 @@ GEM
     date (3.5.1)
     diff-lcs (1.6.2)
     docile (1.4.0)
-    dotenv (3.1.2)
-    dotenv-rails (3.1.2)
-      dotenv (= 3.1.2)
+    dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
       railties (>= 6.1)
     drb (2.2.3)
     erb (6.0.2)
@@ -245,8 +245,6 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (5.0.3)
-    puma (8.0.0)
     public_suffix (7.0.5)
     puma (8.0.0)
       nio4r (~> 2.0)
