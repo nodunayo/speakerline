@@ -245,8 +245,6 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (5.0.3)
-    puma (8.0.0)
     public_suffix (7.0.5)
     puma (8.0.0)
       nio4r (~> 2.0)
@@ -350,7 +348,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    spring (4.2.1)
+    spring (4.5.0)
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
       spring (>= 4)
