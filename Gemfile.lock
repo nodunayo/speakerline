@@ -218,7 +218,7 @@ GEM
     multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
     nested_form (0.3.2)
-    net-imap (0.6.3)
+    net-imap (0.6.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -245,8 +245,6 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (5.0.3)
-    puma (8.0.0)
     public_suffix (7.0.5)
     puma (8.0.0)
       nio4r (~> 2.0)
