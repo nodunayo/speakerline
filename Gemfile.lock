@@ -237,7 +237,9 @@ GEM
     passwordless (1.7.0)
       bcrypt (>= 3.1.11)
       rails (>= 5.1.4)
-    pg (1.5.9)
+    pg (1.6.3-arm64-darwin)
+    pg (1.6.3-x86_64-darwin)
+    pg (1.6.3-x86_64-linux)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
