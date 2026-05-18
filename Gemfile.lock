@@ -144,7 +144,7 @@ GEM
       dotenv (= 3.1.2)
       railties (>= 6.1)
     drb (2.2.3)
-    erb (6.0.2)
+    erb (6.0.4)
     erubi (1.13.1)
     erubis (2.7.0)
     factory_bot (6.4.5)
@@ -245,8 +245,6 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (5.0.3)
-    puma (8.0.0)
     public_suffix (7.0.5)
     puma (8.0.0)
       nio4r (~> 2.0)
