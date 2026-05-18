@@ -144,7 +144,7 @@ GEM
       dotenv (= 3.1.2)
       railties (>= 6.1)
     drb (2.2.3)
-    erb (6.0.2)
+    erb (6.0.4)
     erubi (1.13.1)
     erubis (2.7.0)
     factory_bot (6.4.5)
@@ -218,7 +218,7 @@ GEM
     multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
     nested_form (0.3.2)
-    net-imap (0.6.3)
+    net-imap (0.6.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -228,11 +228,11 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.2-arm64-darwin)
+    nokogiri (1.19.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.2-x86_64-darwin)
+    nokogiri (1.19.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.2-x86_64-linux-gnu)
+    nokogiri (1.19.3-x86_64-linux-gnu)
       racc (~> 1.4)
     passwordless (1.7.0)
       bcrypt (>= 3.1.11)
