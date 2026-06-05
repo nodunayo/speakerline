@@ -3,8 +3,10 @@ RailsAdmin.config do |config|
 
   config.authorize_with do
     authenticate_or_request_with_http_basic('Login required') do |username, password|
-      username = Rails.application.secrets.rails_admin_username
-      password = Rails.application.secrets.rails_admin_password
+      expected_username = ENV["RAILS_ADMIN_USERNAME"].to_s
+      expected_password = ENV["RAILS_ADMIN_PASSWORD"].to_s
+      ActiveSupport::SecurityUtils.secure_compare(username.to_s, expected_username) &
+        ActiveSupport::SecurityUtils.secure_compare(password.to_s, expected_password)
     end
   end
   config.actions do
