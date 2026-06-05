@@ -52,7 +52,7 @@ case Rails.env
 
     speaker = Speaker.first
     User.create(email: Faker::Internet.email, speaker: speaker)
-    puts "created 1 user to log in with..."
+    puts "Created 1 user to log in with..."
 
     puts "Finished seeding the development database!"
 end

@@ -25,3 +25,7 @@ examples.txt
 .env
 
 /coverage/*
+
+/config/credentials/staging.key
+
+/config/credentials/production.key
