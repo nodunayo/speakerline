@@ -26,6 +26,9 @@ examples.txt
 
 /coverage/*
 
-/config/credentials/staging.key
+# Never commit credential keys (all environments)
+/config/credentials/*.key
 
-/config/credentials/production.key
+/config/credentials/development.key
+
+/config/credentials/test.key
